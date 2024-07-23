@@ -1,0 +1,1 @@
+Adicionar alguns pré-filtros em Batch Manager.

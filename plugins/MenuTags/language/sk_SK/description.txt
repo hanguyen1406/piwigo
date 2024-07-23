@@ -1,0 +1,1 @@
+Zobrazí nesúvisiace štítky v menu

@@ -1,0 +1,21 @@
+# Piwigo specific directories
+/_data
+!/plugins/index.php
+/themes/*
+!/themes/index.php
+!/themes/default
+/upload
+/galleries/*
+!/galleries/index.php
+/local/*
+!/local/**/index.php
+
+# IntelliJ
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.settings
+.project

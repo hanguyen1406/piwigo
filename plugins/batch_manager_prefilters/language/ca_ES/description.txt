@@ -1,0 +1,1 @@
+Afegeix pre-filtres al Batch Manager

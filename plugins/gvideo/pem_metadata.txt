@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/Piwigo-Embedded-Videos 
+Revision: ba229a54e24861159989b22e0261dc823c8c82f0 (Tue Mar 26 19:22:30 2024 +0100)

@@ -1,0 +1,1 @@
+Přidá další filtry do hromadného správce Batch Manageru.

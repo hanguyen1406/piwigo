@@ -1,0 +1,1 @@
+Voeg enkele prefilters toe in de Bulkbeheerder.

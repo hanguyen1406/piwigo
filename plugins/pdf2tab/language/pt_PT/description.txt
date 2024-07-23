@@ -1,0 +1,1 @@
+Abrir arquivos PDF numa nova aba do navegador.

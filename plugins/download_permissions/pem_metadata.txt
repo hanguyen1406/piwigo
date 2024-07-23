@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/plegall/Piwigo-download_permissions 
+Revision: 349bc07c6f450b392ae15e056c44563e104e6503 (Thu Feb 11 21:09:01 2021 +0100)

@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/Piwigo-Linked-Pages 
+Revision: 56df0e42c01d287c55bb656104d74b4ea79f5119 (Fri Nov 15 13:10:24 2019 +0100)

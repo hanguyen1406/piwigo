@@ -1,0 +1,30 @@
+#ppcreditsBuyPhoto {
+  text-align:center;
+  margin:20px;
+  color:#333;
+  background-color:#aaa;
+  border-radius:5px;
+  padding:5px 10px;
+}
+
+#ppcreditsBuyPhoto ul {
+  text-align:left;
+}
+
+#ppcreditsBuyPhoto a {
+  color:#333 !important;
+}
+
+.jconfirm a.prepaid-credits-download {
+  background-color: #5cb85c;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Bootstrap Darkroom */
+#main-picture-container #ppcreditsBuyPhoto {
+  max-width:300px;
+  margin:0 auto;
+}

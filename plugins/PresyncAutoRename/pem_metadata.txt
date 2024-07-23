@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/petitssuisses/piwigo-PresyncAutoRename 
+Revision: 5873b7e2dcbfa70947494c05cd178705faa89b6f (Tue Sep 28 11:02:32 2021 +0200)

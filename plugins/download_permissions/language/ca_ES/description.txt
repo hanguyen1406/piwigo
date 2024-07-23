@@ -1,0 +1,1 @@
+Permet la descàrrega de fotos, filtrant per àlbum.

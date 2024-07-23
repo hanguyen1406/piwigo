@@ -1,0 +1,1 @@
+Thêm vài bộ lọc khi xử lý nhiều ảnh cùng lúc.

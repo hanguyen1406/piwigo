@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/plegall/Piwigo-PayPalShoppingCart 
+Revision: 12ef44843fc1e34b5cb36ea9e04bac9e0a38da06 (Thu Nov 25 16:06:39 2021 +0100)

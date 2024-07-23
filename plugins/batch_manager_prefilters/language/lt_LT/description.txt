@@ -1,0 +1,1 @@
+Pridėti keletą papildomų pre-filtrų į paketinį menedžerį.

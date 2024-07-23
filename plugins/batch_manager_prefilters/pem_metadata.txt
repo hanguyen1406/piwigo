@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/batch_manager_prefilters 
+Revision: 025d6b84d58540abba86fc1d0052f39ad69aa01b (Thu Apr 4 09:59:58 2024 +0200)

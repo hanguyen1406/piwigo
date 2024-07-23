@@ -1,0 +1,1 @@
+Engadir algúns prefiltros na xestión por lotes.

@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/plegall/piwigo-prepaid-credits/ 
+Revision: 4efd3ed583e8a9ed2c1933de7259a83760869812 (Tue Jan 4 14:55:59 2022 +0100)

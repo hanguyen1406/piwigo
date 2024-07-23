@@ -1,0 +1,1 @@
+﻿Ouvre les fichiers pdf dans un nouvel onglet du navigateur

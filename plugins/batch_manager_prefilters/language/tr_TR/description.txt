@@ -1,0 +1,1 @@
+Küme Yöneticisine bir kaç ön filtre ekler.

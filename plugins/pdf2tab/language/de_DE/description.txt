@@ -1,0 +1,1 @@
+Öffnen von PDF-Dateien in einem neuen Browser-Tab.

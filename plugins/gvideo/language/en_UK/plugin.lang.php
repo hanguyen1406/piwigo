@@ -1,0 +1,45 @@
+<?php
+
+$lang['Add a video'] = 'Add a video';
+$lang['Video URL'] = 'Video URL';
+$lang['Change'] = 'Change'; 
+$lang['Video size'] = 'Video size';
+$lang['Use common setting'] = 'Use common setting';
+$lang['Autoplay'] = 'Autoplay';
+$lang['Supported services'] = 'Supported services';
+$lang['Common configuration'] = 'Common configuration';
+$lang['Color'] = 'Color';
+$lang['Author portrait'] = 'Author portrait';
+$lang['Author name'] = 'Author name';
+$lang['Logo'] = 'Logo';
+$lang['Please fill the video URL'] = 'Please fill the video URL';
+$lang['Unable to contact host server'] = 'Unable to contact host server';
+$lang['Video successfully added. <a href="%s">View</a>'] = 'Video successfully added. <a href="%s">View</a>';
+$lang['This element is a video added with "Embedded Video"'] = 'This element is a video added with "Embedded Video"';
+$lang['Add film effect'] = 'Add film effect';
+$lang['Upload a new thumbnail'] = 'Upload a new thumbnail';
+$lang['The thumbnail was updated'] = 'The thumbnail was updated';
+$lang['Video successfully updated'] = 'Video successfully updated';
+$lang['Changing the url will reset video description, name and thumbnail'] = 'Changing the url will reset video description, name and thumbnail';
+$lang['Get video description'] = 'Get video description';
+$lang['Get video tags'] = 'Get video tags';
+$lang['Vimeo player'] = 'Vimeo player';
+$lang['Dailymotion player'] = 'Dailymotion player';
+$lang['Video properties'] = 'Video properties';
+$lang['Show privacy details'] = 'Show privacy details';
+$lang['Videos can be unlisted but not private.'] = 'Videos can be unlisted but not private.';
+$lang['Videos can be unlisted and private if the gallery website is within the authorized domains (PRO).'] = 'Videos can be unlisted and private if the gallery website is within the authorized domains (PRO).';
+$lang['Videos can be private if you use the private permalink.'] = 'Videos can be private if you use the private permalink.';
+$lang['No privacy option.'] = 'No privacy option.';
+$lang['Add video from embed code'] = 'Add video from embed code';
+$lang['Add video from hosting platform'] = 'Add video from hosting platform';
+$lang['Embed code'] = 'Embed code';
+$lang['optional'] = 'optional';
+$lang['Please fill the embed code'] = 'Please fill the embed code';
+$lang['This video was already registered'] = 'This video was already registered';
+$lang['Videos'] = 'Videos';
+$lang['Width and height must be integers'] = 'Width and height must be integers';
+$lang['Do not use this form for videos provided by Youtube, Dailymotion, Vimeo, Wat or Wideo.'] = 'Do not use this form for videos provided by Youtube, Dailymotion, Vimeo, Wat or Wideo.';
+$lang['Video data like description and thumbnail might be missing'] = 'Video data like description and thumbnail might be missing';
+$lang['Reset thumbnail (download from host)'] = 'Reset thumbnail (download from host)';
+?>

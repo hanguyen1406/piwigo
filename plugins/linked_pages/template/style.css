@@ -1,0 +1,19 @@
+#linked_pages {
+  list-style:none;
+  padding:0;
+  margin:20px 20px 10px 20px;
+}
+  #linked_pages li {
+    display:inline-block;
+    padding:0 0 15px 0;
+  }
+  #linked_pages li a {
+    padding:4px 8px;
+    border-width:1px;
+    border-style:dotted;
+    border-radius:2px;
+    background-color:rgba(0, 180, 255, 0.05);
+  }
+  #linked_pages li a:hover {
+    border-style:solid;
+  }

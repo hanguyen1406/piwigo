@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/Piwigo-MenuTags 
+Revision: 2f978ff645d266b279ea0f223969a8e154cd8409 (Tue Feb 6 11:49:15 2024 +0100)

@@ -1,0 +1,1 @@
+Åbn pdf-filer i et nyt faneblad i browseren.

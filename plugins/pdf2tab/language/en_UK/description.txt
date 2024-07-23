@@ -1,0 +1,1 @@
+Open pdf files in a new tab of the browser
