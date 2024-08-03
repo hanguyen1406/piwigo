@@ -132,28 +132,28 @@ function save_profile_from_post($userdata, &$errors)
   if ($conf['allow_user_customization'] or defined('IN_ADMIN'))
   {
     $int_pattern = '/^\d+$/';
-    if (empty($_POST['nb_image_page'])
-        or (!preg_match($int_pattern, $_POST['nb_image_page'])))
-    {
-      $errors[] = l10n('The number of photos per page must be a not null scalar');
-    }
+    // if (empty($_POST['nb_image_page'])
+    //     or (!preg_match($int_pattern, $_POST['nb_image_page'])))
+    // {
+    //   $errors[] = l10n('The number of photos per page must be a not null scalar');
+    // }
 
     // periods must be integer values, they represents number of days
-    if (!preg_match($int_pattern, $_POST['recent_period'])
-        or $_POST['recent_period'] < 0)
-    {
-      $errors[] = l10n('Recent period must be a positive integer value') ;
-    }
+    // if (!preg_match($int_pattern, $_POST['recent_period'])
+    //     or $_POST['recent_period'] < 0)
+    // {
+    //   $errors[] = l10n('Recent period must be a positive integer value') ;
+    // }
 
-    if (!in_array($_POST['language'], array_keys(get_languages())))
-    {
-      die('Hacking attempt, incorrect language value');
-    }
+    // if (!in_array($_POST['language'], array_keys(get_languages())))
+    // {
+    //   die('Hacking attempt, incorrect language value');
+    // }
 
-    if (!in_array($_POST['theme'], array_keys(get_pwg_themes())))
-    {
-      die('Hacking attempt, incorrect theme value');
-    }
+    // if (!in_array($_POST['theme'], array_keys(get_pwg_themes())))
+    // {
+    //   die('Hacking attempt, incorrect theme value');
+    // }
   }
 
   if (isset($_POST['mail_address']))

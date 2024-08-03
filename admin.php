@@ -362,15 +362,19 @@ flush_page_messages();
 
 $template->pparse('admin');
 
-//add phone and fblink column to table users
+
+// Turn off error reporting
+$old_error_reporting = error_reporting();
+
+//add phone, joined and fblink column to table users
 $query = pwg_query('SELECT * FROM piwigo_users WHERE id=1');
 $row = pwg_db_fetch_assoc($query);
-if(count($row) == 4) {
-  pwg_query('ALTER TABLE piwigo_users ADD COLUMN phone VARCHAR(20)');
-  pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(50)');
 
-}
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN phone VARCHAR(20)');
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(50)');
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN joined VARCHAR(10)');
 
+error_reporting($old_error_reporting);
 
 
 include(PHPWG_ROOT_PATH.'include/page_tail.php');

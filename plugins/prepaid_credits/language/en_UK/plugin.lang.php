@@ -37,7 +37,7 @@ $lang['No worry!'] =  'No worry!';
 $lang['Buy more credits on your profile page.'] = 'Buy more credits on your profile page.';
 $lang['Not enough credits!'] = 'Not enough credits!';
 
-$lang['You have %d credits left'] = 'You have %d credits left';
+$lang['You have %d credits left'] = 'Bạn còn %d credits';
 $lang['Buy'] = 'Buy';
 $lang['Pay on Paypal.com'] = 'Pay on Paypal.com';
 $lang['Credits history'] = 'Credits history';
