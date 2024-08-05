@@ -221,6 +221,7 @@ $template->assign(
     'U_BATCH'=> $link_start.'batch_manager',
     'U_TAGS'=> $link_start.'tags',
     'U_USERS'=> $link_start.'user_list',
+    'U_FACEBOOK'=> $link_start.'verify_facebook',
     'U_GROUPS'=> $link_start.'group_list',
     'U_RETURN'=> get_gallery_home_url(),
     'U_ADMIN'=> PHPWG_ROOT_PATH.'admin.php',
@@ -363,18 +364,19 @@ flush_page_messages();
 $template->pparse('admin');
 
 
-// Turn off error reporting
-$old_error_reporting = error_reporting();
+$old_error_reporting = error_reporting(0);
+ini_set('display_errors', 0);
 
 //add phone, joined and fblink column to table users
-$query = pwg_query('SELECT * FROM piwigo_users WHERE id=1');
-$row = pwg_db_fetch_assoc($query);
+// $query = pwg_query('SELECT * FROM piwigo_users WHERE id=1');
+// $row = pwg_db_fetch_assoc($query);
 
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN phone VARCHAR(20)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(50)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN joined VARCHAR(10)');
 
 error_reporting($old_error_reporting);
+ini_set('display_errors', 1);
 
 
 include(PHPWG_ROOT_PATH.'include/page_tail.php');

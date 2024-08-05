@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:14:13
+/* Smarty version 4.3.1, created on 2024-08-05 10:20:18
   from '/var/www/html/piwigo/admin/themes/default/template/admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a3f59f62b2_29554891',
+  'unifunc' => 'content_66b0a762f3d003_57502020',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a6e89c78975e2cf66d0a0f834a30a9b1d6f873a' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/admin.tpl',
-      1 => 1702327276,
+      1 => 1722853214,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/colorbox.inc.tpl' => 1,
   ),
 ),false)) {
-function content_6676a3f59f62b2_29554891 (Smarty_Internal_Template $_smarty_tpl) {
-$_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin3, 'block_footer_script'))) {
+function content_66b0a762f3d003_57502020 (Smarty_Internal_Template $_smarty_tpl) {
+$_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin1, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array());
 $_block_repeat=true;
-echo $_block_plugin3->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin1->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
 jQuery.fn.lightAccordion = function(options) {
@@ -77,15 +77,15 @@ jQuery(document).ready(function() {
   }
 });
 <?php $_block_repeat=false;
-echo $_block_plugin3->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin1->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 
 <div id="menubar">
+  
   <div id="adminHome"><a href="<?php echo $_smarty_tpl->tpl_vars['U_ADMIN']->value;?>
 " class="admin-main"><i class="icon-television"></i> <?php echo l10n('Dashboard');?>
 </a></div>
-
 	<dl>
 		<dt><i class="icon-picture"> </i><span><?php echo l10n('Photos');?>
 &nbsp;</span><i class="icon-down-open open-menu"></i></dt>
@@ -145,6 +145,8 @@ if ($_smarty_tpl->tpl_vars['NB_ORPHANS']->value > 0) {?>
         <li><a href="<?php echo $_smarty_tpl->tpl_vars['U_USERS']->value;?>
 "><i class="icon-user-add"></i><?php echo l10n('Manage');?>
 </a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['U_FACEBOOK']->value;?>
+"><i class="icon-user-1"></i>Liên kết Facebook</a></li>
         <li><a href="<?php echo $_smarty_tpl->tpl_vars['U_GROUPS']->value;?>
 "><i class="icon-group"></i><?php echo l10n('Groups');?>
 </a></li>
@@ -235,18 +237,18 @@ if ($_prefixVariable1) {?>
 <?php }
 if ((isset($_smarty_tpl->tpl_vars['U_HELP']->value))) {
 $_smarty_tpl->_subTemplateRender('file:include/colorbox.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_block_plugin4 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin4, 'block_footer_script'))) {
+$_block_plugin2 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin2, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array());
 $_block_repeat=true;
-echo $_block_plugin4->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin2->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
   jQuery('.help-popin').colorbox({ width:"500px" });
 <?php $_block_repeat=false;
-echo $_block_plugin4->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin2->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
   <ul class="HelpActions">

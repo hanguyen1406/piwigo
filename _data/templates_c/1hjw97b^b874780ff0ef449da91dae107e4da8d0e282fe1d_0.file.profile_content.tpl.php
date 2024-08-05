@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-07-29 09:46:58
+/* Smarty version 4.3.1, created on 2024-08-03 10:31:01
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/profile_content.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66a7651268ff72_26886283',
+  'unifunc' => 'content_66ae06e5a62729_27884912',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b874780ff0ef449da91dae107e4da8d0e282fe1d' => 
     array (
       0 => '/var/www/html/piwigo/themes/bootstrap_darkroom/template/profile_content.tpl',
-      1 => 1722246407,
+      1 => 1722681060,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66a7651268ff72_26886283 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66ae06e5a62729_27884912 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 ?>
 <div class="container<?php if ($_smarty_tpl->tpl_vars['theme_config']->value->fluid_width) {?>-fluid<?php }?>">
@@ -90,17 +90,9 @@ echo $_smarty_tpl->tpl_vars['UCF_PROFILE_ADD']->value;?>
 ">
                     </div>
                 </div>
+
 <?php }
 }?>
-            </div>
-        </div>
-<?php if ($_smarty_tpl->tpl_vars['ALLOW_USER_CUSTOMIZATION']->value) {?>
-        <div class="card my-3">
-            <h4 class="card-header">
-                <?php echo l10n('Preferences');?>
-
-            </h4>
-            <div class="card-body">
                 <div class="form-group row">
                     <label for="nb_image_page" class="col-12 col-md-3 col-form-label"><?php echo l10n('Number of photos per page');?>
 </label>
@@ -119,17 +111,46 @@ echo $_smarty_tpl->tpl_vars['UCF_PROFILE_ADD']->value;?>
                         </select>
                     </div>
                 </div>
-                
             </div>
-        </div>
 
+        </div>
+        <hr>
         <input class="btn btn-primary btn-raised" type="submit" name="validate" value="<?php echo l10n('Submit');?>
 ">
         <input class="btn btn-info btn-raised" type="reset" name="reset" value="<?php echo l10n('Reset');?>
 ">
         <input class="btn btn-warning btn-raised" type="submit" name="reset_to_default" value="<?php echo l10n('Reset to default values');?>
 ">
-<?php }?>
+
+        <div class="card my-3">
+            <h4 class="card-header">
+                Nhiệm vụ nhận xu free
+            </h4>
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-dark">
+                        <th>Nhiệm vụ</th>
+                        <th>Trạng thái</th>
+                        <th>Credit</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Liên kết Facebook vào hệ thống Piwigo</td>
+                            <td>Chưa làm</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Follow fanpage Admin Đặng Tuấn</td>
+                            <td>Chưa làm</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div>
+        <div>
+
+<?php if ($_smarty_tpl->tpl_vars['ALLOW_USER_CUSTOMIZATION']->value) {
+}?>
         <input type="hidden" name="redirect" value="<?php echo $_smarty_tpl->tpl_vars['REDIRECT']->value;?>
 ">
         <input type="hidden" name="pwg_token" value="<?php echo $_smarty_tpl->tpl_vars['PWG_TOKEN']->value;?>

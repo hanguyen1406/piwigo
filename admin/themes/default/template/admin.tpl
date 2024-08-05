@@ -46,8 +46,8 @@ jQuery(document).ready(function() {
 {/footer_script}
 
 <div id="menubar">
+  
   <div id="adminHome"><a href="{$U_ADMIN}" class="admin-main"><i class="icon-television"></i> {'Dashboard'|@translate}</a></div>
-
 	<dl>
 		<dt><i class="icon-picture"> </i><span>{'Photos'|@translate}&nbsp;</span><i class="icon-down-open open-menu"></i></dt>
 		<dd>
@@ -82,6 +82,7 @@ jQuery(document).ready(function() {
 		<dd>
       <ul>
         <li><a href="{$U_USERS}"><i class="icon-user-add"></i>{'Manage'|@translate}</a></li>
+        <li><a href="{$U_FACEBOOK}"><i class="icon-user-1"></i>Liên kết Facebook</a></li>
         <li><a href="{$U_GROUPS}"><i class="icon-group"></i>{'Groups'|@translate}</a></li>
 				<li><a href="{$U_NOTIFICATION_BY_MAIL}"><i class="icon-mail-1"></i>{'Notification'|@translate}</a></li>
       </ul>

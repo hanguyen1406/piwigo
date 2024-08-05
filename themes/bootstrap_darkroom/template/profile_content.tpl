@@ -50,16 +50,9 @@
                         <input class="btn btn-primary btn-raised" type="reset" name="reset" value="{'Reset'|@translate}">
                     </div>
                 </div>
+
 {/if}
 {/if}
-            </div>
-        </div>
-{if $ALLOW_USER_CUSTOMIZATION}
-        <div class="card my-3">
-            <h4 class="card-header">
-                {'Preferences'|@translate}
-            </h4>
-            <div class="card-body">
                 <div class="form-group row">
                     <label for="nb_image_page" class="col-12 col-md-3 col-form-label">{'Number of photos per page'|@translate}</label>
                     <div class="col-12 col-md-2">
@@ -74,13 +67,42 @@
                         </select>
                     </div>
                 </div>
-                
             </div>
-        </div>
 
+        </div>
+        <hr>
         <input class="btn btn-primary btn-raised" type="submit" name="validate" value="{'Submit'|@translate}">
         <input class="btn btn-info btn-raised" type="reset" name="reset" value="{'Reset'|@translate}">
         <input class="btn btn-warning btn-raised" type="submit" name="reset_to_default" value="{'Reset to default values'|@translate}">
+
+        <div class="card my-3">
+            <h4 class="card-header">
+                Nhiệm vụ nhận xu free
+            </h4>
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-dark">
+                        <th>Nhiệm vụ</th>
+                        <th>Trạng thái</th>
+                        <th>Credit</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Liên kết Facebook vào hệ thống Piwigo</td>
+                            <td>Chưa làm</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Follow fanpage Admin Đặng Tuấn</td>
+                            <td>Chưa làm</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div>
+        <div>
+
+{if $ALLOW_USER_CUSTOMIZATION}
 {/if}
         <input type="hidden" name="redirect" value="{$REDIRECT}">
         <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
