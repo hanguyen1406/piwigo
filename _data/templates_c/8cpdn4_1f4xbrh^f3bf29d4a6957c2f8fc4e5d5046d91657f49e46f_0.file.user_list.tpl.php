@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 11:23:11
+/* Smarty version 4.3.1, created on 2024-08-06 08:18:44
   from '/var/www/html/piwigo/admin/themes/default/template/user_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676b41f2766f6_24022651',
+  'unifunc' => 'content_66b1dc64b35af3_65241723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3bf29d4a6957c2f8fc4e5d5046d91657f49e46f' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/user_list.tpl',
-      1 => 1702327276,
+      1 => 1722931363,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676b41f2766f6_24022651 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66b1dc64b35af3_65241723 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 ?>
 
@@ -405,7 +405,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
           <span class="icon-cancel search-cancel"></span>
           <input id="user_search" class='search-input' type='text' placeholder='<?php echo l10n('Search');?>
 '>
-        </div>
+    </div>
     <div class="advanced-filter">
       <div class="advanced-filter-header">
         <span class="advanced-filter-title"><?php echo l10n('Advanced filters');?>

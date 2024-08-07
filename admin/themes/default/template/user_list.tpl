@@ -258,7 +258,7 @@ $(document).ready(function() {
           <span class='icon-search search-icon'> </span>
           <span class="icon-cancel search-cancel"></span>
           <input id="user_search" class='search-input' type='text' placeholder='{'Search'|@translate}'>
-        </div>
+    </div>
     <div class="advanced-filter">
       <div class="advanced-filter-header">
         <span class="advanced-filter-title">{'Advanced filters'|@translate}</span>

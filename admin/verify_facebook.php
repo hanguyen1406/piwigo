@@ -6,7 +6,6 @@
 // | file that was distributed with this source code.                      |
 // +-----------------------------------------------------------------------+
 
-
 check_input_parameter('group', $_GET, false, PATTERN_ID);
 
 // +-----------------------------------------------------------------------+
@@ -14,10 +13,18 @@ check_input_parameter('group', $_GET, false, PATTERN_ID);
 // +-----------------------------------------------------------------------+
 
 $page['tab'] = 'verify_facebook';
-include(PHPWG_ROOT_PATH.'admin/include/user_tabs.inc.php');
+
+$template->set_filenames(array('verify_facebook'=>'verify_facebook.tpl.html'));
+
+$template->assign(
+    array(
+      'ADMIN_PAGE_TITLE' => "Quản lý liên kết tài khoản Facebook",
+    )
+);
 
 
-print("facebook");
+
+// print("facebook");
 
 $template->assign_var_from_handle('ADMIN_CONTENT', 'verify_facebook');
 ?>
