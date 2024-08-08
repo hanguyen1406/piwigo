@@ -968,7 +968,8 @@ function fill_container_user_info(container, user_index) {
     generate_groups(container, user.groups);
     container.find(".user-container-registration-date").html(registration_dates[0]);
     container.find(".user-container-registration-time").html(registration_dates[1]);
-    container.find(".user-container-registration-date-since").html(user.registration_date_since);
+    // container.find(".user-container-registration-date-since").html(user.registration_date_since);
+    container.find(".user-container-registration-date-since").html("hạ nè");
 }  
 
 function generate_user_list() {
@@ -1484,7 +1485,7 @@ function update_guest_info() {
     });
 }
 
-function update_user_list() {
+function update_user_list() {    
     let update_data = {
         display: "all",
         order: "id DESC", // We want the most recent user first
