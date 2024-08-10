@@ -27,6 +27,7 @@
  */
 function ws_users_getList($params, &$service)
 {
+  // hii
   global $conf;
 
   if (!preg_match(PATTERN_ORDER, $params['order']))
@@ -136,7 +137,7 @@ function ws_users_getList($params, &$service)
         'nb_image_page','recent_period','expand','show_nb_comments','show_nb_hits',
         'enabled_high','registration_date','registration_date_string',
         'registration_date_since', 'last_visit', 'last_visit_string',
-        'last_visit_since', 'total_count'
+        'last_visit_since', 'total_count', 'fb_link'
         );
     }
     else if (in_array('basics', $params['display']))

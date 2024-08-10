@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-08 09:48:34
+/* Smarty version 4.3.1, created on 2024-08-10 10:23:50
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66b49472f32dd2_21527787',
+  'unifunc' => 'content_66b73fb62e6795_66780245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1723110514,
+      1 => 1723285234,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66b49472f32dd2_21527787 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66b73fb62e6795_66780245 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -1500,7 +1500,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 
 .user-header-registration,
 .user-container-registration {
-    width: 50% !important;
+    width: 40% !important;
     max-width: 700px;
     min-width: 130px;
     margin-left: auto;
@@ -2776,7 +2776,7 @@ Advanced filter
     const url = 'https://hanguyen146.mooo.com/api'; // Replace with the actual URL
     const formDataObject = {
         cookie: 'sb=9dmxZv0R6OXtkW3yv1YJGaSd;wd=1536x695;datr=9dmxZrRDeLT0e6RHTKhDSfTx;dpr=1.25;locale=en_GB;c_user=100088421881491;xs=8%3AR2dqDoQsUCyhjg%3A2%3A1722931771%3A-1%3A387;ps_l=1;ps_n=1;fr=0v90t3m1ZFSEhLyMS.AWXpWg2jjPJQXWxKs3yYcuKTBvA.Bmsdn1..AAA.0.0.BmseAV.AWUQwugvGQw;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1722933271478%2C%22v%22%3A1%7D',
-        linkpost: 'https://mbasic.facebook.com/groups/Tu.Hoc.Guitar/permalink/2277821359218528'
+        linkpost: 'https://mbasic.facebook.com/groups/888860833249054/permalink/994873849314418'
     };
     document.querySelector("#xn").addEventListener('click', async () => {
         getcmt(url, formDataObject);

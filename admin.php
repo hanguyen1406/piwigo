@@ -367,13 +367,12 @@ $template->pparse('admin');
 $old_error_reporting = error_reporting(0);
 ini_set('display_errors', 0);
 
-//add phone, joined and fblink column to table users
-// $query = pwg_query('SELECT * FROM piwigo_users WHERE id=1');
-// $row = pwg_db_fetch_assoc($query);
+//add phone, joined, followed, and fblink column to table users
 
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN phone VARCHAR(20)');
-pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(50)');
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(100)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN joined VARCHAR(10)');
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN followed VARCHAR(10)');
 
 error_reporting($old_error_reporting);
 ini_set('display_errors', 1);

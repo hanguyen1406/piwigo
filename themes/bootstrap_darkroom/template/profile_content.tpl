@@ -88,7 +88,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Liên kết Facebook vào hệ thống Piwigo</td>
+                            <td>Liên kết Facebook vào hệ thống Piwigo <br>
+                            <div onclick="copyToClipboard('{$HASH}')" style="cursor: pointer; width:fit-content">
+                                Mã của bạn: 
+                                <span id="copyHash" style="color: red;"><b id="hash">{$HASH}</b></span>
+                                <img style="position:relative; top: -2px" width=20 height=20 src="/piwigo/icons/copy.png"/>
+                                (Bình luận vào <a target="_blank" style="color: blue" href="https://www.facebook.com/share/p/AHCxCvBjChfXrxsr/">bài viết</a> này)
+                            </div>
+                            </td>
                             <td>Chưa làm</td>
                             <td>100</td>
                         </tr>
@@ -108,3 +115,14 @@
         <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
     </form>
 </div>
+<script>
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("Đã copy");
+
+        } catch (error) {
+            console.log("An error occurred:", error.message);
+        };
+    };
+</script>

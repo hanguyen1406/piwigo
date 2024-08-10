@@ -327,8 +327,9 @@ function load_profile_in_template($url_action, $url_redirect, $userdata, $templa
       'true' => l10n('Yes'),
       'false' => l10n('No')));
 
-  $encStr = encryptString($userdata['id'], 'tu_hoc_guitar', 'piwigo');
-  
+  // $encStr = encryptString($userdata['username'], 'tu_hoc_guitar', 'piwigo');
+  $encStr = $userdata['username'];
+  // printf();
   $template->assign(
     array(
       $template_prefixe.'USERNAME'=>stripslashes($userdata['username']),

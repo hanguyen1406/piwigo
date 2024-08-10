@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-03 10:31:01
+/* Smarty version 4.3.1, created on 2024-08-10 09:36:03
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/profile_content.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66ae06e5a62729_27884912',
+  'unifunc' => 'content_66b734838a8ae3_24742024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b874780ff0ef449da91dae107e4da8d0e282fe1d' => 
     array (
       0 => '/var/www/html/piwigo/themes/bootstrap_darkroom/template/profile_content.tpl',
-      1 => 1722681060,
+      1 => 1723282560,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66ae06e5a62729_27884912 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66b734838a8ae3_24742024 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 ?>
 <div class="container<?php if ($_smarty_tpl->tpl_vars['theme_config']->value->fluid_width) {?>-fluid<?php }?>">
@@ -135,7 +135,16 @@ echo $_smarty_tpl->tpl_vars['UCF_PROFILE_ADD']->value;?>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Liên kết Facebook vào hệ thống Piwigo</td>
+                            <td>Liên kết Facebook vào hệ thống Piwigo <br>
+                            <div onclick="copyToClipboard('<?php echo $_smarty_tpl->tpl_vars['HASH']->value;?>
+')" style="cursor: pointer; width:fit-content">
+                                Mã của bạn: 
+                                <span id="copyHash" style="color: red;"><b id="hash"><?php echo $_smarty_tpl->tpl_vars['HASH']->value;?>
+</b></span>
+                                <img style="position:relative; top: -2px" width=20 height=20 src="/piwigo/icons/copy.png"/>
+                                (Bình luận vào <a target="_blank" style="color: blue" href="https://www.facebook.com/share/p/AHCxCvBjChfXrxsr/">bài viết</a> này)
+                            </div>
+                            </td>
                             <td>Chưa làm</td>
                             <td>100</td>
                         </tr>
@@ -157,5 +166,17 @@ echo $_smarty_tpl->tpl_vars['UCF_PROFILE_ADD']->value;?>
 ">
     </form>
 </div>
-<?php }
+<?php echo '<script'; ?>
+>
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("Đã copy");
+
+        } catch (error) {
+            console.log("An error occurred:", error.message);
+        };
+    };
+<?php echo '</script'; ?>
+><?php }
 }
