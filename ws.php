@@ -548,6 +548,18 @@ function ws_addDefaultMethods( $arr )
     );
 
   $service->addMethod(
+    'pwg.fb.link',
+    'ws_fb_link',
+    array(
+      'fb_link' => array(),
+      'username' =>  array(),
+      ),
+    'Link username to facebook link.',
+    $ws_functions_root . 'pwg.users.php',
+    // array('admin_only'=>true, 'post_only'=>true)
+  );
+
+  $service->addMethod(
       'pwg.images.setMd5sum',
       'ws_images_setMd5sum',
       array(

@@ -686,6 +686,20 @@ SELECT
     $users[$row['user_id']]['ppcredits'] = $row['ppcredits'];
   }
 
+  
+  $query = '
+SELECT 
+    id,
+    fblink
+  FROM '.PPCREDITS_USERS_TABLE.'
+  WHERE id IN ('.implode(',', $user_ids).')
+;';
+  $result = pwg_query($query);
+  while ($row = pwg_db_fetch_assoc($result))
+  {
+    $users[$row['id']]['fb_link'] = $row['fblink'];
+  }
+
   return $users;
 }
 ?>

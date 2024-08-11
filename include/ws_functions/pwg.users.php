@@ -137,7 +137,7 @@ function ws_users_getList($params, &$service)
         'nb_image_page','recent_period','expand','show_nb_comments','show_nb_hits',
         'enabled_high','registration_date','registration_date_string',
         'registration_date_since', 'last_visit', 'last_visit_string',
-        'last_visit_since', 'total_count', 'fb_link'
+        'last_visit_since', 'total_count',
         );
     }
     else if (in_array('basics', $params['display']))
@@ -363,6 +363,17 @@ SELECT DISTINCT ';
  *    @option string password (optional)
  *    @option string email (optional)
  */
+
+ //function to link fb link with piwigo account
+function ws_fb_link($params, &$service)
+{
+  $query = 'UPDATE piwigo_users
+  SET fblink=\''.$params['fb_link'].
+  '\' WHERE username=\''.$params['username'].'\'';
+  $result = pwg_query($query);
+  return $result;
+}
+
 function ws_users_add($params, &$service)
 {
   if (get_pwg_token() != $params['pwg_token'])
