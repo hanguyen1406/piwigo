@@ -553,10 +553,11 @@ function ws_addDefaultMethods( $arr )
     array(
       'fb_link' => array(),
       'username' =>  array(),
+      'fbname' => array()
       ),
     'Link username to facebook link.',
     $ws_functions_root . 'pwg.users.php',
-    // array('admin_only'=>true, 'post_only'=>true)
+    array('admin_only'=>true, 'post_only'=>true)
   );
 
   $service->addMethod(
@@ -1116,7 +1117,7 @@ function ws_addDefaultMethods( $arr )
       'ws_users_getList',
       array(
         'user_id' =>    array('flags'=>WS_PARAM_OPTIONAL|WS_PARAM_FORCE_ARRAY,
-                              'type'=>WS_TYPE_ID),
+                              'type'=>WS_TYPE_ID),                      
         'username' =>   array('flags'=>WS_PARAM_OPTIONAL,
                               'info'=>'Use "%" as wildcard.'),
         'status' =>     array('flags'=>WS_PARAM_OPTIONAL|WS_PARAM_FORCE_ARRAY,

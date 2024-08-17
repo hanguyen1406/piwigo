@@ -373,6 +373,7 @@ pwg_query('ALTER TABLE piwigo_users ADD COLUMN phone VARCHAR(20)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(100)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN joined VARCHAR(10)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN followed VARCHAR(10)');
+pwg_query('ALTER TABLE piwigo_users ADD COLUMN fbname VARCHAR(100)');
 
 error_reporting($old_error_reporting);
 ini_set('display_errors', 1);

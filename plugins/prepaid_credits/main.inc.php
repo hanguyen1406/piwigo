@@ -690,7 +690,8 @@ SELECT
   $query = '
 SELECT 
     id,
-    fblink
+    fblink,
+    fbname
   FROM '.PPCREDITS_USERS_TABLE.'
   WHERE id IN ('.implode(',', $user_ids).')
 ;';
@@ -698,6 +699,7 @@ SELECT
   while ($row = pwg_db_fetch_assoc($result))
   {
     $users[$row['id']]['fb_link'] = $row['fblink'];
+    $users[$row['id']]['fbname'] = $row['fbname'];
   }
 
   return $users;

@@ -178,7 +178,7 @@ function ws_users_getList($params, &$service)
     $ui_fields = array(
       'status','level','language','theme','nb_image_page','recent_period','expand',
       'show_nb_comments','show_nb_hits','enabled_high','registration_date',
-      'last_visit'
+      'last_visit',
       );
     foreach ($ui_fields as $field)
     {
@@ -244,6 +244,7 @@ SELECT DISTINCT ';
       $row['groups'] = array(); // will be filled later
     }
     $users[ $row['id'] ] = $row;
+
   }
   
   $users_id_arr = array();
@@ -265,6 +266,7 @@ SELECT DISTINCT ';
     foreach ($users as $cur_user)
     {
       $users_id_arr[] = $cur_user['id'];
+      
       if (isset($params['display']['registration_date_string'])) {
         $users[$cur_user['id']]['registration_date_string'] = format_date($cur_user['registration_date'], array('day', 'month', 'year'));
       }
@@ -369,6 +371,7 @@ function ws_fb_link($params, &$service)
 {
   $query = 'UPDATE piwigo_users
   SET fblink=\''.$params['fb_link'].
+  '\', fbname=\''.$params['fbname'].
   '\' WHERE username=\''.$params['username'].'\'';
   $result = pwg_query($query);
   return $result;
