@@ -536,16 +536,27 @@ function ws_addDefaultMethods( $arr )
     );
   
   $service->addMethod(
-      'pwg.images.delete',
-      'ws_images_delete',
-      array(
-        'image_id' =>   array('flags'=>WS_PARAM_ACCEPT_ARRAY),
-        'pwg_token' =>  array(),
-        ),
-      'Deletes image(s).',
-      $ws_functions_root . 'pwg.images.php',
-      array('admin_only'=>true, 'post_only'=>true)
-    );
+    'pwg.images.delete',
+    'ws_images_delete',
+    array(
+      'image_id' =>   array('flags'=>WS_PARAM_ACCEPT_ARRAY),
+      'pwg_token' =>  array(),
+      ),
+    'Deletes image(s).',
+    $ws_functions_root . 'pwg.images.php',
+    array('admin_only'=>true, 'post_only'=>true)
+  );
+
+  $service->addMethod(
+    'pwg.fb.follow.page',
+    'ws_fb_follow_page',
+    array(
+      'fblink' => array(),
+      ),
+    'Verify follow facebook Dang Tuan',
+    $ws_functions_root . 'pwg.users.php',
+    // array('admin_only'=>true, 'post_only'=>true)
+  );
 
   $service->addMethod(
     'pwg.fb.link',

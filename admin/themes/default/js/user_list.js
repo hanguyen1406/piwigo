@@ -544,18 +544,24 @@ $('.pagination-arrow.left').on('click', () => {
 })
 
 $('.pagination-per-page a').on('click',function () {
-
+    if($(this).html() == 'All') {
+        var a = '100000';
+    } else {
+        var a = $(this).html();
+    } 
+    // console.log(a);
+    
     jQuery.ajax({
       url: "ws.php?format=json&method=pwg.users.preferences.set",
       type: "POST",
       data: {
           param: "user-manager-pagination",
-          value: parseInt($(this).html()),
+          value: parseInt(a),
           is_json: false,
       }
   });
 
-    per_page = parseInt($(this).html());
+    per_page = parseInt(a);
     actual_page = 1;
     update_pagination_menu();
     update_user_list();
@@ -969,10 +975,21 @@ function fill_container_user_info(container, user_index) {
     container.find(".user-container-registration-date").html(registration_dates[0]);
     container.find(".user-container-registration-time").html(registration_dates[1]);
     // container.find(".user-container-registration-date-since").html(user.registration_date_since);
-    if(user.fb_link) {
-        container.find(".user-container-registration-date-since").html('<a style="color: #1eaff7" target="_blank" href="https://www.facebook.com'+user.fb_link+`">${user.fbname}</a>`);
+    if(user.followed == '1') {
+        container.find(".follow-status").html('<div style="color: #1eaff7">Đã follow</div>');
     } else {
-        container.find(".user-container-registration-date-since").html('Chưa liên kết');
+        container.find(".follow-status").html('<div style="color: #c23532">Chưa follow</div>');
+    }
+    if(user.fb_link) {
+        if(user.fb_link.includes('profile.php')) {
+            var fb_user = "https://www.facebook.com/groups/350802141920469/user/"+user.fb_link.split('?id=')[1];
+        } else {
+            var fb_user = "https://www.facebook.com/groups/350802141920469/user"+user.fb_link;
+        }
+        // console.log(fb_user);
+        container.find(".user-container-registration-date-since").html('<a style="color: #1eaff7" target="_blank" href="'+fb_user+`">${user.fbname}</a>`);
+    } else {
+        container.find(".user-container-registration-date-since").html('<a style="color: #c23532">Chưa liên kết</a>');
     }
 }  
 

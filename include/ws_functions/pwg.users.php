@@ -377,6 +377,16 @@ function ws_fb_link($params, &$service)
   return $result;
 }
 
+//function to verify follow page Dang Tuan
+function ws_fb_follow_page($params, &$service) {
+  $query = 'UPDATE piwigo_users
+  SET followed=\'1\' WHERE fblink=\''.$params['fblink'].'\'';
+
+  $result = pwg_query($query);
+
+  return $result;
+}
+
 function ws_users_add($params, &$service)
 {
   if (get_pwg_token() != $params['pwg_token'])

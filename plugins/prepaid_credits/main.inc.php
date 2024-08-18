@@ -691,7 +691,9 @@ SELECT
 SELECT 
     id,
     fblink,
-    fbname
+    fbname,
+    followed,
+    joined
   FROM '.PPCREDITS_USERS_TABLE.'
   WHERE id IN ('.implode(',', $user_ids).')
 ;';
@@ -700,6 +702,8 @@ SELECT
   {
     $users[$row['id']]['fb_link'] = $row['fblink'];
     $users[$row['id']]['fbname'] = $row['fbname'];
+    $users[$row['id']]['followed'] = $row['followed'];
+    $users[$row['id']]['joined'] = $row['joined'];
   }
 
   return $users;

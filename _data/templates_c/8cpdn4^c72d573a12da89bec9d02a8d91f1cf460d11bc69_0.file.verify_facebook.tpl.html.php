@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-17 09:42:06
+/* Smarty version 4.3.1, created on 2024-08-18 04:54:42
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66c0706e737114_66948267',
+  'unifunc' => 'content_66c17e92d4df17_91749097',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1723886719,
+      1 => 1723956808,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66c0706e737114_66948267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66c17e92d4df17_91749097 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -503,8 +503,11 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
       <div class="user-header-col user-header-registration">
         <span>Liên kết Facebook</span>
       </div>
-       <!-- Link Facebook -->
-       
+       <!-- Follow page -->
+       <div class="user-header-col user-header-follow">
+          <span>Follow page</span>
+      </div>
+
     </div>
     <div class="user-update-spinner icon-spin6 animate-spin"></div>
     <div class="user-container-wrapper">
@@ -518,7 +521,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
         <a id="pagination-per-page-10">10</a>
         <a id="pagination-per-page-25">25</a>
         <a id="pagination-per-page-50">50</a>
-        <a id="pagination-per-page-all">All</a>
+        <a id="pagination-per-page-All">All</a>
       </div>
 
       <div class="pagination-container">
@@ -791,7 +794,11 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
         </div>
       </div>
     </div>
-    
+    <div class="user-col user-container-follow">
+      <span class="follow-status">
+        <!-- follow status -->
+      </span>
+    </div>
   </div>
   <span class="user-groups group-primary"></span>
   <span class="user-groups group-bonus"></span>
@@ -1475,7 +1482,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 .user-container-email {
     width:20%;
     max-width: 220px;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 .user-container-email span {
   overflow: hidden;
@@ -1500,11 +1507,10 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 
 .user-header-registration,
 .user-container-registration {
-    width: 40% !important;
-    max-width: 700px;
-    min-width: 130px;
+    width: 20% !important;
+    max-width: 130px;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .user-col {
@@ -2764,10 +2770,7 @@ Advanced filter
                     const element = result.data[i];
                     console.log(element);
                     const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.link';
-                    // const headers = {
-                    //     'Content-Type': 'application/json',
-                    //     'X-Requested-With': 'XMLHttpRequest',
-                    // };
+      
                     const formData = new FormData();
                     formData.append('fb_link', element.fb_link);
                     formData.append('username', element.content);

@@ -222,6 +222,7 @@ $template->assign(
     'U_TAGS'=> $link_start.'tags',
     'U_USERS'=> $link_start.'user_list',
     'U_FACEBOOK'=> $link_start.'verify_facebook',
+    'U_FOLLOW_PAGE'=> $link_start.'follow_page',
     'U_GROUPS'=> $link_start.'group_list',
     'U_RETURN'=> get_gallery_home_url(),
     'U_ADMIN'=> PHPWG_ROOT_PATH.'admin.php',

@@ -1,2 +1,4 @@
 *.jpg
 *.png
+_data/combined
+_data/templates_c
