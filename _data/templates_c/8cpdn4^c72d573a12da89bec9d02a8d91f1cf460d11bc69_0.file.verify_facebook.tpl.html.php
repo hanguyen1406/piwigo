@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-18 04:54:42
+/* Smarty version 4.3.1, created on 2024-08-20 04:09:50
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66c17e92d4df17_91749097',
+  'unifunc' => 'content_66c4170e1c3786_72663065',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1723956808,
+      1 => 1724126989,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66c17e92d4df17_91749097 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66c4170e1c3786_72663065 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -356,20 +356,28 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
       margin-top: 20px;
   }
 </style>
-<div style="text-align: left; margin-left: 30px;">
-  <div id="inputgetcmt">
-      <div id="line1">
-          <input class="cmtinput search-input" type='text' placeholder='Dán cookie ở đây'>
-          <input class="cmtinput search-input" type='text' placeholder='Dán link post ở đây'>
-      </div>
-      <div id="xn" class="user-header-button">
-          <label class="head-button-2">
-          <p>Xác nhận</p>
-          </label>
-      </div>
+<div style="text-align: left; margin-left: 30px; display: flex;">
+  <div>
+    <div id="inputgetcmt">
+        <div id="line1">
+            <input class="cmtinput search-input" type='text' placeholder='Dán cookie ở đây'>
+            <input class="cmtinput search-input" type='text' placeholder='Dán link post ở đây'>
+        </div>
+        <div id="xn" class="user-header-button">
+            <label class="head-button-2">
+            <p>Xác nhận</p>
+            </label>
+        </div>
+    </div>
+    <div id="cookie_status"></div>
   </div>
-  <div id="cookie_status">
-  
+  <div style="width: 50%; display: flex; justify-content: space-around;">
+    <textarea placeholder="Điền code html vào đây" id="htmlcode" style="height: 90%; margin-top: 3px;width: 80%;"></textarea>
+    <div onclick="updateFollowStatus()" id="xn-follow" style="width: 90px; margin-top: 20px;" class="user-header-button">
+      <label class="head-button-2">
+      <p>Xác nhận</p>
+      </label>
+    </div>
   </div>
 </div>
 
@@ -2799,11 +2807,66 @@ Advanced filter
         cookie: 'sb=9dmxZv0R6OXtkW3yv1YJGaSd;wd=1536x695;datr=9dmxZrRDeLT0e6RHTKhDSfTx;dpr=1.25;locale=en_GB;c_user=100088421881491;xs=8%3AR2dqDoQsUCyhjg%3A2%3A1722931771%3A-1%3A387;ps_l=1;ps_n=1;fr=0v90t3m1ZFSEhLyMS.AWXpWg2jjPJQXWxKs3yYcuKTBvA.Bmsdn1..AAA.0.0.BmseAV.AWUQwugvGQw;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1722933271478%2C%22v%22%3A1%7D',
         linkpost: 'https://mbasic.facebook.com/groups/888860833249054/permalink/994873849314418'
     };
-    document.querySelector("#xn").addEventListener('click', async () => {
+    document.querySelector("#xn .head-button-2").addEventListener('click', async () => {
         getcmt(url, formDataObject);
 
     })
+    async function updateFollowStatus() {
+      const texts = document.querySelector("#htmlcode").value;
+      if(texts) {
+        var urls = texts.match(/href="https:\/\/www.facebook.com\/(.*?)"/g)
+        // console.log(urls);
+        //regex string
+        // href="https://www.facebook.com/(.*?)"
+        if(urls) {
+          for (let i = 0; i < urls.length; i++) {
+            const element = urls[i];
+            if(!element.includes('Admin.DangTuan') && !element.includes('/help/')) {
+              // console.log(element);
+              if(element.includes('/groups/')) {
+                var uid = element.split('/user/')[1].slice(0, -2);
+              } else {
+                var uid = element.split('k.com')[1].slice(0, -1);
+              }
+              console.log(uid);
 
+            }
+            
+          }
+
+        } else {
+          alert("Code html ko có url")
+        }
+      } else {
+        alert("Chưa nhập code html")
+      }
+      
+      // const formDataObject = {
+      //   fblink: "/profile.php?id=100038065698702"
+      // };
+      // const urlEncodedData = new URLSearchParams();
+      // for (const key in formDataObject) {
+      //   if (formDataObject.hasOwnProperty(key)) {
+      //       urlEncodedData.append(key, formDataObject[key]);
+      //   }
+      // }
+      // const requestOptions = {
+      //     method: 'POST', 
+      //     body: urlEncodedData,
+      // };
+
+      // try {
+      //   const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
+      //   const response = await fetch(url, requestOptions);
+      //   const result = await response.json();
+      //   console.log(result);
+
+      // } catch (error) {
+      //     console.error('Error:', error);
+      // }
+
+      // window.location.reload();
+    }
 
 <?php echo '</script'; ?>
 >
