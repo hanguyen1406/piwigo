@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-20 09:08:25
+/* Smarty version 4.3.1, created on 2024-08-27 18:16:10
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66c45d099ef958_11606549',
+  'unifunc' => 'content_66cdb57a638f91_95443640',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1724144832,
+      1 => 1724757368,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66c45d099ef958_11606549 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66cdb57a638f91_95443640 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -428,7 +428,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
         <span class="icon-cancel search-cancel"></span>
         <input id="user_search" class='search-input' type='text' placeholder='<?php echo l10n('Search');?>
 '>
-  
+        <span><b>Trạng thái : </b><b id="get_status"></b></span>
     </div>
     <div class="advanced-filter">
       <div class="advanced-filter-header">
@@ -2749,8 +2749,12 @@ Advanced filter
 
 <?php echo '<script'; ?>
 >
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
     async function getcmt(url, formDataObject) {
         alert("Vui lòng chờ sau khi đồng bộ trang sẽ tự load lại");
+        await sleep(6000);
         const urlEncodedData = new URLSearchParams();
         for (const key in formDataObject) {
             if (formDataObject.hasOwnProperty(key)) {
@@ -2771,41 +2775,43 @@ Advanced filter
         try {
             const response = await fetch(url, requestOptions);
             const result = await response.json();
-            // console.log(result);
-            let cmtuser = document.querySelector("#content");
-            if (result.status == 'success') {
-                for (let i = 0; i < result.data.length; i++) {
-                    const element = result.data[i];
-                    console.log(element);
-                    const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.link';
+            // let cmtuser = document.querySelector("#content");
+            // if (result.status == 'success') {
+              //     for (let i = 0; i < result.data.length; i++) {
+            //         const element = result.data[i];
+            //         console.log(element);
+            //         const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.link';
       
-                    const formData = new FormData();
-                    formData.append('fb_link', element.fb_link);
-                    formData.append('username', element.content);
-                    formData.append('fbname', element.name);
-                    fetch(url, {
-                        method: 'POST',
-                        // headers: headers,
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => console.log(data))
-                    .catch(error => console.error('Error:', error));
+            //         const formData = new FormData();
+            //         formData.append('fb_link', element.fb_link);
+            //         formData.append('username', element.content);
+            //         formData.append('fbname', element.name);
+            //         fetch(url, {
+            //             method: 'POST',
+            //             // headers: headers,
+            //             body: formData
+            //         })
+            //         .then(response => response.json())
+            //         .then(data => console.log(data))
+            //         .catch(error => console.error('Error:', error));
 
-                }
-                alert("Đồng bộ thành công");
-                window.location.reload();
-            }
+            //     }
+            //     alert("Đồng bộ thành công");
+            //     window.location.reload();
+            // }
+            alert("Đã cập nhật cookie và link!");
+            console.log(result);
 
+            // window.location.reload();
         } catch (error) {
             console.error('Error:', error);
         }
     }
 
-    const url = 'https://hanguyen146.mooo.com/api'; // Replace with the actual URL
+    var url = 'https://hanguyen146.mooo.com/api'; // Replace with the actual URL
     const formDataObject = {
-        cookie: 'sb=9dmxZv0R6OXtkW3yv1YJGaSd;wd=1536x695;datr=9dmxZrRDeLT0e6RHTKhDSfTx;dpr=1.25;locale=en_GB;c_user=100088421881491;xs=8%3AR2dqDoQsUCyhjg%3A2%3A1722931771%3A-1%3A387;ps_l=1;ps_n=1;fr=0v90t3m1ZFSEhLyMS.AWXpWg2jjPJQXWxKs3yYcuKTBvA.Bmsdn1..AAA.0.0.BmseAV.AWUQwugvGQw;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1722933271478%2C%22v%22%3A1%7D',
-        linkpost: 'https://mbasic.facebook.com/groups/888860833249054/permalink/994873849314418'
+      cookie: 'sb=9dmxZv0R6OXtkW3yv1YJGaSd;wd=1536x695;datr=9dmxZrRDeLT0e6RHTKhDSfTx;dpr=1.25;locale=en_GB;c_user=100088421881491;xs=8%3AR2dqDoQsUCyhjg%3A2%3A1722931771%3A-1%3A387;ps_l=1;ps_n=1;fr=0v90t3m1ZFSEhLyMS.AWXpWg2jjPJQXWxKs3yYcuKTBvA.Bmsdn1..AAA.0.0.BmseAV.AWUQwugvGQw;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1722933271478%2C%22v%22%3A1%7D',
+      linkpost: 'https://mbasic.facebook.com/groups/888860833249054/permalink/994873849314418'
     };
     document.querySelector("#xn .head-button-2").addEventListener('click', async () => {
         getcmt(url, formDataObject);
@@ -2863,6 +2869,35 @@ Advanced filter
         alert("Chưa nhập code html")
       }
     }
+    url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.status';
+
+    const options = {
+      method: 'GET', // or 'POST' if you're posting data
+    };
+
+    fetch(url, options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status:`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if(data.stat == 'ok') {
+          console.log(data);
+          var status = document.querySelector('#get_status');
+          status.textContent = data.result.status+', '+data.result.updated_at;
+          if(data.result.status == 'error') {
+            status.style.color = '#c23532';
+          } else {
+            status.style.color = '#1eaff7';
+
+          }
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
 
 <?php echo '</script'; ?>
 >
