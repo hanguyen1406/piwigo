@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-06 08:18:44
+/* Smarty version 4.3.1, created on 2024-08-20 08:51:34
   from '/var/www/html/piwigo/admin/themes/default/template/user_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66b1dc64b35af3_65241723',
+  'unifunc' => 'content_66c45916723382_62643827',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3bf29d4a6957c2f8fc4e5d5046d91657f49e46f' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/user_list.tpl',
-      1 => 1722931363,
+      1 => 1724143889,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66b1dc64b35af3_65241723 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66c45916723382_62643827 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 ?>
 
@@ -320,7 +320,7 @@ echo $_block_plugin1->block_footer_script(array(), ob_get_clean(), $_smarty_tpl,
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 
-<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'user_list','load'=>'footer','path'=>'admin/themes/default/js/user_list.js'),$_smarty_tpl ) );?>
+<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'user_list','load'=>'footer','path'=>'admin/themes/default/js/user_list_old.js'),$_smarty_tpl ) );?>
 
 
 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'jquery.cookie','path'=>'themes/default/js/jquery.cookie.js','load'=>'footer'),$_smarty_tpl ) );?>

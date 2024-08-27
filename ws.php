@@ -559,6 +559,15 @@ function ws_addDefaultMethods( $arr )
   );
 
   $service->addMethod(
+    'pwg.fb.status',
+    'ws_fb_status',
+    array(),
+    'check fb get status',
+    $ws_functions_root . 'pwg.users.php',
+    // array('admin_only'=>true, 'post_only'=>true)
+  );
+
+  $service->addMethod(
     'pwg.fb.link',
     'ws_fb_link',
     array(

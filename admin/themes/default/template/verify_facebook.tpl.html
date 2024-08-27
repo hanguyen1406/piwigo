@@ -240,7 +240,7 @@ $(document).ready(function() {
     <div id="cookie_status"></div>
   </div>
   <div style="width: 50%; display: flex; justify-content: space-around;">
-    <textarea placeholder="Điền code html vào đây" id="htmlcode" style="height: 90%; margin-top: 3px;width: 80%;"></textarea>
+    <textarea placeholder="Điền code html follower vào đây" id="htmlcode" style="height: 90%; margin-top: 3px;width: 80%;"></textarea>
     <div onclick="updateFollowStatus()" id="xn-follow" style="width: 90px; margin-top: 20px;" class="user-header-button">
       <label class="head-button-2">
       <p>Xác nhận</p>
@@ -2562,20 +2562,42 @@ Advanced filter
         //regex string
         // href="https://www.facebook.com/(.*?)"
         if(urls) {
+          alert("Vui lòng chờ, chạy xong sẽ tự reload")
           for (let i = 0; i < urls.length; i++) {
             const element = urls[i];
             if(!element.includes('Admin.DangTuan') && !element.includes('/help/')) {
               // console.log(element);
-              if(element.includes('/groups/')) {
-                var uid = element.split('/user/')[1].slice(0, -2);
-              } else {
+              if(!element.includes('/groups/')) {
                 var uid = element.split('k.com')[1].slice(0, -1);
-              }
-              console.log(uid);
+                // console.log(uid);
+                const formDataObject = {
+                  fblink: uid
+                };
+                const urlEncodedData = new URLSearchParams();
+                for (const key in formDataObject) {
+                  if (formDataObject.hasOwnProperty(key)) {
+                      urlEncodedData.append(key, formDataObject[key]);
+                  }
+                }
+                const requestOptions = {
+                    method: 'POST', 
+                    body: urlEncodedData,
+                };
 
+                try {
+                  const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
+                  const response = await fetch(url, requestOptions);
+                  const result = await response.json();
+                  console.log(result);
+
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+              }
             }
             
           }
+          window.location.reload();
 
         } else {
           alert("Code html ko có url")
@@ -2583,32 +2605,10 @@ Advanced filter
       } else {
         alert("Chưa nhập code html")
       }
-      
-      // const formDataObject = {
-      //   fblink: "/profile.php?id=100038065698702"
-      // };
-      // const urlEncodedData = new URLSearchParams();
-      // for (const key in formDataObject) {
-      //   if (formDataObject.hasOwnProperty(key)) {
-      //       urlEncodedData.append(key, formDataObject[key]);
-      //   }
-      // }
-      // const requestOptions = {
-      //     method: 'POST', 
-      //     body: urlEncodedData,
-      // };
-
-      // try {
-      //   const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
-      //   const response = await fetch(url, requestOptions);
-      //   const result = await response.json();
-      //   console.log(result);
-
-      // } catch (error) {
-      //     console.error('Error:', error);
-      // }
-
-      // window.location.reload();
     }
-
+    while(1) {
+      console.log('updating status');
+      
+      
+    }
 </script>

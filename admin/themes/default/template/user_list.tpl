@@ -190,7 +190,7 @@ $(document).ready(function() {
 
 {/footer_script}
 
-{combine_script id='user_list' load='footer' path='admin/themes/default/js/user_list.js'}
+{combine_script id='user_list' load='footer' path='admin/themes/default/js/user_list_old.js'}
 
 {combine_script id='jquery.cookie' path='themes/default/js/jquery.cookie.js' load='footer'}
 

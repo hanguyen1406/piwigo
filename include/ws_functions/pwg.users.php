@@ -387,6 +387,14 @@ function ws_fb_follow_page($params, &$service) {
   return $result;
 }
 
+function ws_fb_status($params, &$service) {
+  $query = 'select * from piwigo_status';
+
+  $result = query2array($query);
+
+  return $result[0];
+}
+
 function ws_users_add($params, &$service)
 {
   if (get_pwg_token() != $params['pwg_token'])

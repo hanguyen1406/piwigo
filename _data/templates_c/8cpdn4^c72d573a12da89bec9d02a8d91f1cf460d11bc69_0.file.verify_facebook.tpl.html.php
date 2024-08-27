@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-20 04:09:50
+/* Smarty version 4.3.1, created on 2024-08-20 09:08:25
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66c4170e1c3786_72663065',
+  'unifunc' => 'content_66c45d099ef958_11606549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1724126989,
+      1 => 1724144832,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66c4170e1c3786_72663065 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66c45d099ef958_11606549 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -372,7 +372,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
     <div id="cookie_status"></div>
   </div>
   <div style="width: 50%; display: flex; justify-content: space-around;">
-    <textarea placeholder="Điền code html vào đây" id="htmlcode" style="height: 90%; margin-top: 3px;width: 80%;"></textarea>
+    <textarea placeholder="Điền code html follower vào đây" id="htmlcode" style="height: 90%; margin-top: 3px;width: 80%;"></textarea>
     <div onclick="updateFollowStatus()" id="xn-follow" style="width: 90px; margin-top: 20px;" class="user-header-button">
       <label class="head-button-2">
       <p>Xác nhận</p>
@@ -2819,20 +2819,42 @@ Advanced filter
         //regex string
         // href="https://www.facebook.com/(.*?)"
         if(urls) {
+          alert("Vui lòng chờ, chạy xong sẽ tự reload")
           for (let i = 0; i < urls.length; i++) {
             const element = urls[i];
             if(!element.includes('Admin.DangTuan') && !element.includes('/help/')) {
               // console.log(element);
-              if(element.includes('/groups/')) {
-                var uid = element.split('/user/')[1].slice(0, -2);
-              } else {
+              if(!element.includes('/groups/')) {
                 var uid = element.split('k.com')[1].slice(0, -1);
-              }
-              console.log(uid);
+                // console.log(uid);
+                const formDataObject = {
+                  fblink: uid
+                };
+                const urlEncodedData = new URLSearchParams();
+                for (const key in formDataObject) {
+                  if (formDataObject.hasOwnProperty(key)) {
+                      urlEncodedData.append(key, formDataObject[key]);
+                  }
+                }
+                const requestOptions = {
+                    method: 'POST', 
+                    body: urlEncodedData,
+                };
 
+                try {
+                  const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
+                  const response = await fetch(url, requestOptions);
+                  const result = await response.json();
+                  console.log(result);
+
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+              }
             }
             
           }
+          window.location.reload();
 
         } else {
           alert("Code html ko có url")
@@ -2840,32 +2862,6 @@ Advanced filter
       } else {
         alert("Chưa nhập code html")
       }
-      
-      // const formDataObject = {
-      //   fblink: "/profile.php?id=100038065698702"
-      // };
-      // const urlEncodedData = new URLSearchParams();
-      // for (const key in formDataObject) {
-      //   if (formDataObject.hasOwnProperty(key)) {
-      //       urlEncodedData.append(key, formDataObject[key]);
-      //   }
-      // }
-      // const requestOptions = {
-      //     method: 'POST', 
-      //     body: urlEncodedData,
-      // };
-
-      // try {
-      //   const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
-      //   const response = await fetch(url, requestOptions);
-      //   const result = await response.json();
-      //   console.log(result);
-
-      // } catch (error) {
-      //     console.error('Error:', error);
-      // }
-
-      // window.location.reload();
     }
 
 <?php echo '</script'; ?>

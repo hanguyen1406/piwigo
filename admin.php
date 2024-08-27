@@ -375,6 +375,19 @@ pwg_query('ALTER TABLE piwigo_users ADD COLUMN fblink VARCHAR(100)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN joined VARCHAR(10)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN followed VARCHAR(10)');
 pwg_query('ALTER TABLE piwigo_users ADD COLUMN fbname VARCHAR(100)');
+pwg_query('CREATE TABLE IF NOT EXISTS piwigo_fb_comment (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  fblink VARCHAR(255) NOT NULL,
+  time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)');
+pwg_query('CREATE TABLE IF NOT EXISTS piwigo_status(
+  name VARCHAR(255) NOT NULL PRIMARY KEY,
+  status VARCHAR(10) NOT NULL,
+  updated_at TIMESTAMP
+)');
+pwg_query('insert into piwigo_status(name, status) values("get_fb_cmt", "")');
 
 error_reporting($old_error_reporting);
 ini_set('display_errors', 1);
