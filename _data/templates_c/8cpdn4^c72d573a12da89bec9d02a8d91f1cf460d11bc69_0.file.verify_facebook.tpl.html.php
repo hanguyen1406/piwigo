@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-27 18:16:10
+/* Smarty version 4.3.1, created on 2024-09-04 22:20:39
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66cdb57a638f91_95443640',
+  'unifunc' => 'content_66d87ac72e80b8_23374099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1724757368,
+      1 => 1724923173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66cdb57a638f91_95443640 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d87ac72e80b8_23374099 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -2802,7 +2802,7 @@ Advanced filter
             alert("Đã cập nhật cookie và link!");
             console.log(result);
 
-            // window.location.reload();
+            window.location.reload();
         } catch (error) {
             console.error('Error:', error);
         }
@@ -2848,7 +2848,7 @@ Advanced filter
                 };
 
                 try {
-                  const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
+                  const url = '/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
                   const response = await fetch(url, requestOptions);
                   const result = await response.json();
                   console.log(result);

@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: 中文 (繁體) [TW]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=524
 Author: Piwigo team
 Author URI: http://piwigo.org

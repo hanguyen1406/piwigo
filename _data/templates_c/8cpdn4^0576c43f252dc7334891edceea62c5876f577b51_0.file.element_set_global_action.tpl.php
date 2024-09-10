@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:57:05
+/* Smarty version 4.3.1, created on 2024-09-02 20:57:21
   from '/var/www/html/piwigo/plugins/prepaid_credits/element_set_global_action.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e6416dd250_54179440',
+  'unifunc' => 'content_66d5c4412382e4_85713277',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e6416dd250_54179440 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c4412382e4_85713277 (Smarty_Internal_Template $_smarty_tpl) {
 $_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0] : null;
 if (!is_callable(array($_block_plugin3, 'block_html_style'))) {
 throw new SmartyException('block tag \'html_style\' not callable or registered');

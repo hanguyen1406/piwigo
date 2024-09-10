@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:11
+/* Smarty version 4.3.1, created on 2024-09-04 22:20:22
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/navigation_bar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e42b0efdb7_68795569',
+  'unifunc' => 'content_66d87ab63966b4_51094678',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e42b0efdb7_68795569 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d87ab63966b4_51094678 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="mt-5" aria-label="Page navigation">
     <ul class="pagination justify-content-center">
 <?php if ((isset($_smarty_tpl->tpl_vars['navbar']->value['URL_FIRST']))) {?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:10
+/* Smarty version 4.3.1, created on 2024-09-02 20:56:15
   from '/var/www/html/piwigo/plugins/pdf2tab/template/thumbnails.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e42af40c09_36914002',
+  'unifunc' => 'content_66d5c3ff73cc13_70468562',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e42af40c09_36914002 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c3ff73cc13_70468562 (Smarty_Internal_Template $_smarty_tpl) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>"jquery",'load'=>"header"),$_smarty_tpl ) );?>
 
 <?php $_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['html_head'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['html_head'][0][0] : null;

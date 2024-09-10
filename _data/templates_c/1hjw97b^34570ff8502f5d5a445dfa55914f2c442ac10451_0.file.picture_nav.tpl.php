@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:17
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/picture_nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e431281c50_81041621',
+  'unifunc' => 'content_66d5c5a343b211_07789984',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e431281c50_81041621 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a343b211_07789984 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-contextual navbar-expand-lg <?php echo $_smarty_tpl->tpl_vars['theme_config']->value->navbar_contextual_style;?>
  <?php echo $_smarty_tpl->tpl_vars['theme_config']->value->navbar_contextual_bg;?>
  sticky-top mb-2">
@@ -36,17 +36,17 @@ function content_6676e431281c50_81041621 (Smarty_Internal_Template $_smarty_tpl)
         <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
             <ul class="navbar-nav">
 <?php if ((isset($_smarty_tpl->tpl_vars['current']->value['unique_derivatives'])) && count($_smarty_tpl->tpl_vars['current']->value['unique_derivatives']) > 1) {
-$_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin3, 'block_footer_script'))) {
+$_block_plugin5 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin5, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin5->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>function changeImgSrc(url,typeSave,typeMap) {var theImg = document.getElementById("theMainImage");if (theImg) {theImg.removeAttribute("width");theImg.removeAttribute("height");theImg.src = url;theImg.useMap = "#map"+typeMap;}jQuery('.derivative-li').removeClass('active');jQuery('#derivative'+typeMap).addClass('active');document.cookie = 'picture_deriv='+typeSave+';path=<?php echo $_smarty_tpl->tpl_vars['COOKIE_PATH']->value;?>
 ';}<?php $_block_repeat=false;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin5->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
                 <li class="nav-item dropdown">
@@ -167,16 +167,16 @@ if ((isset($_smarty_tpl->tpl_vars['U_PHOTO_ADMIN']->value))) {?>
                 </li>
 <?php }
 if ((isset($_smarty_tpl->tpl_vars['U_CADDIE']->value))) {
-$_block_plugin4 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin4, 'block_footer_script'))) {
+$_block_plugin6 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin6, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array());
 $_block_repeat=true;
-echo $_block_plugin4->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin6->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>function addToCadie(aElement, rootUrl, id) {if (aElement.disabled) return;aElement.disabled=true;var y = new PwgWS(rootUrl);y.callService("pwg.caddie.add", {image_id: id}, {onFailure: function(num, text) { alert(num + " " + text); document.location=aElement.href; },onSuccess: function(result) { aElement.disabled = false; }});}<?php $_block_repeat=false;
-echo $_block_plugin4->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin6->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
                 <li class="nav-item">

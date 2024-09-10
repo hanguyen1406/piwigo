@@ -356,7 +356,7 @@ $lang['synchronize files metadata with database photos informations'] = 'Synchro
 $lang['even already synchronized photos'] = "Même les photos déjà synchronisées";
 $lang['Used metadata'] = "Méta-données employées";
 $lang['The name of directories and files must be composed of letters, numbers, "-", "_" or "."'] = "Le nom des répertoires et des fichiers ne doit être constitué que de lettres, de chiffres, de \"-\", \"_\" et \".\"";
-$lang['wrong filename'] = "nom de fichier erroné";
+$lang['wrong filename'] = 'nom de fichier en erreur';
 $lang['Upload'] = "Ajout";
 $lang['user "%s" added'] = "utilisateur \"%s\" ajouté";
 $lang['User status'] = "Statut de l'utilisateur";
@@ -1351,4 +1351,6 @@ $lang['Activate button "%s"'] = 'Afficher le bouton "%s"';
 $lang['Detect and avoid duplicates during upload'] = 'Détecter et éviter les doublons à l\'import';
 $lang['During upload, if Piwigo detects the photo already exists, associate the existing photo to the destination album, without duplicating file'] = 'Pendant l\'ajout de photo, si Piwigo détecte que la photo existe déjà, associer la photo existante à l\'album de destination, sans dupliquer le fichier.';
 $lang['%d files'] = "%d fichiers";
+$lang['Shrink'] = 'Réduire';
+$lang['Expand'] = 'Agrandir';
 // Leave this line empty

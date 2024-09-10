@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:24
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/menubar_menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6d0c789b0_98557382',
+  'unifunc' => 'content_66d5c1544e9e21_95925243',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a6d0c789b0_98557382 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c1544e9e21_95925243 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['blocks']->value['mbMenu']->data['qsearch'])) && $_smarty_tpl->tpl_vars['blocks']->value['mbMenu']->data['qsearch'] == true && !$_smarty_tpl->tpl_vars['theme_config']->value->quicksearch_navbar) {?>
       <div class="dropdown-header">
         <form class="navbar-form" role="search" action="<?php echo $_smarty_tpl->tpl_vars['ROOT_URL']->value;?>

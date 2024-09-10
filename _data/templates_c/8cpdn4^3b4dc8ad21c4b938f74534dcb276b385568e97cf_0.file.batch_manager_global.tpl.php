@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:57:05
+/* Smarty version 4.3.1, created on 2024-09-02 20:57:21
   from '/var/www/html/piwigo/admin/themes/default/template/batch_manager_global.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e6417b1c91_21058974',
+  'unifunc' => 'content_66d5c4412ac578_90326194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b4dc8ad21c4b938f74534dcb276b385568e97cf' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/batch_manager_global.tpl',
-      1 => 1702327276,
+      1 => 1725273008,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/add_album.inc.tpl' => 1,
   ),
 ),false)) {
-function content_6676e6417b1c91_21058974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c4412ac578_90326194 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 $_smarty_tpl->_subTemplateRender('file:include/datepicker.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('load_mode'=>'async'), 0, false);
 $_smarty_tpl->_subTemplateRender('file:include/colorbox.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('load_mode'=>'footer'), 0, false);
@@ -314,6 +314,10 @@ $(document).ready(function() {
   $("input[name=setSelected]").change(function() {
     $('input[name=whole_set]').val(this.checked ? all_elements.join(',') : '');
   });
+
+    if ($('input[name="setSelected"]').is(':checked')) {
+    $("input[name=setSelected]").trigger('change');
+  }
 
   jQuery("input[name=confirm_deletion]").change(function() {
     jQuery("#confirmDel span.errors").css("visibility", "hidden");
@@ -932,7 +936,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           <option value="date_creation"><?php echo l10n('Set creation date');?>
 </option>
           <option value="level" class="icon-lock"><?php echo l10n('Who can see these photos?');?>
-</option>
+ (<?php echo l10n('Privacy level');?>
+)</option>
           <option value="metadata"><?php echo l10n('Synchronize metadata');?>
 </option>
 <?php if (($_smarty_tpl->tpl_vars['IN_CADDIE']->value)) {?>

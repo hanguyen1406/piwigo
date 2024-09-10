@@ -536,49 +536,16 @@ function ws_addDefaultMethods( $arr )
     );
   
   $service->addMethod(
-    'pwg.images.delete',
-    'ws_images_delete',
-    array(
-      'image_id' =>   array('flags'=>WS_PARAM_ACCEPT_ARRAY),
-      'pwg_token' =>  array(),
-      ),
-    'Deletes image(s).',
-    $ws_functions_root . 'pwg.images.php',
-    array('admin_only'=>true, 'post_only'=>true)
-  );
-
-  $service->addMethod(
-    'pwg.fb.follow.page',
-    'ws_fb_follow_page',
-    array(
-      'fblink' => array(),
-      ),
-    'Verify follow facebook Dang Tuan',
-    $ws_functions_root . 'pwg.users.php',
-    // array('admin_only'=>true, 'post_only'=>true)
-  );
-
-  $service->addMethod(
-    'pwg.fb.status',
-    'ws_fb_status',
-    array(),
-    'check fb get status',
-    $ws_functions_root . 'pwg.users.php',
-    // array('admin_only'=>true, 'post_only'=>true)
-  );
-
-  $service->addMethod(
-    'pwg.fb.link',
-    'ws_fb_link',
-    array(
-      'fb_link' => array(),
-      'username' =>  array(),
-      'fbname' => array()
-      ),
-    'Link username to facebook link.',
-    $ws_functions_root . 'pwg.users.php',
-    array('admin_only'=>true, 'post_only'=>true)
-  );
+      'pwg.images.delete',
+      'ws_images_delete',
+      array(
+        'image_id' =>   array('flags'=>WS_PARAM_ACCEPT_ARRAY),
+        'pwg_token' =>  array(),
+        ),
+      'Deletes image(s).',
+      $ws_functions_root . 'pwg.images.php',
+      array('admin_only'=>true, 'post_only'=>true)
+    );
 
   $service->addMethod(
       'pwg.images.setMd5sum',
@@ -856,7 +823,7 @@ function ws_addDefaultMethods( $arr )
       array(
         'image_id' => array('default'=>null, 'flags'=>WS_PARAM_ACCEPT_ARRAY),
         'pwg_token' => array(),
-        'category_id' => array('default'=>null, 'type'=>WS_TYPE_ID),
+        'category_id' => array('type'=>WS_TYPE_ID),
         ),
       'Notifiy Piwigo you have finished to upload a set of photos. It will empty the lounge, if any.',
       $ws_functions_root . 'pwg.images.php',
@@ -1137,7 +1104,7 @@ function ws_addDefaultMethods( $arr )
       'ws_users_getList',
       array(
         'user_id' =>    array('flags'=>WS_PARAM_OPTIONAL|WS_PARAM_FORCE_ARRAY,
-                              'type'=>WS_TYPE_ID),                      
+                              'type'=>WS_TYPE_ID),
         'username' =>   array('flags'=>WS_PARAM_OPTIONAL,
                               'info'=>'Use "%" as wildcard.'),
         'status' =>     array('flags'=>WS_PARAM_OPTIONAL|WS_PARAM_FORCE_ARRAY,

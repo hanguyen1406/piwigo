@@ -263,6 +263,7 @@ jQuery('#applyAction').click(function(e) {
   }
 
   if (jQuery('[name="selectAction"]').val() == 'metadata') {
+    e.preventDefault();
     e.stopPropagation();
     jQuery('.bulkAction').hide();
     jQuery('#regenerationText').html(lang.syncProgressMessage);
@@ -281,7 +282,7 @@ jQuery('#applyAction').click(function(e) {
     var todo = 0;
     var syncBlockSize = Math.min(
       Number((elements.length/2).toFixed()),
-      1000
+      500
     );
     var image_ids = Array();
 

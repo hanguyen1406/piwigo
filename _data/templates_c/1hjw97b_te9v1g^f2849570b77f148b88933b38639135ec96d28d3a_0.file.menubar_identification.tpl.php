@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:24
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/menubar_identification.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6d0c8b296_57162313',
+  'unifunc' => 'content_66d5c1545040b1_28720573',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a6d0c8b296_57162313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c1545040b1_28720573 (Smarty_Internal_Template $_smarty_tpl) {
 ?><li class="nav-item dropdown" id="identificationDropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php if ((isset($_smarty_tpl->tpl_vars['USERNAME']->value))) {?><i class="fas fa-user"></i> <?php echo $_smarty_tpl->tpl_vars['USERNAME']->value;
 } else {

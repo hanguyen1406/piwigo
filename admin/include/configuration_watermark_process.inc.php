@@ -168,7 +168,6 @@ if (count($errors) == 0)
   {
     $old_use_watermark = $params->use_watermark;
     ImageStdParams::apply_global($params);
-
     $changed = $params->use_watermark != $old_use_watermark;
     if (!$changed and $params->use_watermark)
     {

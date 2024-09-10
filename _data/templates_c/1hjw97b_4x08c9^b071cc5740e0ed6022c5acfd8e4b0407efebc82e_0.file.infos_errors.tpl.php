@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:17
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/infos_errors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e43132b122_06626161',
+  'unifunc' => 'content_66d5c5a3479707_08582679',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e43132b122_06626161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a3479707_08582679 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['errors']->value))) {?>
 <div class="container<?php if ($_smarty_tpl->tpl_vars['theme_config']->value->fluid_width) {?>-fluid<?php }?>">
 <?php

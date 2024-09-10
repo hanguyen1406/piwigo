@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/plegall/Piwigo-photo_update 
+Revision: 25592d4463f8ae62732555861820897e7a6ecbbc (Tue Dec 29 15:48:35 2020 +0100)

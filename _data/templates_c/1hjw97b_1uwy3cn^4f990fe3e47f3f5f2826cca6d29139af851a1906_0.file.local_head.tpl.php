@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:14:16
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/default/local_head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a3f8bbfa60_10124218',
+  'unifunc' => 'content_66d5c15458b379_03974251',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a3f8bbfa60_10124218 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c15458b379_03974251 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['load_css']->value) {?> 
 	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['ROOT_URL']->value;?>

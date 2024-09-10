@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:11
+/* Smarty version 4.3.1, created on 2024-09-02 20:56:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/thumbnails.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e42b030223_29041031',
+  'unifunc' => 'content_66d5c3ff759612_28494379',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:grid_classes.tpl' => 1,
   ),
 ),false)) {
-function content_6676e42b030223_29041031 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c3ff759612_28494379 (Smarty_Internal_Template $_smarty_tpl) {
 if (!empty($_smarty_tpl->tpl_vars['thumbnails']->value)) {
 $_block_plugin2 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
 if (!is_callable(array($_block_plugin2, 'block_footer_script'))) {

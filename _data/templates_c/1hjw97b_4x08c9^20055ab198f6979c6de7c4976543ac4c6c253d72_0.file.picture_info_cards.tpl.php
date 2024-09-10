@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:17
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/picture_info_cards.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e431433611_85016624',
+  'unifunc' => 'content_66d5c5a34d7895_82399591',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:picture_info_comments.tpl' => 1,
   ),
 ),false)) {
-function content_6676e431433611_85016624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a34d7895_82399591 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <div id="infopanel-left" class="col-lg-6 col-12">
       <!-- Picture infos -->
       <div id="card-informations" class="card mb-2">
@@ -100,13 +100,13 @@ if ((isset($_smarty_tpl->tpl_vars['rating']->value['USER_RATE'])) && $_smarty_tp
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'core.scripts','path'=>'themes/default/js/scripts.js','load'=>'async'),$_smarty_tpl ) );
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'rating','require'=>'core.scripts','path'=>'themes/bootstrap_darkroom/js/rating.js','load'=>'async'),$_smarty_tpl ) );
-$_block_plugin11 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin11, 'block_footer_script'))) {
+$_block_plugin13 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin13, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin11->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin13->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];_pwgRatingAutoQueue.push( {rootUrl: '<?php echo $_smarty_tpl->tpl_vars['ROOT_URL']->value;?>
 ', image_id: <?php echo $_smarty_tpl->tpl_vars['current']->value['id'];?>
@@ -120,7 +120,7 @@ ob_start();?>var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];_pwgRatingAutoQue
                        "\n" => "\\n", "</" => "<\/", "<!--" => "<\!--", "<s" => "<\s", "<S" => "<\S",
                        "`" => "\\`", "\${" => "\\\$\{"));?>
 )".replace( "%d", rating.count);}}$('#averageRate').find('span').each(function() {$(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');$(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');});}});<?php $_block_repeat=false;
-echo $_block_plugin11->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin13->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
                     </div>
@@ -219,17 +219,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 if ($_smarty_tpl->tpl_vars['display_info']->value['privacy_level'] && (isset($_smarty_tpl->tpl_vars['available_permission_levels']->value))) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'core.scripts','load'=>'async','path'=>'themes/default/js/scripts.js'),$_smarty_tpl ) );?>
 
-<?php $_block_plugin12 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin12, 'block_footer_script'))) {
+<?php $_block_plugin14 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin14, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin12->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin14->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>function setPrivacyLevel(id, level, label) {(new PwgWS('<?php echo $_smarty_tpl->tpl_vars['ROOT_URL']->value;?>
 ')).callService("pwg.images.setPrivacyLevel", { image_id:id, level:level},{method: "POST",onFailure: function(num, text) { alert(num + " " + text); },onSuccess: function(result) {jQuery('#dropdownPermissions').html(label);jQuery('.permission-li').removeClass('active');jQuery('#permission-' + level).addClass('active');}});}<?php $_block_repeat=false;
-echo $_block_plugin12->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin14->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
             <div id="Privacy" class="imageInfo">
@@ -451,13 +451,13 @@ echo $_smarty_tpl->tpl_vars['metadata']->value[0]['lines'][$_prefixVariable18];?
           </div>
           <button id="show_exif_data" class="btn btn-primary btn-raised mt-1" style="text-transform: none;"><i class="fas fa-info mr-1"></i> <?php echo l10n('Show EXIF data');?>
 </button>
-<?php $_block_plugin13 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin13, 'block_footer_script'))) {
+<?php $_block_plugin15 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin15, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin13->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin15->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
 $('#show_exif_data').on('click', function() {
@@ -472,7 +472,7 @@ $('#show_exif_data').on('click', function() {
   }
 });
 <?php $_block_repeat=false;
-echo $_block_plugin13->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin15->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
           <div id="full_exif_data" class="d-none flex-column mt-2">

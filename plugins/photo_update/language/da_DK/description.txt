@@ -1,0 +1,1 @@
+Giver mulighed for at opdatere et fotografi (JPEG-/PNG-fil) fra dets administrationsside, uden at miste relaterede data (brugerkommentarer, antal besøg ...).

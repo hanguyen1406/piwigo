@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:10
+/* Smarty version 4.3.1, created on 2024-09-07 17:13:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/menubar_tags.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e42af19bb0_49803447',
+  'unifunc' => 'content_66dc273b896679_60544241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e42af19bb0_49803447 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66dc273b896679_60544241 (Smarty_Internal_Template $_smarty_tpl) {
 if (!(isset($_smarty_tpl->tpl_vars['tag']->value['level']))) {
 $_smarty_tpl->_assignInScope('level', "2");
 } else {

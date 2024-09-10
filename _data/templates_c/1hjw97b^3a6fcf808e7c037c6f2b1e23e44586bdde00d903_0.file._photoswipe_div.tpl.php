@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:17
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/_photoswipe_div.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e431467392_34154076',
+  'unifunc' => 'content_66d5c5a34fd0f6_24293748',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e431467392_34154076 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a34fd0f6_24293748 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
      <div class="pswp__bg"></div>
      <div class="pswp__scroll-wrap">

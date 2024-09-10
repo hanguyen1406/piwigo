@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:57:05
+/* Smarty version 4.3.1, created on 2024-09-02 20:57:21
   from '/var/www/html/piwigo/admin/themes/default/template/include/datepicker.inc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e6417c6d13_92305179',
+  'unifunc' => 'content_66d5c4412be634_16997358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e6417c6d13_92305179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c4412be634_16997358 (Smarty_Internal_Template $_smarty_tpl) {
 if (empty($_smarty_tpl->tpl_vars['load_mode']->value)) {
 $_smarty_tpl->_assignInScope('load_mode', 'footer');
 }

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:48:17
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/picture.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e43130fb25_67386509',
+  'unifunc' => 'content_66d5c5a346e262_69052719',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -28,7 +28,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:picture_info_comments.tpl' => 1,
   ),
 ),false)) {
-function content_6676e43130fb25_67386509 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a346e262_69052719 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Start of picture.tpl -->
 <?php if (get_device() != 'desktop') {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'jquery.mobile-events','path'=>'themes/bootstrap_darkroom/node_modules/jQuery-Touch-Events/src/jquery.mobile-events.min.js','require'=>'jquery','load'=>'footer'),$_smarty_tpl ) );?>
@@ -51,16 +51,16 @@ echo $_smarty_tpl->tpl_vars['PLUGIN_PICTURE_BEFORE']->value;
 ?>
   </div>
 <?php if (get_device() != 'desktop') {
-$_block_plugin5 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin5, 'block_footer_script'))) {
+$_block_plugin7 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin7, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>"jquery"));
 $_block_repeat=true;
-echo $_block_plugin5->block_footer_script(array('require'=>"jquery"), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin7->block_footer_script(array('require'=>"jquery"), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>$('#theImage img').bind('swipeleft swiperight', function (event) {if (event.type == 'swipeleft') {$('#navigationButtons a#navNextPicture i').click();} else if (event.type == 'swiperight') {$('#navigationButtons a#navPrevPicture i').click();} else {return;}});<?php $_block_repeat=false;
-echo $_block_plugin5->block_footer_script(array('require'=>"jquery"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin7->block_footer_script(array('require'=>"jquery"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }?>
@@ -87,13 +87,13 @@ $_smarty_tpl->_subTemplateRender('file:picture_info_sidebar.tpl', $_smarty_tpl->
   <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_css'][0], array( array('path'=>"plugins/prepaid_credits/ppcredits.css"),$_smarty_tpl ) );?>
 
 
-  <?php $_block_plugin6 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin6, 'block_footer_script'))) {
+  <?php $_block_plugin8 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin8, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array());
 $_block_repeat=true;
-echo $_block_plugin6->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin8->block_footer_script(array(), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
   jQuery("#ok").click(function(){
@@ -110,7 +110,7 @@ ob_start();?>
     return false;
   });
   <?php $_block_repeat=false;
-echo $_block_plugin6->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin8->block_footer_script(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
   

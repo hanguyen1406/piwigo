@@ -5,6 +5,12 @@
 // | For copyright and license information, please view the COPYING.txt    |
 // | file that was distributed with this source code.                      |
 // +-----------------------------------------------------------------------+
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT"); // Date in the past
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // Always modified
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 
 defined('PHPWG_ROOT_PATH') or trigger_error('Hacking attempt!', E_USER_ERROR);
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:14:16
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a3f8bba9a9_81031365',
+  'unifunc' => 'content_66d5c15457f504_15867451',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a3f8bba9a9_81031365 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c15457f504_15867451 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <!DOCTYPE html>
@@ -228,13 +228,13 @@ qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && 
 " />
                     </div>
                   </form>
-<?php $_block_plugin2 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin2, 'block_footer_script'))) {
+<?php $_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin3, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin2->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
 var qsearch_icon = $('#navbar-menubar>#quicksearch>.fa-search');
@@ -246,7 +246,7 @@ $(document).ready(function() {
   $('#navbar-menubar>#quicksearch').css({'color': $('#navbar-menubar .nav-link').css('color')});
 });
 <?php $_block_repeat=false;
-echo $_block_plugin2->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }
@@ -256,13 +256,13 @@ echo $_smarty_tpl->tpl_vars['MENUBAR']->value;?>
             </div>
         </nav>
 <?php if ($_smarty_tpl->tpl_vars['theme_config']->value->page_header == 'fancy') {
-$_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin3, 'block_footer_script'))) {
+$_block_plugin4 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin4, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin4->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
 var sfactor = $(".page-header").height() - 50;
@@ -323,7 +323,7 @@ $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
 });
 <?php }
 $_block_repeat=false;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin4->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }
@@ -353,13 +353,13 @@ if ($_smarty_tpl->tpl_vars['theme_config']->value->page_header == 'jumbotron') {
 
 <?php if ($_smarty_tpl->tpl_vars['theme_config']->value->page_header == 'fancy' && $_smarty_tpl->tpl_vars['theme_config']->value->page_header_both_navs) {
 if (empty($_smarty_tpl->tpl_vars['MENUBAR']->value)) {
-$_block_plugin4 = isset($_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0] : null;
-if (!is_callable(array($_block_plugin4, 'block_html_style'))) {
+$_block_plugin5 = isset($_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['html_style'][0][0] : null;
+if (!is_callable(array($_block_plugin5, 'block_html_style'))) {
 throw new SmartyException('block tag \'html_style\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('html_style', array());
 $_block_repeat=true;
-echo $_block_plugin4->block_html_style(array(), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin5->block_html_style(array(), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
 .navbar-contextual {
@@ -368,26 +368,9 @@ ob_start();?>
   padding-bottom: 5px;
 }
 <?php $_block_repeat=false;
-echo $_block_plugin4->block_html_style(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin5->block_html_style(array(), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
-$_block_plugin5 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin5, 'block_footer_script'))) {
-throw new SmartyException('block tag \'footer_script\' not callable or registered');
-}
-$_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
-$_block_repeat=true;
-echo $_block_plugin5->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
-while ($_block_repeat) {
-ob_start();?>
-$(document).ready(function() {
-  $('.navbar-contextual').removeClass('navbar-light').addClass('navbar-dark navbar-forced-sm');
-});
-<?php $_block_repeat=false;
-echo $_block_plugin5->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
-}
-array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
-} else {
 $_block_plugin6 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
 if (!is_callable(array($_block_plugin6, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
@@ -398,11 +381,28 @@ echo $_block_plugin6->block_footer_script(array('require'=>'jquery'), null, $_sm
 while ($_block_repeat) {
 ob_start();?>
 $(document).ready(function() {
+  $('.navbar-contextual').removeClass('navbar-light').addClass('navbar-dark navbar-forced-sm');
+});
+<?php $_block_repeat=false;
+echo $_block_plugin6->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
+} else {
+$_block_plugin7 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin7, 'block_footer_script'))) {
+throw new SmartyException('block tag \'footer_script\' not callable or registered');
+}
+$_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
+$_block_repeat=true;
+echo $_block_plugin7->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
+$(document).ready(function() {
   $('.page-header').addClass('mb-5');
   $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
 });
 <?php $_block_repeat=false;
-echo $_block_plugin6->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin7->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }

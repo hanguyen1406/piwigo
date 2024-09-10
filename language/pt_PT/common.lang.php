@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: PortuguÃªs [PT]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=432
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -42,18 +42,18 @@ $lang['Author'] = 'Autor';
 $lang['Albums'] = 'Albuns';
 $lang['Album'] = 'Album';
 $lang['Close this window'] = 'Fechar a janela';
-$lang['Complete RSS feed (photos, comments)'] = 'RSS completo (fotos e comentï¿½rios)';
+$lang['Complete RSS feed (photos, comments)'] = 'RSS completo (fotos e comentários)';
 $lang['Confirm Password'] = 'Confirmar a senha';
-$lang['Connection settings'] = 'Definiï¿½ï¿½es de ligaï¿½ï¿½o';
+$lang['Connection settings'] = 'Definições de ligação';
 $lang['Login'] = 'Entrar';
 $lang['Contact webmaster'] = 'Contactar o webmaster';
 $lang['Create a new account'] = 'Abrir uma conta nova';
 $lang['Created on'] = 'Aberta em';
 $lang['Creation date'] = 'Data de abertura';
-$lang['Current password is wrong'] = 'A Senha actual estï¿½ errada';
-$lang['Dimensions'] = 'Dimensï¿½es';
+$lang['Current password is wrong'] = 'A Senha actual está errada';
+$lang['Dimensions'] = 'DimensÃµes';
 $lang['Display'] = 'Mostrar';
-$lang['Email address is missing. Please specify an email address.'] = 'Esqueceu o endereï¿½o de email. Por favor indique um email.';
+$lang['Email address is missing. Please specify an email address.'] = 'Esqueceu o endereço de email. Por favor indique um email.';
 $lang['Email address'] = 'EndereÃ§o de email';
 $lang['Enter your personnal informations'] = 'Introduza os seus dados pessoais';
 $lang['Error sending email'] = 'Erro durante o envio do email';

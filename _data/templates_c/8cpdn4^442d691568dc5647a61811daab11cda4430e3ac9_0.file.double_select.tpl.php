@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:58:19
+/* Smarty version 4.3.1, created on 2024-09-02 20:57:17
   from '/var/www/html/piwigo/admin/themes/default/template/double_select.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e68b7989d2_09707903',
+  'unifunc' => 'content_66d5c43d383a36_85409367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676e68b7989d2_09707903 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c43d383a36_85409367 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 ?>
 <table class="doubleSelect">

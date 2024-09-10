@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:40
+/* Smarty version 4.3.1, created on 2024-09-02 20:56:55
   from '/var/www/html/piwigo/admin/themes/default/template/intro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6e0f24f19_22256924',
+  'unifunc' => 'content_66d5c4274590d7_74801729',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/colorbox.inc.tpl' => 1,
   ),
 ),false)) {
-function content_6676a6e0f24f19_22256924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c4274590d7_74801729 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 $_smarty_tpl->_subTemplateRender('file:include/colorbox.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

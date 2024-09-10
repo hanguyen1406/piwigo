@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:24
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/plugins/MenuTags/menubar_menu_tags.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6d0c5f082_53791775',
+  'unifunc' => 'content_66d5c1544d3d55_24369167',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a6d0c5f082_53791775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c1544d3d55_24369167 (Smarty_Internal_Template $_smarty_tpl) {
 if ("bootstrap_darkroom" == $_smarty_tpl->tpl_vars['themeconf']->value['name']) {?>
 <li id="categoriesDropdownMenu" class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo l10n('Tags');?>

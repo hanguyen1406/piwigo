@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:24
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/grid_classes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6d0cdda69_45095334',
+  'unifunc' => 'content_66d5c15454e444_78938723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a6d0cdda69_45095334 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c15454e444_78938723 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('width_xxl', 1410);
 $_smarty_tpl->_assignInScope('width_xl', 1170);
 $_smarty_tpl->_assignInScope('width_lg', 970);

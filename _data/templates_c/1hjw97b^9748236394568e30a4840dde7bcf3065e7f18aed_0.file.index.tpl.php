@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:24
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6d0d235d1_73704688',
+  'unifunc' => 'content_66d5c1545d13a0_75570194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navigation_bar.tpl' => 2,
   ),
 ),false)) {
-function content_6676a6d0d235d1_73704688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c1545d13a0_75570194 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Start of index.tpl -->
 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'cookie','require'=>'jquery','path'=>'themes/bootstrap_darkroom/js/jquery.cookie.js','load'=>'footer'),$_smarty_tpl ) );?>
 
@@ -335,16 +335,16 @@ if (empty($_smarty_tpl->tpl_vars['CONTENT_DESCRIPTION']->value)) {?> pt-3<?php }
     <!-- Start of categories -->
 <?php echo $_smarty_tpl->tpl_vars['CATEGORIES']->value;?>
 
-<?php $_block_plugin3 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin3, 'block_footer_script'))) {
+<?php $_block_plugin9 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin9, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin9->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>$(document).ready(function() {$('#content .col-outer .card-body:has(> .card-title)').equalHeights();});<?php $_block_repeat=false;
-echo $_block_plugin3->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin9->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
     <!-- End of categories -->
@@ -411,16 +411,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <!-- Start of thumbnails -->
         <div id="thumbnails" class="row"><?php echo $_smarty_tpl->tpl_vars['THUMBNAILS']->value;?>
 </div>
-<?php $_block_plugin4 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin4, 'block_footer_script'))) {
+<?php $_block_plugin10 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin10, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin4->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin10->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});<?php $_block_repeat=false;
-echo $_block_plugin4->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin10->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 if ($_smarty_tpl->tpl_vars['theme_config']->value->photoswipe) {?>
@@ -454,35 +454,35 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 $_smarty_tpl->_subTemplateRender('file:_photoswipe_js.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('selector'=>'#photoSwipeData'), 0, false);
 ?>
         </div>
-<?php $_block_plugin5 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin5, 'block_footer_script'))) {
+<?php $_block_plugin11 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin11, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'photoswipe'));
 $_block_repeat=true;
-echo $_block_plugin5->block_footer_script(array('require'=>'photoswipe'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin11->block_footer_script(array('require'=>'photoswipe'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>$('#startSlideshow').on('click touchstart', function() {startPhotoSwipe(0);$('.pswp__button--autoplay')[0].click();});function setupPhotoSwipe() {$('#thumbnails').find("a:has(img):not(.addCollection)").each(function(_index) {var $pswpIndex = <?php if ((isset($_smarty_tpl->tpl_vars['GDThumb']->value)) || (isset($_smarty_tpl->tpl_vars['GThumb']->value))) {
 echo $_smarty_tpl->tpl_vars['START_ID']->value;
 } else { ?>0<?php }?>;if ($(this).find('img').length > 0) {var _href = $(this).href;$(this).attr('href', 'javascript:;').attr('data-href', _href);if (!$(this).attr('data-index')) {$(this).attr('data-index', _index);$pswpIndex = $pswpIndex + _index;} else {$pswpIndex = $pswpIndex + $(this).data('index');}$(this).off('click tap').on('click tap', function(event) {event.preventDefault();startPhotoSwipe($pswpIndex);});}});if (window.location.hash) {const pidMatch = /(#|&)pid=(\d+)(&|$)/.exec(window.location.hash);if (pidMatch) {startPhotoSwipe(parseInt(pidMatch[2]) - 1);}}}<?php if ($_smarty_tpl->tpl_vars['theme_config']->value->thumbnail_linkto == 'photoswipe' || ($_smarty_tpl->tpl_vars['theme_config']->value->thumbnail_linkto == 'photoswipe_mobile_only' && get_device() != 'desktop')) {?>$(document).ready(function() {setupPhotoSwipe();});<?php if ((isset($_smarty_tpl->tpl_vars['loaded_plugins']->value['rv_tscroller']))) {?>$(document).ajaxComplete(function() {setupPhotoSwipe();});<?php }
 }
 $_block_repeat=false;
-echo $_block_plugin5->block_footer_script(array('require'=>'photoswipe'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin11->block_footer_script(array('require'=>'photoswipe'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }
-$_block_plugin6 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin6, 'block_footer_script'))) {
+$_block_plugin12 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin12, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>"jquery"));
 $_block_repeat=true;
-echo $_block_plugin6->block_footer_script(array('require'=>"jquery"), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin12->block_footer_script(array('require'=>"jquery"), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();
 if (!(isset($_smarty_tpl->tpl_vars['loaded_plugins']->value['piwigo-videojs'])) && ((isset($_smarty_tpl->tpl_vars['GThumb']->value)) || (isset($_smarty_tpl->tpl_vars['GDThumb']->value)))) {?>function addVideoIndicator() {$('img.thumbnail[src*="pwg_representative"]').each(function() {$(this).closest('li').append('<i class="fas fa-file-video fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');});}$(document).ready(function() {addVideoIndicator();});$(document).ajaxComplete(function() {addVideoIndicator();});<?php } else { ?>$('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {$(this).closest('div').append('<i class="fas fa-file-video fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');});<?php }
 $_block_repeat=false;
-echo $_block_plugin6->block_footer_script(array('require'=>"jquery"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin12->block_footer_script(array('require'=>"jquery"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
         <!-- End of thumbnails -->

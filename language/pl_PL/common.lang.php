@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Polski [PL]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=430
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -457,7 +457,7 @@ $lang['Choose filters'] = 'Wybierz filtry';
 $lang['Clear'] = 'Wyczyść';
 $lang['Empty filters'] = 'Wyczyść filtry';
 $lang['File type'] = 'Typ pliku';
-$lang['Fill in the filters to start a search'] = 'Wypełnij filtry, aby rozpocząć wyszukiwanie';
+$lang['Fill in the filters to start a search'] = 'Określ filtry, aby rozpocząć wyszukiwanie';
 $lang['Filters'] = 'Filtry';
 $lang['No results are available.'] = 'Wyniki nie są dostępne.';
 $lang['Pre-established filters are proposed, but you can add or remove them using the "Choose filters" button.'] = 'Wstępnie wygenerowane filtry zostały zaproponowane, ale możesz je usunąć lub dodać własne, używając przycisku „Wybierz filtry”.';

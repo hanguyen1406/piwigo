@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:14:16
+/* Smarty version 4.3.1, created on 2024-09-02 20:44:52
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/language_switch_flags.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a3f8bcac05_96678187',
+  'unifunc' => 'content_66d5c154596fd1_75374676',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a3f8bcac05_96678187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c154596fd1_75374676 (Smarty_Internal_Template $_smarty_tpl) {
 ?><li id="languageSwitch" class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
         <span class="pwg-icon langflag-<?php echo $_smarty_tpl->tpl_vars['lang_switch']->value['Active']['code'];?>
@@ -56,16 +56,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_css'][0], array( array('path'=>($_smarty_tpl->tpl_vars['LANGUAGE_SWITCH_PATH']->value).("language_switch.css")),$_smarty_tpl ) );?>
 
 
-<?php $_block_plugin7 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin7, 'block_footer_script'))) {
+<?php $_block_plugin8 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin8, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'jquery'));
 $_block_repeat=true;
-echo $_block_plugin7->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin8->block_footer_script(array('require'=>'jquery'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>$(document).ready(function() {$('#languageSwitch').appendTo('#navbar-menubar>ul.navbar-nav');});<?php $_block_repeat=false;
-echo $_block_plugin7->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin8->block_footer_script(array('require'=>'jquery'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }

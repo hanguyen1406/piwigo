@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 14:54:06
+/* Smarty version 4.3.1, created on 2024-09-07 17:13:48
   from '/var/www/html/piwigo/admin/themes/default/template/photos_add_direct.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676e58e98e123_08603028',
+  'unifunc' => 'content_66dc275c39cd40_72000526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/add_album.inc.tpl' => 1,
   ),
 ),false)) {
-function content_6676e58e98e123_08603028 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66dc275c39cd40_72000526 (Smarty_Internal_Template $_smarty_tpl) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'footer','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
 <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'jquery.plupload','load'=>'footer','require'=>'jquery','path'=>'themes/default/js/plugins/plupload/plupload.full.min.js'),$_smarty_tpl ) );?>

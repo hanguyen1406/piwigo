@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-22 10:26:39
+/* Smarty version 4.3.1, created on 2024-09-02 20:56:55
   from '/var/www/html/piwigo/plugins/FCKEditor/fckeditor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6676a6df307467_48515222',
+  'unifunc' => 'content_66d5c4273fa4d5_21010644',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6676a6df307467_48515222 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c4273fa4d5_21010644 (Smarty_Internal_Template $_smarty_tpl) {
 $_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['html_head'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['html_head'][0][0] : null;
 if (!is_callable(array($_block_plugin1, 'block_html_head'))) {
 throw new SmartyException('block tag \'html_head\' not callable or registered');

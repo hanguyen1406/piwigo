@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-06-25 13:10:24
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:08
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/menubar_related_categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_667ac1c098acc1_10219674',
+  'unifunc' => 'content_66d5c59c103343_87992441',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_667ac1c098acc1_10219674 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c59c103343_87992441 (Smarty_Internal_Template $_smarty_tpl) {
 ?><li id="relatedCategoriesDropdownMenu" class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo l10n('Related albums');?>
 </a>

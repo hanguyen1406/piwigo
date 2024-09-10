@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-07-29 09:44:57
+/* Smarty version 4.3.1, created on 2024-09-02 21:03:15
   from '/var/www/html/piwigo/themes/bootstrap_darkroom/template/footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66a76499b00897_04743716',
+  'unifunc' => 'content_66d5c5a34f7982_42526357',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_plugin_fixes_js.tpl' => 1,
   ),
 ),false)) {
-function content_66a76499b00897_04743716 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66d5c5a34f7982_42526357 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <!-- Start of footer.tpl -->
         <div class="copyright container<?php if ($_smarty_tpl->tpl_vars['theme_config']->value->fluid_width) {?>-fluid<?php }?>">
             <div class="text-center">
@@ -81,18 +81,18 @@ $_smarty_tpl->_subTemplateRender('file:_photoswipe_div.tpl', $_smarty_tpl->cache
 ?>
 
 <?php if (preg_match('/^material/',$_smarty_tpl->tpl_vars['theme_config']->value->bootstrap_theme)) {
-$_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
-if (!is_callable(array($_block_plugin1, 'block_footer_script'))) {
+$_block_plugin17 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
+if (!is_callable(array($_block_plugin17, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
 }
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('footer_script', array('require'=>'bootstrap'));
 $_block_repeat=true;
-echo $_block_plugin1->block_footer_script(array('require'=>'bootstrap'), null, $_smarty_tpl, $_block_repeat);
+echo $_block_plugin17->block_footer_script(array('require'=>'bootstrap'), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
  $('body').bootstrapMaterialDesign();
 <?php $_block_repeat=false;
-echo $_block_plugin1->block_footer_script(array('require'=>'bootstrap'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+echo $_block_plugin17->block_footer_script(array('require'=>'bootstrap'), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);
 }

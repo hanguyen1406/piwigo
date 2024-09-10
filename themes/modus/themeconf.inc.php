@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: modus
-Version: 14.0.0
+Version: 14.5.0
 Description: Responsive, horizontal menu, retina aware, no lost space.
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=728
 Author: rvelices

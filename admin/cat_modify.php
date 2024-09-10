@@ -198,7 +198,7 @@ $template->assign(
 
     'U_ADD_PHOTOS_ALBUM' => $base_url.'photos_add&amp;album='.$category['id'],
     'U_CHILDREN' => $cat_list_url.'&amp;parent_id='.$category['id'],
-    'U_MOVE' => $base_url.'albums&amp;parent_id='.$category['id'].'#cat-'.$category['id'],
+    'U_MOVE' => $base_url.'albums&amp;parent_id='.$category['id'],
     )
   );
  
@@ -320,7 +320,7 @@ $template->assign(array(
   ),
 
   'NB_SUBCATS' => $category['nb_subcats'],
-  ),
+  )
 );
 
 $template->assign(array(
@@ -359,7 +359,7 @@ if ($category['has_images'] or !empty($category['representative_picture_id']))
   // representant ?
   if (!empty($category['representative_picture_id']))
   {
-    $tpl_representant['picture'] = get_category_representant_properties($category['representative_picture_id'], IMG_SMALL);
+    $tpl_representant['picture'] = get_category_representant_properties($category['representative_picture_id'], IMG_MEDIUM);
   }
 
   // can the admin choose to set a new random representant ?
