@@ -167,6 +167,7 @@ if (count($errors) == 0)
   foreach (ImageStdParams::get_defined_type_map() as $type => $params)
   {
     $old_use_watermark = $params->use_watermark;
+    
     ImageStdParams::apply_global($params);
 
     $changed = $params->use_watermark != $old_use_watermark;

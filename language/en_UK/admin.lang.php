@@ -405,7 +405,7 @@ $lang['In your php.ini file, the upload_max_filesize (%sB) is bigger than post_m
 $lang['Inactive Languages'] = 'Inactive Languages';
 $lang['Inactive Plugins'] = 'Inactive Plugins';
 $lang['Inactive Themes'] = 'Inactive themes';
-$lang['include child albums'] = 'include child albums';
+$lang['include child albums'] = 'include sub-albums';
 $lang['Include display of recent photos grouped by dates'] = "Include display of recent photos grouped by dates";
 $lang['include photos with lower privacy level'] = 'include photos with lower privacy level';
 $lang['Information data registered in database'] = "Information data registered in database";
@@ -1351,4 +1351,6 @@ $lang['Activate button "%s"'] = 'Activate button "%s"';
 $lang['Detect and avoid duplicates during upload'] = 'Detect and avoid duplicates during upload';
 $lang['During upload, if Piwigo detects the photo already exists, associate the existing photo to the destination album, without duplicating file'] = 'During upload, if Piwigo detects the photo already exists, associate the existing photo to the destination album, without duplicating file';
 $lang['%d files'] = "%d files";
+$lang['Shrink'] = 'Shrink';
+$lang['Expand'] = 'Expand';
 // Leave this line empty

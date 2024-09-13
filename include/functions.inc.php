@@ -452,6 +452,14 @@ UPDATE '.USER_INFOS_TABLE.'
   if ('tags'==@$page['section'])
   {
     $tags_string = implode(',', $page['tag_ids']);
+
+    if (strlen($tags_string) > 50)
+    {
+      // we need to truncate, mysql won't accept a too long string
+      $tags_string = substr($tags_string, 0, 50);
+      // the last tag_id may have been truncated itself, so we must remove it
+      $tags_string = substr($tags_string, 0, strrpos($tags_string, ','));
+    }
   }
 
   $ip = $_SERVER['REMOTE_ADDR'];
@@ -476,7 +484,10 @@ UPDATE '.USER_INFOS_TABLE.'
 
     $conf['history_sections_cache'] = safe_unserialize($conf['history_sections_cache']);
 
-    if (in_array($page['section'], $conf['history_sections_cache']))
+    if (
+      in_array($page['section'], $conf['history_sections_cache'])
+      or in_array(strtolower($page['section']), array_map('strtolower', $conf['history_sections_cache']))
+    )
     {
       $section = $page['section'];
     }
@@ -1416,6 +1427,29 @@ SELECT param, value
   }
 
   trigger_notify('load_conf', $condition);
+}
+
+/**
+ * Is the config table currentable writeable?
+ *
+ * @since 14
+ *
+ * @return boolean
+ */
+function pwg_is_dbconf_writeable()
+{
+  list($param, $value) = array('pwg_is_dbconf_writeable_'.generate_key(12), date('c').' '.generate_key(20));
+
+  conf_update_param($param, $value);
+  list($dbvalue) = pwg_db_fetch_row(pwg_query('SELECT value FROM '.CONFIG_TABLE.' WHERE param = \''.$param.'\''));
+
+  if ($dbvalue != $value)
+  {
+    return false;
+  }
+
+  conf_delete_param($param);
+  return true;
 }
 
 /**

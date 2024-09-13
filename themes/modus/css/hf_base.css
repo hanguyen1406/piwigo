@@ -51,7 +51,7 @@ html, body {
 
 .errors{
   border:none;
-  background:#ffc4bf url(/themes/default/icon/errors.png) no-repeat center right;
+  background:#ffc4bf url(../../default/icon/errors.png) no-repeat center right;
   font-family: 'Open Sans', sans-serif;
   margin:0;
   font-weight:bold;
@@ -856,4 +856,10 @@ li.path-ext-svg a img {
 .mcs-container,
 .mcs-side-results.search-in-set-button{
 	margin-top:0;
+}
+
+@media screen {
+.wide #theImage {
+	width: 75%; /*min default picture derivative width*/
+}
 }

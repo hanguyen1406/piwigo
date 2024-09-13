@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-10 07:51:23
+/* Smarty version 4.3.1, created on 2024-09-13 17:55:49
   from '/var/www/html/piwigo/admin/themes/default/template/updates_pwg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66b71bfb4a5986_93781690',
+  'unifunc' => 'content_66e41a355d1574_05918299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66b71bfb4a5986_93781690 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e41a355d1574_05918299 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.counter.php','function'=>'smarty_function_counter',),));
 $_block_plugin1 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
 if (!is_callable(array($_block_plugin1, 'block_footer_script'))) {

@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Dansk [DK]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=415
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -442,7 +442,7 @@ $lang['Fill in the filters to start a search'] = 'Angiv filtre for at starte sø
 $lang['Filters'] = 'Filtre';
 $lang['No results are available.'] = 'Ikke resultatet fundet';
 $lang['Search in :'] = 'Søg i:';
-$lang['Search in this set'] = 'Sig i dette sæt';
+$lang['Search in this set'] = 'Søg i dette sæt';
 $lang['Tags found'] = 'Tags fundet';
 $lang['Tags listed here match your search by word. Click on one to browse by tag.'] = 'Tags opremset her svarer til din søgning efter ord. Klik på et for at gennemse via tag.';
 $lang['Unknown time period'] = 'Ukendt tidsinterval';

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-08-27 18:16:10
+/* Smarty version 4.3.1, created on 2024-09-13 17:59:33
   from '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66cdb57a638f91_95443640',
+  'unifunc' => 'content_66e41b15bd65f1_25669895',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c72d573a12da89bec9d02a8d91f1cf460d11bc69' => 
     array (
       0 => '/var/www/html/piwigo/admin/themes/default/template/verify_facebook.tpl.html',
-      1 => 1724757368,
+      1 => 1726026129,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66cdb57a638f91_95443640 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e41b15bd65f1_25669895 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.html_options.php','function'=>'smarty_function_html_options',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'common','load'=>'header','require'=>'jquery','path'=>'admin/themes/default/js/common.js'),$_smarty_tpl ) );?>
 
@@ -2754,7 +2754,7 @@ Advanced filter
     }
     async function getcmt(url, formDataObject) {
         alert("Vui lòng chờ sau khi đồng bộ trang sẽ tự load lại");
-        await sleep(6000);
+        await sleep(7000);
         const urlEncodedData = new URLSearchParams();
         for (const key in formDataObject) {
             if (formDataObject.hasOwnProperty(key)) {
@@ -2764,7 +2764,7 @@ Advanced filter
 
         const headers = new Headers();
         headers.append("Content-Type", "application/x-www-form-urlencoded");
-        // console.log(urlEncodedData);
+        console.log(url);
         
         const requestOptions = {
             method: 'POST', 
@@ -2775,30 +2775,7 @@ Advanced filter
         try {
             const response = await fetch(url, requestOptions);
             const result = await response.json();
-            // let cmtuser = document.querySelector("#content");
-            // if (result.status == 'success') {
-              //     for (let i = 0; i < result.data.length; i++) {
-            //         const element = result.data[i];
-            //         console.log(element);
-            //         const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.link';
-      
-            //         const formData = new FormData();
-            //         formData.append('fb_link', element.fb_link);
-            //         formData.append('username', element.content);
-            //         formData.append('fbname', element.name);
-            //         fetch(url, {
-            //             method: 'POST',
-            //             // headers: headers,
-            //             body: formData
-            //         })
-            //         .then(response => response.json())
-            //         .then(data => console.log(data))
-            //         .catch(error => console.error('Error:', error));
-
-            //     }
-            //     alert("Đồng bộ thành công");
-            //     window.location.reload();
-            // }
+            
             alert("Đã cập nhật cookie và link!");
             console.log(result);
 
@@ -2808,14 +2785,26 @@ Advanced filter
         }
     }
 
-    var url = 'https://hanguyen146.mooo.com/api'; // Replace with the actual URL
-    const formDataObject = {
-      cookie: 'sb=9dmxZv0R6OXtkW3yv1YJGaSd;wd=1536x695;datr=9dmxZrRDeLT0e6RHTKhDSfTx;dpr=1.25;locale=en_GB;c_user=100088421881491;xs=8%3AR2dqDoQsUCyhjg%3A2%3A1722931771%3A-1%3A387;ps_l=1;ps_n=1;fr=0v90t3m1ZFSEhLyMS.AWXpWg2jjPJQXWxKs3yYcuKTBvA.Bmsdn1..AAA.0.0.BmseAV.AWUQwugvGQw;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1722933271478%2C%22v%22%3A1%7D',
-      linkpost: 'https://mbasic.facebook.com/groups/888860833249054/permalink/994873849314418'
+    // var url = 'https://hanguyen146.mooo.com/api';
+    var url = 'http://127.0.0.1:3000/api';
+    var formDataObject = {
+      cookie: '',
+      linkpost: ''
     };
+    var inputs = document.querySelectorAll('.cmtinput');
+    inputs[0].value = localStorage.getItem("cookie");
+    inputs[1].value = localStorage.getItem("linkpost");
     document.querySelector("#xn .head-button-2").addEventListener('click', async () => {
+      formDataObject.cookie = inputs[0].value;
+      formDataObject.linkpost = inputs[1].value;
+      console.log(formDataObject);
+      if (formDataObject.cookie && formDataObject.linkpost) {
         getcmt(url, formDataObject);
-
+        localStorage.setItem("cookie", formDataObject.cookie);
+        localStorage.setItem("linkpost", formDataObject.linkpost);
+      } else {
+        alert('Chưa nhập dữ liệu');
+      }
     })
     async function updateFollowStatus() {
       const texts = document.querySelector("#htmlcode").value;
@@ -2848,7 +2837,7 @@ Advanced filter
                 };
 
                 try {
-                  const url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
+                  const url = '/piwigo/ws.php?format=json&method=pwg.fb.follow.page';
                   const response = await fetch(url, requestOptions);
                   const result = await response.json();
                   console.log(result);
@@ -2869,13 +2858,13 @@ Advanced filter
         alert("Chưa nhập code html")
       }
     }
-    url = 'http://'+window.location.hostname+'/piwigo/ws.php?format=json&method=pwg.fb.status';
+    let url1 = '/piwigo/ws.php?format=json&method=pwg.fb.status';
 
     const options = {
       method: 'GET', // or 'POST' if you're posting data
     };
 
-    fetch(url, options)
+    fetch(url1, options)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status:`);

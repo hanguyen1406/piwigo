@@ -23,7 +23,7 @@
 
 /*
 Plugin Name: Language Switch
-Version: 14.4.0
+Version: 14.5.0
 Description: Switch to another language from flags on your gallery home page.
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=123
 Author: Piwigo team

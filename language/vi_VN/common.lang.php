@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Tiếng Việt [VN]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=437
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -79,11 +79,11 @@ $lang['Password forgotten'] = 'Quên mật khẩu';
 $lang['Password'] = 'Mật khẩu';
 $lang['Post date'] = 'Ngày gởi hình';
 $lang['Posted on'] = 'Gởi vào';
-$lang['Profile'] = 'Trang cá nhân';
+$lang['Profile'] = 'Hồ sơ';
 $lang['Quick connect'] = 'Kết nối nhanh';
 $lang['RSS feed'] = 'Bản tin RSS';
 $lang['Register'] = 'Đăng ký';
-$lang['Registration'] = 'Thông tin tài khoản';
+$lang['Registration'] = 'Mục đăng ký';
 $lang['Related tags'] = 'Tag liên quan';
 $lang['Reset'] = 'Làm lại';
 $lang['Retrieve password'] = 'Nhận lại mật khẩu';
@@ -138,7 +138,7 @@ $lang['created after %s (%s)'] = 'đã tạo sau %s (%s)';
 $lang['created before %s (%s)'] = 'đã tạo trước %s (%s)';
 $lang['created between %s (%s) and %s (%s)'] = 'đã tạo giữa %s (%s) và %s (%s)';
 $lang['created on %s'] = 'đã tạo vào %s';
-$lang['Customize'] = 'Trang cá nhân';
+$lang['Customize'] = 'Tùy chọn';
 $lang['Your Gallery Customization'] = 'Tuỳ chọn cho Gallery của bạn ';
 $lang['day'][0] = 'Chủ Nhật';
 $lang['day'][1] = 'Thứ Hai';
@@ -178,7 +178,7 @@ $lang['Invalid password!'] = 'Sai mật khẩu!';
 $lang['Language']='Ngôn ngữ';
 $lang['last %d days'] = '%d ngày cuối';
 $lang['Last'] = 'Cuối';
-$lang['Logout'] = 'Đăng xuất';
+$lang['Logout'] = 'Thoát';
 $lang['obligatory'] = 'Phần bắt buộc';
 $lang['display a calendar by creation date'] = 'hiển thị lịch theo ngày gởi hình';
 $lang['display all photos in all sub-albums'] = 'hiển thị mọi thành phần có trong tất cả mục nhỏ';
@@ -283,7 +283,7 @@ $lang['Repeat the slideshow'] = 'Lặp lại trình chiếu';
 $lang['Not repeat the slideshow'] = 'Không lặp lại trình chiếu';
 $lang['Reduce diaporama speed'] = 'Giảm tốc độ xem hình tự động';
 $lang['Accelerate diaporama speed'] = 'Tăng tốc độ trình chiếu';
-$lang['Submit'] = 'Lưu';
+$lang['Submit'] = 'Chấp nhận';
 $lang['Yes'] = 'Có';
 $lang['No'] = 'Không';
 $lang['%d photo']='%d hình';

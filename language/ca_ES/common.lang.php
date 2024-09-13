@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Català [CA]
-Version: 14.0.0
+Version: 14.5.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=413
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -204,7 +204,7 @@ $lang['password updated'] = 'Clau d\'accés actualitzada';
 $lang['Recent period must be a positive integer value'] = 'El període ha de ser un valor enter positiu';
 $lang['photo'] = 'foto';
 $lang['Click on the photo to see it in high definition'] = 'Feu clic sobre la foto per a veure-la amb més qualitat';
-$lang['Show file metadata'] = 'Mostra/Oculta informació addicional de la càmera fotogràrica (metadades Exif)';
+$lang['Show file metadata'] = 'Mostra/Oculta informació addicional de la càmera fotogràfica (metadades Exif)';
 $lang['Powered by'] = 'Desenvolupat per';
 $lang['Preferences'] = 'Preferències';
 $lang['Previous'] = 'Anterior';

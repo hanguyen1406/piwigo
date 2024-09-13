@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: elegant
-Version: 14.0.0
+Version: 14.5.0
 Description: Dark background, grayscale.
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=685
 Author: Piwigo team

@@ -1,0 +1,87 @@
+[2024-09-13 15:19:28]	[DEBUG]	[admin/intro::299] recent activity calculated in 0.006 s
+[2024-09-13 16:07:02]	[DEBUG]	[i.php]	
+  src_path: '20240902214942-3649f8a6.jpg'
+  derivative_path: '20240902214942-3649f8a6-sq.jpg'
+  o_size: '960 1280 1228800'
+  d_size: '120 120 14400'
+  mem_usage: 0.6
+  timing: array(
+    'load' => 82,
+    'rotate' => '',
+    'crop' => 37,
+    'scale' => 27,
+    'sharpen' => '',
+    'watermark' => 16,
+    'save' => 1,
+    'send' => 0,
+    'total' => 165,
+  )
+[2024-09-13 16:07:02]	[DEBUG]	[i.php]	
+  src_path: '20240902214942-3649f8a6.jpg'
+  derivative_path: '20240902214942-3649f8a6-me.jpg'
+  o_size: '960 1280 1228800'
+  d_size: '445 594 264330'
+  mem_usage: 0.6
+  timing: array(
+    'load' => 83,
+    'rotate' => '',
+    'crop' => '',
+    'scale' => 91,
+    'sharpen' => '',
+    'watermark' => 13,
+    'save' => 11,
+    'send' => 0,
+    'total' => 200,
+  )
+[2024-09-13 16:34:24]	[DEBUG]	[i.php]	
+  src_path: '20240902214941-96183e01.jpg'
+  derivative_path: '20240902214941-96183e01-me.jpg'
+  o_size: '1536 2048 3145728'
+  d_size: '445 594 264330'
+  mem_usage: 0.4
+  timing: array(
+    'load' => 66,
+    'rotate' => '',
+    'crop' => '',
+    'scale' => 93,
+    'sharpen' => '',
+    'watermark' => 15,
+    'save' => 9,
+    'send' => 0,
+    'total' => 184,
+  )
+[2024-09-13 16:34:27]	[DEBUG]	[i.php]	
+  src_path: '20240902214941-2dd62a90.jpg'
+  derivative_path: '20240902214941-2dd62a90-me.jpg'
+  o_size: '960 1280 1228800'
+  d_size: '445 594 264330'
+  mem_usage: 0.4
+  timing: array(
+    'load' => 26,
+    'rotate' => '',
+    'crop' => '',
+    'scale' => 68,
+    'sharpen' => '',
+    'watermark' => 20,
+    'save' => 9,
+    'send' => 0,
+    'total' => 126,
+  )
+[2024-09-13 16:34:29]	[DEBUG]	[i.php]	
+  src_path: '20240902214941-5ede0bf5.jpg'
+  derivative_path: '20240902214941-5ede0bf5-me.jpg'
+  o_size: '960 1280 1228800'
+  d_size: '445 594 264330'
+  mem_usage: 0.4
+  timing: array(
+    'load' => 25,
+    'rotate' => '',
+    'crop' => '',
+    'scale' => 80,
+    'sharpen' => '',
+    'watermark' => 12,
+    'save' => 11,
+    'send' => 0,
+    'total' => 130,
+  )
+[2024-09-13 17:54:00]	[DEBUG]	[admin/intro::299] recent activity calculated in 0.003 s

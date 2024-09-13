@@ -1914,7 +1914,8 @@ function fill_lounge($images, $categories)
     mass_inserts(
       LOUNGE_TABLE,
       array_keys($inserts[0]),
-      $inserts
+      $inserts,
+      array('ignore'=>true)
     );
   }
 }
@@ -1941,7 +1942,7 @@ function empty_lounge($invalidate_user_cache=true)
   }
 
   $exec_id = generate_key(4);
-  $logger->debug(__FUNCTION__.', exec='.$exec_id.', begins');
+  $logger->debug(__FUNCTION__.(isset($_REQUEST['method']) ? ' (API:'.$_REQUEST['method'].')' : '').', exec='.$exec_id.', begins');
 
   // if lounge is already being emptied, skip
   $query = '
@@ -2365,6 +2366,9 @@ function get_extents($start='')
  */
 function create_tag($tag_name)
 {
+  // clean the tag, no html/js allowed in tag name
+  $tag_name = strip_tags($tag_name);
+
   // does the tag already exists?
   $query = '
 SELECT id
@@ -2862,7 +2866,7 @@ function get_tag_ids($raw_tags, $allow_create=true)
     elseif ($allow_create)
     {
       // we have to create a new tag
-      $tag_ids[] = tag_id_from_tag_name($raw_tag);
+      $tag_ids[] = tag_id_from_tag_name(strip_tags($raw_tag));
     }
   }
 
