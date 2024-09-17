@@ -3064,6 +3064,7 @@ function clear_derivative_cache_rec($path, $pattern)
       }
       else
       {
+        // printf($node.'<br>');
         if (preg_match($pattern, $node))
         {
           unlink($path.'/'.$node);

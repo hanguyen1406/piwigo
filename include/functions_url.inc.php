@@ -197,7 +197,7 @@ function params_for_duplication($redefined, $removed)
   {
     unset($params[$param_key]);
   }
-
+  
   foreach ($redefined as $redefined_param => $redefined_value)
   {
     $params[$redefined_param] = $redefined_value;
@@ -216,6 +216,7 @@ function params_for_duplication($redefined, $removed)
  */
 function duplicate_picture_url($redefined = array(), $removed = array())
 {
+  // printf(implode(', ', $redefined).'<br>');
   return make_picture_url(
     params_for_duplication($redefined, $removed)
     );

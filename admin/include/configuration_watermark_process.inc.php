@@ -167,9 +167,7 @@ if (count($errors) == 0)
   foreach (ImageStdParams::get_defined_type_map() as $type => $params)
   {
     $old_use_watermark = $params->use_watermark;
-    
     ImageStdParams::apply_global($params);
-
     $changed = $params->use_watermark != $old_use_watermark;
     if (!$changed and $params->use_watermark)
     {
@@ -195,7 +193,7 @@ if (count($errors) == 0)
   {
     clear_derivative_cache($changed_types);
   }
-
+  // printf('hii');
   $page['infos'][] = l10n('Your configuration settings are saved');
   pwg_activity('system', ACTIVITY_SYSTEM_CORE, 'config', array('config_section'=>'watermark'));
 }

@@ -238,6 +238,7 @@ function parse_request()
 
     $key = array();
     $params->add_url_tokens($key);
+    
     $key = implode('_', $key);
     if (!isset(ImageStdParams::$custom[$key]))
     {
@@ -277,6 +278,7 @@ function try_switch_source(DerivativeParams $params, $original_mtime)
   $use_watermark = $params->use_watermark;
   if ($use_watermark)
   {
+    // printf($use_watermark);
     $use_watermark = $params->will_watermark($dsize);
   }
 

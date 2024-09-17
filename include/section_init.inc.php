@@ -244,6 +244,7 @@ if ('categories' == $page['section'])
     }
 
     $page['items'] = get_image_ids_for_categories($cat_ids);
+    // printf($page['items']);
   }
   elseif
     (

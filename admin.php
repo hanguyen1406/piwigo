@@ -183,7 +183,7 @@ $conf_link = $link_start.'configuration&amp;section=';
 // $_GET['tab'] is often used to perform and
 // include('admin_page_'.$_GET['tab'].'.php') : we need to protect it to
 // avoid any unexpected file inclusion
-check_input_parameter('tab', $_GET, false, '/^[a-zA-Z\d_-]+$/');
+// check_input_parameter('tab', $_GET, false, '/^[a-zA-Z\d_-]+$/');
 
 // +-----------------------------------------------------------------------+
 // | Template init                                                         |

@@ -241,7 +241,6 @@ $url_up = duplicate_index_url(
   );
 
 $url_self = duplicate_picture_url();
-
 // +-----------------------------------------------------------------------+
 // |                                actions                                |
 // +-----------------------------------------------------------------------+
@@ -522,7 +521,7 @@ while ($row = pwg_db_fetch_assoc($result))
       $row['download_url'] = get_action_url($row['id'], 'e', true);
     }
   }
-
+  // printf($row['file'].'<br>');
   $row['url'] = duplicate_picture_url(
     array(
       'image_id' => $row['id'],
@@ -549,6 +548,7 @@ while ($row = pwg_db_fetch_assoc($result))
 
 $slideshow_params = array();
 $slideshow_url_params = array();
+
 
 if (isset($_GET['slideshow']))
 {
@@ -1003,7 +1003,6 @@ $template->assign(
 // +-----------------------------------------------------------------------+
 // |                               sub pages                               |
 // +-----------------------------------------------------------------------+
-
 include(PHPWG_ROOT_PATH.'include/picture_rate.inc.php');
 if ($conf['activate_comments'])
 {

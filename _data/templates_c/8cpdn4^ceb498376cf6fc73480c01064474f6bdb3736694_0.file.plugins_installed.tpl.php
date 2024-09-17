@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-09-13 17:59:31
+/* Smarty version 4.3.1, created on 2024-09-17 15:32:53
   from '/var/www/html/piwigo/admin/themes/default/template/plugins_installed.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66e41b13b750a9_19915186',
+  'unifunc' => 'content_66e93eb5981925_16969929',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66e41b13b750a9_19915186 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e93eb5981925_16969929 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/piwigo/include/smarty/libs/plugins/function.counter.php','function'=>'smarty_function_counter',),));
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'jquery.ajaxmanager','load'=>'footer','require'=>'jquery','path'=>'themes/default/js/plugins/jquery.ajaxmanager.js'),$_smarty_tpl ) );?>
 

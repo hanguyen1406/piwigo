@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/plegall/menalto2piwigo 
+Revision: 437594c86f6374d96f4128bb8940016a1d2ffad0 (Fri Aug 12 02:37:02 2016 +0200)

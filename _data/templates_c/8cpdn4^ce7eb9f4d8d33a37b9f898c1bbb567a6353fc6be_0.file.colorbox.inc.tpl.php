@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-09-13 17:56:42
+/* Smarty version 4.3.1, created on 2024-09-17 14:59:13
   from '/var/www/html/piwigo/admin/themes/default/template/include/colorbox.inc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66e41a6a9d4404_26667583',
+  'unifunc' => 'content_66e936d1105ff4_96776296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66e41a6a9d4404_26667583 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e936d1105ff4_96776296 (Smarty_Internal_Template $_smarty_tpl) {
 if (empty($_smarty_tpl->tpl_vars['load_mode']->value)) {
 $_smarty_tpl->_assignInScope('load_mode', 'footer');
 }

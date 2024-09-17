@@ -303,7 +303,7 @@ else
 {
   $filter['enabled'] = false;
 }
-
+// printf('hi');
 if (isset($conf['header_notes']))
 {
   $header_notes = array_merge($header_notes, $conf['header_notes']);
