@@ -1,0 +1,1 @@
+Permite personalizar el tag <title> de las distintas páginas de Piwigo

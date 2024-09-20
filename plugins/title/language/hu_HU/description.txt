@@ -1,0 +1,1 @@
+Lehetővé teszi az egyes Piwigo oldalak címeinek (neveinek) <title> tetszés szerinti testreszabását.

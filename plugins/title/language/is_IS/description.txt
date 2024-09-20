@@ -1,0 +1,1 @@
+Gerir þér kleift að sérsníða merkið < title > fyrir mismunandi Piwigo síður

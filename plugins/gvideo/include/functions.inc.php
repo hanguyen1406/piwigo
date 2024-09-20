@@ -31,7 +31,6 @@ function parse_video_url($source_url, &$safe_mode=false)
     {
       parse_str($url['query'], $url['query']);
       if (empty($url['query']['v'])) return false;
-      
       $video['video_id'] = $url['query']['v'];
     }
     
@@ -259,6 +258,7 @@ function parse_video_url($source_url, &$safe_mode=false)
     default:
       return false;   
   }
+  // printf(implode(", ", $video));
   
   return $video;
 }

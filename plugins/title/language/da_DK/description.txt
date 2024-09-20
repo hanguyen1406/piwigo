@@ -1,0 +1,1 @@
+Gør det muligt at tilpasset tag'et < title > på forskellige Piwigo-sider.
