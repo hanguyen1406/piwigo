@@ -1,1 +1,1 @@
-a:5:{s:2:"id";s:5:"33863";s:7:"subject";s:18:"Piwigo 15.0.0beta3";s:9:"posted_on";s:10:"1725551919";s:6:"posted";s:30:"Thứ Năm 5 Tháng Chín 2024";s:3:"url";s:47:"https://piwigo.org/forum/viewtopic.php?id=33863";}
+a:5:{s:2:"id";s:5:"33892";s:7:"subject";s:36:"Piwigo 15.0.0RC1 never been so close";s:9:"posted_on";s:10:"1727099605";s:6:"posted";s:30:"Thứ Hai 23 Tháng Chín 2024";s:3:"url";s:47:"https://piwigo.org/forum/viewtopic.php?id=33892";}

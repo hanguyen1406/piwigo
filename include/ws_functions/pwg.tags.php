@@ -218,6 +218,24 @@ SELECT *
  * @param mixed[] $params
  *    @option string name
  */
+
+function ws_tags_addMultiple($params, &$service)
+{
+  $tags = $params['tags'];
+  $array = explode(",", $tags);
+  $res = [];
+  $image_id = $params['image_id'];
+  if($image_id) {
+    pwg_query('delete from piwigo_image_tag where image_id='.$image_id);
+    for ($i=0; $i < sizeof($array); $i++) { 
+      $query = 'insert into piwigo_image_tag value('.$image_id.','.$array[$i].')';
+      $res[] = pwg_query($query);
+    }
+  }
+
+  return $res;
+}
+
 function ws_tags_add($params, &$service)
 {
   include_once(PHPWG_ROOT_PATH.'admin/include/functions.php');

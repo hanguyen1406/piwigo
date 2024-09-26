@@ -392,7 +392,7 @@ function ws_fb_status($params, &$service) {
 
   $result = query2array($query);
 
-  return $result[0];
+  return $params;
 }
 
 function ws_users_add($params, &$service)

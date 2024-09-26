@@ -561,7 +561,7 @@ function ws_addDefaultMethods( $arr )
   $service->addMethod(
     'pwg.fb.status',
     'ws_fb_status',
-    array(),
+    array('tag' => array()),
     'check fb get status',
     $ws_functions_root . 'pwg.users.php',
     // array('admin_only'=>true, 'post_only'=>true)
@@ -749,7 +749,17 @@ function ws_addDefaultMethods( $arr )
       $ws_functions_root . 'pwg.tags.php',
       array('admin_only'=>true)
     );
-
+  $service->addMethod( // TODO: create multiple tags
+      'pwg.tags.addMultiple',
+      'ws_tags_addMultiple',
+      array(
+        'tags' => array(),
+        'image_id' => array()
+      ),
+      'Adds a new multiple tag.',
+      $ws_functions_root . 'pwg.tags.php',
+      // array('admin_only'=>true)
+    );  
   $service->addMethod(
       'pwg.tags.delete',
       'ws_tags_delete',

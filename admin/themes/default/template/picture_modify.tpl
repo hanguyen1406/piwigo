@@ -210,6 +210,7 @@ $('#action-delete-picture').on('click', function() {
       <select data-selectize="tags" data-value="{$tag_selection|@json_encode|escape:html}"
         placeholder="{'Type in a search term'|translate}"
         data-create="true" name="tags[]" multiple style="width:calc(100% + 2px);"></select>
+    
     </p>
 
     <p>

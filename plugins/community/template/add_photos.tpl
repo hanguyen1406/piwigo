@@ -290,6 +290,29 @@ var limit_storage = {$limit_storage};
         uploadedPhotos.push(parseInt(data.result.image_id));
         uploadCategory = data.result.category;
 
+        const selectedValues = Array.from(selectedItemsContainer.children).map(item => item.id);
+        const tagsString = selectedValues.join(',');
+
+        tagsInput.value = tagsString;
+
+        // thêm multiple tag tại đây
+        console.log("Tags:", tagsString); 
+
+        jQuery.ajax({
+          url: rootUrl + "ws.php?format=json&method=pwg.tags.addMultiple",
+          type:"POST",
+          data: {
+            image_id: data.result.image_id,
+            tags: tagsString
+          },
+          dataType: "json",
+          success:function(data) {
+            console.log(data);
+          },
+          error:function(XMLHttpRequest, textStatus, errorThrows) {
+          }
+        });
+
         jQuery.ajax({
           url: rootUrl + "ws.php?format=json&method=pwg.images.setInfo",
           type:"POST",
@@ -299,7 +322,7 @@ var limit_storage = {$limit_storage};
             author: jQuery("input[name=author]").val(),
             name: jQuery("input[name=name]").val(),
             comment: jQuery("textarea[name=description]").val(),
-            tag_ids: jQuery('#tag').val()
+            
           },
           dataType: "json",
           success:function(data) {
@@ -476,6 +499,35 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
 #tag {
   padding: 3px; 
 }
+
+.selected-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 5px;
+}
+.item span {
+  margin-right: 10px;
+}
+.remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  line-height: 0.5;
+}
+
 </style>
 {/literal}
 
@@ -590,7 +642,7 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
 
     <p class="showFieldset"><a id="showPhotoProperties" href="#">{'Set Photo Properties'|@translate}</a></p>
 
-    <fieldset id="photoProperties" style="display:none">
+    <fieldset id="photoProperties">
       <legend>{'Photo Properties'|@translate}</legend>
 
       <input type="checkbox" name="set_photo_properties" style="display:none">
@@ -609,15 +661,18 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
         {'Description'|@translate}<br>
         <textarea name="description" id="description" class="description" style="margin:0"></textarea>
       </p>
-      <p>
-        Chọn tag: 
-        <select id="tag" name="tag">
-          {foreach from=$tags item=tag}
-            <option value="{$tag['id']}">{$tag['name']}</option>
-          {/foreach}
-        </select>
-        
-      </p>
+      
+      <select id="tag-select">
+        <option value="" disabled selected>Chọn tags<option>
+        {foreach from=$tags item=tag}
+          <option value="{$tag['id']}">{$tag['name']}</option>
+        {/foreach}
+      </select>
+      <div class="selected-items" id="selected-items"></div>
+
+      <!-- Input ẩn sẽ chứa chuỗi "apple,banana" -->
+      <input type="hidden" id="tags" name="tags" value="">
+      
     </fieldset>
 
     <div id="uploadingActions" style="display:none">
@@ -652,4 +707,71 @@ jQuery(document).ready(function(){
     return false;
   });
 });
+
+const fruitSelect = document.getElementById("tag-select");
+const selectedItemsContainer = document.getElementById("selected-items");
+const tagsInput = document.getElementById("tags");
+const form = document.getElementById("uploadForm");
+
+// Lắng nghe sự kiện change để xử lý khi chọn một mục
+fruitSelect.addEventListener("change", () => {
+  const selectedOption = fruitSelect.options[fruitSelect.selectedIndex]; // Lấy option đã chọn
+  
+  // Kiểm tra xem option có giá trị hay không (loại bỏ placeholder)
+  if (selectedOption && selectedOption.value) {
+    // Tạo div cho mỗi mục đã chọn
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("item");
+    itemDiv.id = selectedOption.value;
+
+    // Thêm tên của mục
+    const itemSpan = document.createElement("span");
+    itemSpan.textContent = selectedOption.textContent;
+
+    // Nút x để xóa mục
+    const removeBtn = document.createElement("button");
+    removeBtn.classList.add("remove-btn");
+    removeBtn.textContent = "x";
+    removeBtn.addEventListener("click", () => {
+      selectedItemsContainer.removeChild(itemDiv); // Remove item from the UI
+      fruitSelect.add(selectedOption); // Add it back to the dropdown
+      sortDropdown(fruitSelect); // Sort the dropdown list
+    });
+
+    // Thêm các thành phần vào div
+    itemDiv.appendChild(itemSpan);
+    itemDiv.appendChild(removeBtn);
+    selectedItemsContainer.appendChild(itemDiv);
+
+    // Xóa mục khỏi dropdown sau khi chọn
+    fruitSelect.remove(fruitSelect.selectedIndex);
+
+    // Đặt lại dropdown về trạng thái mặc định (placeholder)
+    fruitSelect.selectedIndex = 0;
+  }
+});
+// console.log(form);
+// Sự kiện submit form
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Ngăn chặn form submit ngay lập tức
+
+  // Lấy tất cả các mục đã chọn và tạo chuỗi cách nhau bởi dấu phẩy
+  const selectedValues = Array.from(selectedItemsContainer.children).map(item => item.id);
+  const tagsString = selectedValues.join(',');
+
+  // Gán chuỗi vào input ẩn
+  tagsInput.value = tagsString;
+
+  console.log("Tags:", tagsString); // Debug: Hiển thị kết quả
+  // form.submit(); // Submit form sau khi gán giá trị
+});
+
+// Hàm sắp xếp danh sách trong dropdown
+function sortDropdown(selectElement) {
+  const optionsArray = Array.from(selectElement.options);
+  optionsArray.sort((a, b) => a.text.localeCompare(b.text)); // Sort alphabetically by text
+  selectElement.innerHTML = ''; // Clear the dropdown
+  optionsArray.forEach(option => selectElement.add(option)); // Add sorted options back
+}
+
 {/literal}{/footer_script}

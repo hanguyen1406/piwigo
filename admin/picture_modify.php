@@ -198,7 +198,7 @@ SELECT
   WHERE image_id = '.$_GET['image_id'].'
 ;';
 $tag_selection = get_taglist($query);
-
+printf(implode(", ", $tag_selection[1]));
 $row = $page['image'];
 
 if (isset($data['date_creation']))
