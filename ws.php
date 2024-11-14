@@ -102,7 +102,14 @@ function ws_addDefaultMethods( $arr )
     $ws_functions_root . 'pwg.php',
     array('admin_only'=>true)
   );
-
+  $service->addMethod(
+    'pwg.album.get',
+    'ws_album_get',
+    null,
+    'get all albums',
+    $ws_functions_root . 'pwg.php',
+    array('admin_only'=>false)
+  );
   $service->addMethod(
       'pwg.caddie.add',
       'ws_caddie_add',
@@ -957,7 +964,7 @@ function ws_addDefaultMethods( $arr )
       $ws_functions_root . 'pwg.extensions.php',
       array('admin_only'=>true)
     );
-
+  
   $service->addMethod(
       'pwg.plugins.performAction',
       'ws_plugins_performAction',

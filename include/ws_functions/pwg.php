@@ -117,6 +117,18 @@ SELECT id, path, representative_ext, width, height, rotation
   return $ret;
 }
 
+function ws_album_get($params, &$service)
+{
+  $query = "select * from piwigo_categories";
+  $result = pwg_query($query);
+  $res = [];
+  while ($row = pwg_db_fetch_assoc($result))
+  {
+    $res[] = $row['id'].",".$row['name'];
+  }
+  return $res;
+}
+
 /**
  * API method
  * Returns Piwigo version
