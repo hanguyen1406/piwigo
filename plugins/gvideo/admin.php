@@ -14,7 +14,7 @@ if ($page['tab'] != 'photo')
   $tabsheet = new tabsheet();
   $tabsheet->add('add', l10n('Add a video'), GVIDEO_ADMIN . '-add');
   $tabsheet->add('config', l10n('Configuration'), GVIDEO_ADMIN . '-config');
-  $tabsheet->add('adds', l10n('Add multiple video'), GVIDEO_ADMIN . '-adds');
+  $tabsheet->add('adds', l10n('Thêm nhiều video'), GVIDEO_ADMIN . '-adds');
   $tabsheet->select($page['tab']);
   $tabsheet->assign();
 }

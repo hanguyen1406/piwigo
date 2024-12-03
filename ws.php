@@ -743,7 +743,7 @@ function ws_addDefaultMethods( $arr )
       null,
       '<b>Admin only.</b>',
       $ws_functions_root . 'pwg.tags.php',
-      array('admin_only'=>true)
+      array('admin_only'=>false)
     );
 
   $service->addMethod( // TODO: create multiple tags

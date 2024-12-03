@@ -4,7 +4,24 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Allow specific me
 header("Access-Control-Allow-Headers: Content-Type, Authorization"); // Allow specific headers
 header("Access-Control-Allow-Credentials: true"); // Allow credentials (if needed)
 // Lấy từ khóa từ URL (ví dụ: http://example.com/script.php?word=thaythe)
-$word = isset($_GET['word']) ? $_GET['word'] : "guitar Đặng tuấn"; // Lấy giá trị từ query string
+// Lấy giá trị từ query string
+$word = isset($_GET['word']) ? $_GET['word'] : "guitar Đặng tuấn"; 
+$albums = isset($_GET['albums']) ? $_GET['albums'] : ""; 
+$tags = isset($_GET['tags']) ? $_GET['tags'] : ""; 
+if($albums != ""){
+    $albums = explode(",", $albums);
+    $albums = array_map(function($item) {
+        return "\"$item\"";
+    }, $albums);
+    $albumsString = "var albums = [\n" . implode(",", $albums) . "\n];";
+}
+if($tags != ""){
+    $tags = explode(",", $tags);
+    $tags = array_map(function($item) {
+        return "\"$item\"";
+    }, $tags);
+    $tagsString = "var tags = [\n" . implode(",\n", $tags) . "\n];";
+}
 
 // Initialize a cURL session
 $ch = curl_init();
@@ -75,7 +92,7 @@ $newOptionsString = "var newOptions = [\n" . implode(",\n", $newOptions) . "\n];
 
 //get tag list
 $ch3 = curl_init();
-$url3 = $domain."/piwigo/ws.php?format=json&method=pwg.tags.getList";
+$url3 = $domain."/piwigo/ws.php?format=json&method=pwg.tags.getAdminList";
 
 curl_setopt($ch3, CURLOPT_URL, $url3);
 curl_setopt($ch3, CURLOPT_RETURNTRANSFER, true);
@@ -102,17 +119,6 @@ if (curl_errno($ch)) {
 
     // Chuỗi HTML với thay thế từ khóa
     $html_code = '<div class="row">
-    <link rel="stylesheet" href="http://103.200.23.179/~hanguye6/php-melody/admin/css/admin-melody.css" />
-    <link
-        rel="stylesheet"
-        href="http://103.200.23.179/~hanguye6/php-melody/admin/css/bootstrap-admin.min.css"
-    />
-    <link
-        rel="stylesheet"
-        href="http://103.200.23.179/~hanguye6/php-melody/admin/css/bootstrap.min.css"
-    />
-    
-    
     
     <style>
         .bootstrap-tagsinput .tag {
@@ -144,11 +150,10 @@ if (curl_errno($ch)) {
     '.$response_data['html'].'
     <script>
         jQuery(document).ready(function () {
-
+            $("pre").remove();
             jQuery(`select[id^="select_category-"]`).html(``);
             jQuery(`select[id^="select_tag"]`).html(``);
-            
-            '.$newTagsString.'
+            '.$albumsString.$tagsString.$newTagsString.'
             jQuery(`select[id^="select_tag-"]`).each(function() {
                 var selects = jQuery(this);
                 jQuery.each(newTags, function(index, optionData) {
@@ -159,6 +164,9 @@ if (curl_errno($ch)) {
                     placeholder: "Chọn tag",  
                     allowClear: false               
                 });
+                // Set multiple values
+                selects.val(tags).trigger("change"); 
+
             });
             
             '.$newOptionsString.'
@@ -172,9 +180,11 @@ if (curl_errno($ch)) {
                 });
 
                 selectElement.select2({
-                    placeholder: "Chọn giá trị",  
+                    placeholder: "Chọn albums",  
                     allowClear: false               
                 });
+
+                selectElement.val(albums).trigger("change"); 
             });
         });
     </script>
