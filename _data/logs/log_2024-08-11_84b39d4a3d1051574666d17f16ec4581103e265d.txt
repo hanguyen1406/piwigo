@@ -1,2 +1,0 @@
-[2024-08-11 6:24:04]	[DEBUG]	[admin/intro::299] recent activity calculated in 0.004 s
-[2024-08-11 15:23:24]	[DEBUG]	[admin/intro::299] recent activity calculated in 0.016 s
