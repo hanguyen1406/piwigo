@@ -310,16 +310,16 @@ SELECT picture_id
     'is_gvideo' => 1,
     );
     
-  if ($config['sync_description'] and !empty($video['description']))
-  {
-    $updates['comment'] = pwg_db_real_escape_string($video['description']);
-  }
+  // if ($config['sync_description'] and !empty($video['description']))
+  // {
+  //   $updates['comment'] = pwg_db_real_escape_string($video['description']);
+  // }
   
-  if ($config['sync_tags'] and !empty($video['tags']))
-  {
-    $tags = pwg_db_real_escape_string($video['tags']);
-    set_tags(get_tag_ids($tags), $image_id);
-  }
+  // if ($config['sync_tags'] and !empty($video['tags']))
+  // {
+  //   $tags = pwg_db_real_escape_string($video['tags']);
+  //   set_tags(get_tag_ids($tags), $image_id);
+  // }
   
   single_update(
     IMAGES_TABLE,

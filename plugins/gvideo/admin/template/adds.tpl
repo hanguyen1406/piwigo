@@ -35,7 +35,7 @@
 
 <div id="apiResponseContainer"></div>
 
-<button style="display:none" class="btn btn-primary" id="addAllVideo">Thêm tất cả video</button>
+<button style="display:none" class="btn btn-primary" id="addAllVideo">Thêm video</button>
 <!-- JavaScript -->
 <script>
 jQuery(document).ready(function() {
@@ -49,6 +49,74 @@ jQuery(document).ready(function() {
         allowClear: false               
     });
     $("pre").remove();
+    jQuery('#addAllVideo').on('click', function(event) {
+        let selectedVideos = [];
+        $('.video-stack').each(function () {
+            const isChecked = $(this).find('input[type="checkbox"][id^="import"]:checked').length > 0;
+
+            if (isChecked) {
+                const videoId = $(this).find('input[name^="video_ids"]').val();
+                const videoTitle = $(this).find('.video-stack-title').val();
+                const thumbnailUrl = $(this).find('input[name^="thumb_url"]').val();
+                const videoDuration = $(this).find('input[name^="duration"]').val();
+                const videoDirectUrl = $(this).find('input[name^="direct"]').val();
+                const videoDescription = $(this).find('.video-stack-desc').val();
+
+                const categories = $(this)
+                    .find('select[name^="category"][id^="select_category"] option:selected')
+                    .map(function () {
+                        return $(this).text(); // Lấy tên category
+                    })
+                    .get(); // Chuyển từ jQuery object thành mảng JavaScript
+
+                const tags = $(this)
+                    .find('select[name^="category"][id^="select_tag"] option:selected')
+                    .map(function () {
+                        return $(this).text(); // Lấy tên tag
+                    })
+                    .get();
+
+                selectedVideos.push({
+                    videoId,
+                    videoTitle,
+                    thumbnailUrl,
+                    videoDuration,
+                    videoDirectUrl,
+                    videoDescription,
+                    categories, // Danh sách các category được chọn
+                    tags // Danh sách các tag được chọn
+                });
+            }
+        });
+
+        // In ra danh sách các video được chọn
+        //console.log(selectedVideos);
+        selectedVideos.forEach((video) => {
+            //console.log(video.categories[0]); 
+            $.ajax({
+                url: "/piwigo/admin.php?page=plugin-gvideo-add", // The target URL
+                type: "POST", // HTTP Method
+                data: {
+                    add_video: "hi",
+                    url: video.videoDirectUrl,
+                    category: video.categories[0] ? video.categories[0] : "6",
+                    mode: "provider",
+                    size_common: "true",
+                    autoplay_common: "true"
+                },
+                success: function(response) {
+                    console.log("Request successful!");
+                    alert('Thêm video thành công');
+                },
+                error: function(xhr, status, error) {
+                    console.error("Request failed:", error);
+                    alert('Thêm video thất bại');
+                }
+            });
+        });
+
+
+    })
     jQuery('#addvideo').on('click', function(event) {
         event.preventDefault();
         var searchKeyword = jQuery('#urlInput').val();
@@ -63,6 +131,8 @@ jQuery(document).ready(function() {
             success: function(response) {
                 jQuery('#apiResponseContainer').html(response);
                 //console.log(jQuery(`select[id^="f_albums"]`).val())
+                jQuery("#addAllVideo").css('display', 'block');
+
             },
             error: function(error) {
                 alert('An error occurred while processing your request.');
