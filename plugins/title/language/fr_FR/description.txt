@@ -1,0 +1,1 @@
+Permet de personnaliser la balise "< title >" des différentes page de Piwigo

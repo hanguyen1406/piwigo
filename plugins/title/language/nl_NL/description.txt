@@ -1,0 +1,1 @@
+Maakt het mogelijk om tag < titel > aan te passen voor verschillende Piwigo-pagina's

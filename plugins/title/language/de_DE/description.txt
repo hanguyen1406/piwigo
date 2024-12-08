@@ -1,0 +1,1 @@
+Es erlaubt Ihnen die anpassung des Tags <title> von verschiedenen Piwigoseiten.

@@ -1,0 +1,1 @@
+Farklı Piwigo sayfalarının etiketlerini < title > özelleştirmenize olanak verir

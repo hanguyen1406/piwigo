@@ -1,0 +1,1 @@
+Umožní nastaviť značku (tag) < title > inak ako je to na stránke Piwigo

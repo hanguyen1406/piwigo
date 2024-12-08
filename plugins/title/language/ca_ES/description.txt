@@ -1,0 +1,1 @@
+Permet personalitzar l'etiqueta <title> per les pàgines de la galeria.
