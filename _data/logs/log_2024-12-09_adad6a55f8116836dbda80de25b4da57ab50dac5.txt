@@ -1,0 +1,35 @@
+[2024-12-09 13:37:58]	[DEBUG]	[i.php]	
+  src_path: '20240920094411-17dd12db.jpg'
+  derivative_path: '20240920094411-17dd12db-cu_e520x360.jpg'
+  o_size: '558 414 231012'
+  d_size: '520 359 186680'
+  mem_usage: 0.8
+  timing: array(
+    'load' => 58,
+    'rotate' => '',
+    'crop' => 60,
+    'scale' => 137,
+    'sharpen' => '',
+    'watermark' => 85,
+    'save' => 26,
+    'send' => 0,
+    'total' => 368,
+  )
+[2024-12-09 13:37:58]	[DEBUG]	[i.php]	
+  src_path: '20240907171358-05c0c3b2.jpg'
+  derivative_path: '20240907171358-05c0c3b2-cu_e520x360.jpg'
+  o_size: '1000 1000 1000000'
+  d_size: '520 359 186680'
+  mem_usage: 0.4
+  timing: array(
+    'load' => 225,
+    'rotate' => '',
+    'crop' => 155,
+    'scale' => 66,
+    'sharpen' => '',
+    'watermark' => 32,
+    'save' => 5,
+    'send' => 0,
+    'total' => 485,
+  )
+[2024-12-09 13:38:01]	[DEBUG]	[admin/intro::299] recent activity calculated in 0.008 s
