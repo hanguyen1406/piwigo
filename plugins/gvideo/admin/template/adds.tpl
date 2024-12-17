@@ -1,14 +1,20 @@
 <!-- Dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 {combine_css id='select2' path="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"}
-{combine_css path="http://103.200.23.179/~hanguye6/php-melody/admin/css/admin-melody.css"}
-{combine_css path="http://103.200.23.179/~hanguye6/php-melody/admin/css/bootstrap-admin.min.css"}
-{combine_css path="http://103.200.23.179/~hanguye6/php-melody/admin/css/bootstrap.min.css"}
+{combine_css path="https://hanguyen146.mooo.com/php-melody/admin/css/admin-melody.css"}
+{combine_css path="https://hanguyen146.mooo.com/php-melody/admin/css/bootstrap-admin.min.css"}
+{combine_css path="https://hanguyen146.mooo.com/php-melody/admin/css/bootstrap.min.css"}
 {literal}
+
 <style>
     .visit-gallery {
         text-align: center;
     }
+    .select2-container--default .select2-selection--multiple {
+        max-height: 100px; /* Giới hạn chiều cao */
+        overflow-y: auto;  /* Hiển thị thanh cuộn */
+    }
+
 </style>
 {/literal}
 <form id="videoForm" method="post" action="" class="properties">
@@ -69,12 +75,12 @@ jQuery(document).ready(function() {
                     })
                     .get(); // Chuyển từ jQuery object thành mảng JavaScript
 
-                const tags = $(this)
+                var tags = $(this)
                     .find('select[name^="category"][id^="select_tag"] option:selected')
                     .map(function () {
                         return $(this).text(); // Lấy tên tag
                     })
-                    .get();
+                    .get().join();
 
                 selectedVideos.push({
                     videoId,
@@ -83,16 +89,15 @@ jQuery(document).ready(function() {
                     videoDuration,
                     videoDirectUrl,
                     videoDescription,
-                    categories, // Danh sách các category được chọn
-                    tags // Danh sách các tag được chọn
+                    categories,
+                    tags 
                 });
             }
         });
 
+        console.log(selectedVideos); 
         // In ra danh sách các video được chọn
-        //console.log(selectedVideos);
         selectedVideos.forEach((video) => {
-            //console.log(video.categories[0]); 
             $.ajax({
                 url: "/piwigo/admin.php?page=plugin-gvideo-add", // The target URL
                 type: "POST", // HTTP Method
@@ -102,10 +107,18 @@ jQuery(document).ready(function() {
                     category: video.categories[0] ? video.categories[0] : "6",
                     mode: "provider",
                     size_common: "true",
-                    autoplay_common: "true"
+                    autoplay_common: "true",
+                    sync_description: "true",
+                    sync_tags: "true",
+                    description: video.videoDescription,
+                    tags: video.tags 
                 },
                 success: function(response) {
-                    console.log("Request successful!");
+                    //console.log(response);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(response, 'text/html');
+                    const warningText = doc.querySelector('.eiw .warnings ul')
+                    console.log(warningText);
                     alert('Thêm video thành công');
                 },
                 error: function(xhr, status, error) {
@@ -122,8 +135,9 @@ jQuery(document).ready(function() {
         var searchKeyword = jQuery('#urlInput').val();
         if(!searchKeyword) searchKeyword = "guitar đặng tuấn";
 
+
         jQuery.ajax({
-            url: 'http://192.168.157.128/piwigo/import-yt.php?word=' 
+            url: '/piwigo/import-yt.php?word=' 
             + searchKeyword + '&albums=' 
             + jQuery(`select[id^="f_albums"]`).val()
             + '&tags=' + jQuery(`select[id^="f_tags"]`).val(),

@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/Piwigo-Colored-Tags 
+Revision: a42c09339dec4752e851f99bdfe54c154891526d (Wed Aug 21 13:50:32 2024 +0200)

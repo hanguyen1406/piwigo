@@ -27,7 +27,7 @@ if($tags != ""){
 $ch = curl_init();
 
 // Set the URL
-$url = "http://103.200.23.179/~hanguye6/php-melody/admin/admin-ajax.php";
+$url = "https://hanguyen146.mooo.com/php-melody/admin/admin-ajax.php";
 
 // Set the request headers
 $headers = [
@@ -149,15 +149,37 @@ if (curl_errno($ch)) {
     </style>
     '.$response_data['html'].'
     <script>
+        async function getYouTubeTags(videoId, apiKey) {
+            var apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`;
+            try {
+                const response = await $.ajax({
+                    url: apiUrl,
+                    type: "GET",
+                });
+                if (response.items && response.items.length > 0 && response.items[0].snippet.tags) {
+                    return response.items[0].snippet.tags;
+                } else {
+                    return []; // Không có tags
+                }
+            } catch (error) {
+                console.log("Không thể kết nối tới YouTube API.");
+                return [];
+            }
+        }
+        var apiKey = "AIzaSyB526qh8k1-BCf6CxgApU4Sv_NLLNVy-kQ"; 
         jQuery(document).ready(function () {
             $("pre").remove();
             jQuery(`select[id^="select_category-"]`).html(``);
             jQuery(`select[id^="select_tag"]`).html(``);
             '.$albumsString.$tagsString.$newTagsString.'
-            jQuery(`select[id^="select_tag-"]`).each(function() {
+            jQuery(`select[id^="select_tag-"]`).each(async function(index) {
                 var selects = jQuery(this);
-                jQuery.each(newTags, function(index, optionData) {
-                    var newOption = jQuery(`<option></option>`).val(optionData.value).text(optionData.text);
+                var hrefValue = $(".stack-preview a").eq(index).attr("href");
+                var videoId = hrefValue.split("v=")[1];
+                var tags = await getYouTubeTags(videoId, apiKey);
+
+                jQuery.each(tags, function(index, optionData) {
+                    var newOption = jQuery(`<option></option>`).val(optionData).text(optionData);
                     selects.append(newOption); 
                 });
                 selects.select2({

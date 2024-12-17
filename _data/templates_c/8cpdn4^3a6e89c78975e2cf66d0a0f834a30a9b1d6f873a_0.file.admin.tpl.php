@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-09-20 11:58:53
+/* Smarty version 4.3.1, created on 2024-12-11 17:53:12
   from '/var/www/html/piwigo/admin/themes/default/template/admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_66ed010d07b8f0_75833618',
+  'unifunc' => 'content_67596f18439ea4_35714246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/colorbox.inc.tpl' => 1,
   ),
 ),false)) {
-function content_66ed010d07b8f0_75833618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67596f18439ea4_35714246 (Smarty_Internal_Template $_smarty_tpl) {
 $_block_plugin2 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
 if (!is_callable(array($_block_plugin2, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');

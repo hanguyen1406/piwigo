@@ -3,7 +3,6 @@ defined('GVIDEO_PATH') or die('Hacking attempt!');
 
 include_once(GVIDEO_PATH.'include/functions.inc.php');
 include_once(PHPWG_ROOT_PATH . 'admin/include/functions_upload.inc.php');
-echo 'hi';
 if (isset($_POST['add_video']))
 {
   $_POST['url'] = trim($_POST['url']);

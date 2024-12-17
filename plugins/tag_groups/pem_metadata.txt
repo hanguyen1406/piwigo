@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/piwigo-tag_groups 
+Revision: d9624068430fbc5060e6ebc0fdc11e83c16e2543 (Mon Sep 9 11:07:46 2024 +0200)

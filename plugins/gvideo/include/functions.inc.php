@@ -309,17 +309,31 @@ SELECT picture_id
     'author' => pwg_db_real_escape_string($video['author']),
     'is_gvideo' => 1,
     );
-    
-  // if ($config['sync_description'] and !empty($video['description']))
-  // {
-  //   $updates['comment'] = pwg_db_real_escape_string($video['description']);
-  // }
+  //$page['warnings'][] = implode(',',$config);
+  if ($config['sync_description'] and !empty($config['description']))
+  {
+    $updates['comment'] = pwg_db_real_escape_string($video['description']);
+  }
   
-  // if ($config['sync_tags'] and !empty($video['tags']))
-  // {
-  //   $tags = pwg_db_real_escape_string($video['tags']);
-  //   set_tags(get_tag_ids($tags), $image_id);
-  // }
+  if ($config['sync_tags'] and !empty($config['tags']))
+  {
+    $tags = $config['tags'];
+    // $page['warnings'][] = implode(',',$tags);
+
+    // $tags = explode(',', $tags);
+
+    // for ($i = 0; $i < count($tags); $i++) {
+    //   $tag_name = $tags[$i].trim();
+    //   pwg_query('INSERT INTO piwigo_tags (name, url_name)
+    //   SELECT "'.$tag_name.'", "'.$tag_name.'"
+    //   WHERE NOT EXISTS (
+    //       SELECT 1 FROM piwigo_tags WHERE name = "'.$tag_name.'"
+    //   )');
+
+    // }
+    set_tags(get_tag_ids($tags), $image_id);
+
+  }
   
   single_update(
     IMAGES_TABLE,
