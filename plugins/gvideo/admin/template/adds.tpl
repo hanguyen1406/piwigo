@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
         allowClear: false               
     });
     $("pre").remove();
-    jQuery('#addAllVideo').on('click', function(event) {
+    jQuery('#addAllVideo').on('click',async function(event) {
         let selectedVideos = [];
         $('.video-stack').each(function () {
             const isChecked = $(this).find('input[type="checkbox"][id^="import"]:checked').length > 0;
@@ -67,11 +67,11 @@ jQuery(document).ready(function() {
                 const videoDuration = $(this).find('input[name^="duration"]').val();
                 const videoDirectUrl = $(this).find('input[name^="direct"]').val();
                 const videoDescription = $(this).find('.video-stack-desc').val();
-
+                
                 const categories = $(this)
                     .find('select[name^="category"][id^="select_category"] option:selected')
                     .map(function () {
-                        return $(this).text(); // Lấy tên category
+                        return $(this).val(); // Lấy tên category
                     })
                     .get(); // Chuyển từ jQuery object thành mảng JavaScript
 
@@ -96,38 +96,44 @@ jQuery(document).ready(function() {
         });
 
         console.log(selectedVideos); 
-        // In ra danh sách các video được chọn
-        selectedVideos.forEach((video) => {
-            $.ajax({
-                url: "/piwigo/admin.php?page=plugin-gvideo-add", // The target URL
-                type: "POST", // HTTP Method
-                data: {
-                    add_video: "hi",
-                    url: video.videoDirectUrl,
-                    category: video.categories[0] ? video.categories[0] : "6",
-                    mode: "provider",
-                    size_common: "true",
-                    autoplay_common: "true",
-                    sync_description: "true",
-                    sync_tags: "true",
-                    description: video.videoDescription,
-                    tags: video.tags 
-                },
-                success: function(response) {
-                    //console.log(response);
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(response, 'text/html');
-                    const warningText = doc.querySelector('.eiw .warnings ul')
-                    console.log(warningText);
-                    alert('Thêm video thành công');
-                },
-                error: function(xhr, status, error) {
-                    console.error("Request failed:", error);
-                    alert('Thêm video thất bại');
-                }
+        if(selectedVideos.length==0) {
+            alert('Chưa chọn video nào');
+        }
+        else if(selectedVideos[0].categories == '') {
+            alert('Chưa chọn albums!!!');
+        }
+        else {
+            await selectedVideos.forEach((video) => {
+                $.ajax({
+                    url: "/piwigo/admin.php?page=plugin-gvideo-add", // The target URL
+                    type: "POST", // HTTP Method
+                    data: {
+                        add_video: "hi",
+                        url: video.videoDirectUrl,
+                        category: video.categories[0] ? video.categories[0] : "6",
+                        mode: "provider",
+                        size_common: "true",
+                        autoplay_common: "true",
+                        sync_description: "true",
+                        sync_tags: "true",
+                        description: video.videoDescription,
+                        tags: video.tags 
+                    },
+                    success: function(response) {
+                        //console.log(response);
+                        //const parser = new DOMParser();
+                        //const doc = parser.parseFromString(response, 'text/html');
+                        //const warningText = doc.querySelector('.eiw .warnings ul')
+                        //console.log(warningText);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Request failed:", error);
+                        alert('Thêm video thất bại');
+                    }
+                });
             });
-        });
-
+            alert('Thêm video thành công');
+        }
 
     })
     jQuery('#addvideo').on('click', function(event) {
@@ -137,7 +143,7 @@ jQuery(document).ready(function() {
 
 
         jQuery.ajax({
-            url: '/piwigo/import-yt.php?word=' 
+            url: '/piwigo/plugins/import-yt.php?word=' 
             + searchKeyword + '&albums=' 
             + jQuery(`select[id^="f_albums"]`).val()
             + '&tags=' + jQuery(`select[id^="f_tags"]`).val(),

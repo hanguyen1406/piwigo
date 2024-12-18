@@ -318,19 +318,7 @@ SELECT picture_id
   if ($config['sync_tags'] and !empty($config['tags']))
   {
     $tags = $config['tags'];
-    // $page['warnings'][] = implode(',',$tags);
-
-    // $tags = explode(',', $tags);
-
-    // for ($i = 0; $i < count($tags); $i++) {
-    //   $tag_name = $tags[$i].trim();
-    //   pwg_query('INSERT INTO piwigo_tags (name, url_name)
-    //   SELECT "'.$tag_name.'", "'.$tag_name.'"
-    //   WHERE NOT EXISTS (
-    //       SELECT 1 FROM piwigo_tags WHERE name = "'.$tag_name.'"
-    //   )');
-
-    // }
+    
     set_tags(get_tag_ids($tags), $image_id);
 
   }

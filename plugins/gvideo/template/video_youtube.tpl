@@ -1,10 +1,10 @@
 <div id=player class="col-xs-12 col-sm-12 col-md-12 wide-player">
 <div id=video-wrapper>
-<link href=video-js.min.css rel=stylesheet>
-<link href=video-js.pm.css rel=stylesheet>
-<script src=video.min.js></script>
-<script src=videojs.hotkeys.min.js></script>
-<script src=youtube.js></script>
+<link href=/piwigo/plugins/video-js.min.css rel=stylesheet>
+<link href=/piwigo/plugins/video-js.pm.css rel=stylesheet>
+<script src=/piwigo/plugins/video.min.js></script>
+<script src=/piwigo/plugins/videojs.hotkeys.min.js></script>
+<script src=/piwigo/plugins/youtube.js></script>
 <div id=Playerholder>
 <div data-setup='{ "techOrder": ["youtube","html5"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={$GVIDEO.video_id}s"}],  "controls": true, "autoplay": false }' preload=auto poster="" class="video-js vjs-default-skin video-js-dimensions vjs-controls-enabled vjs-workinghover vjs-v7 vjs-youtube vjs-has-started vjs-paused vjs-user-inactive" id=video-js src="" tabindex=-1 lang=en-us role=region aria-label="Video Player" style=outline:0>
 <div>
