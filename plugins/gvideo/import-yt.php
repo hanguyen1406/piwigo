@@ -61,6 +61,8 @@ $data = http_build_query([
 ]);
 
 // Set cURL options
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return the response instead of printing it
 curl_setopt($ch, CURLOPT_POST, true); // Send as POST request
@@ -74,6 +76,8 @@ $domain = $_SERVER['HTTP_HOST'];
 $ch2 = curl_init();
 $url2 = $domain."/piwigo/ws.php?format=json&method=pwg.album.get";
 
+curl_setopt($ch2, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch2, CURLOPT_URL, $url2);
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch2, CURLOPT_HTTPGET, true); 
@@ -94,6 +98,8 @@ $newOptionsString = "var newOptions = [\n" . implode(",\n", $newOptions) . "\n];
 $ch3 = curl_init();
 $url3 = $domain."/piwigo/ws.php?format=json&method=pwg.tags.getAdminList";
 
+curl_setopt($ch3, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch3, CURLOPT_URL, $url3);
 curl_setopt($ch3, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch3, CURLOPT_HTTPGET, true); 
@@ -101,8 +107,8 @@ curl_setopt($ch3, CURLOPT_HTTPHEADER, ["Accept: application/json"]);
 
 // Execute the second request
 $response3 = curl_exec($ch3);
+//echo $response3;
 $response_data3 = json_decode($response3, true);
-
 // $newOptions = [];
 foreach ($response_data3['result']['tags'] as $index => $item) {
     // echo $item['name'];

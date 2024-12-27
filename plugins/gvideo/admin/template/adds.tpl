@@ -143,7 +143,7 @@ jQuery(document).ready(function() {
 
 
         jQuery.ajax({
-            url: '/piwigo/plugins/import-yt.php?word=' 
+            url: '/piwigo/plugins/gvideo/import-yt.php?word=' 
             + searchKeyword + '&albums=' 
             + jQuery(`select[id^="f_albums"]`).val()
             + '&tags=' + jQuery(`select[id^="f_tags"]`).val(),

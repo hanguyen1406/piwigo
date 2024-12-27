@@ -1,0 +1,2 @@
+Adds a Photo Batch Manager action to create registered custom
+derivative images.

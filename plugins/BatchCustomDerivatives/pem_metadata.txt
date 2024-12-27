@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/sshambar/BatchCustomDerivatives 
+Revision: a02ec73805c6bafda0b8ff97bf961391fba6d87e (Tue Dec 22 13:57:37 2020 -0800)
