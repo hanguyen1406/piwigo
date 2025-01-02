@@ -2,4 +2,5 @@
 *.png
 _data/combined
 _data/templates_c
+_data/cache
 _data/
