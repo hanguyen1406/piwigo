@@ -90,7 +90,7 @@ function delete_derivatives_new(ids){
         regenerateError: '0'
     },
     success: (response) => {
-        console.log('Response:', response);
+      //console.log('Response:', response);
     },
     error: (xhr, status, error) => {
         console.error('Error:', error);
