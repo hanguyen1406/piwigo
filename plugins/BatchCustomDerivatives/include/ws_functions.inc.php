@@ -223,7 +223,7 @@ class BatchCustomDerivatives_WS {
 			// all unrecognized custom types?
 			return array( 'urls' => array() );
 		}
-
+		
 		$max_urls = $params['max_urls'];
 		$query    = 'SELECT MAX(id)+1, COUNT(*) FROM ' . IMAGES_TABLE . ';';
 		list( $max_id, $image_count ) = pwg_db_fetch_row( pwg_query( $query ) );
@@ -257,7 +257,7 @@ SELECT id, path, representative_ext, width, height, rotation
   ORDER BY id DESC
   LIMIT ' . $qlimit . '
 ;';
-
+		//echo $where_clauses;
 		$urls = array();
 		$file_path = $params['watermark'];
 		$watermark = new WatermarkParams();

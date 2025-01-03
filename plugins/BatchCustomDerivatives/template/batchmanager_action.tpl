@@ -36,6 +36,69 @@ function bcd_progress(success) {
   }
 }
 
+function delete_derivatives_new(ids){
+  $.ajax({
+    url: 'http://192.168.157.128/piwigo/admin.php?page=batch_manager',
+    method: 'POST',
+    headers: {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    data: {
+        start: '0',
+        pwg_token: '{$PWG_TOKEN}',
+        filter_prefilter: 'caddie',
+        filter_category_use: 'on',
+        filter_category: '6',
+        filter_category_recursive: 'on',
+        tag_mode: 'AND',
+        filter_level: '0',
+        filter_dimension_min_width: '480',
+        filter_dimension_max_width: '1920',
+        filter_dimension_min_height: '358',
+        filter_dimension_max_height: '1920',
+        filter_dimension_min_ratio: '0.56',
+        filter_dimension_max_ratio: '1.77',
+        q: '',
+        filter_filesize_min: '0.0',
+        filter_filesize_max: '0.7',
+        whole_set: '',
+        'selection[]': ids,
+        selectAction: 'delete_derivatives',
+        confirm_deletion: '1',
+        submit: '',
+        associate: '',
+        dissociate: '6',
+        author: '',
+        title: '',
+        date_creation: '2025-01-03 00:00:00',
+        level: '0',
+        'del_derivatives_type[]': ['square', 'thumb', 'medium', 'custom'],
+        fs_price: 'default',
+        swap_price: '',
+        swap_dl_price: '',
+        price: 'default',
+        nb_credits: '4',
+        radio: 'apply',
+        albums: '-',
+        file_link: '',
+        'w[file]': '',
+        watermarkImage: '',
+        isSelectImage: 'true',
+        'w[opacity]': '',
+        regenerateSuccess: '0',
+        regenerateError: '0'
+    },
+    success: (response) => {
+        console.log('Response:', response);
+    },
+    error: (xhr, status, error) => {
+        console.error('Error:', error);
+    }
+  });
+
+}
+
 function bcd_getDerivativeUrls() {
   var ids = bcd_derivatives.elements.splice(0, 500);
   var params = { max_urls: 100000, ids: ids, types: [] };
@@ -45,6 +108,10 @@ function bcd_getDerivativeUrls() {
   } );
   params.watermark = jQuery("#wSelect").find(":selected").val();
   params.opacity = jQuery("#wOpacity").val();
+  console.log(params);
+  delete_derivatives_new(params.ids)
+
+  //return 1;
 {*  if(jQuery("#isSelectImage").val() == 'false'){*}
 {*    params.append('watermarkImages', $('input[type=file]')[0].files[0])*}
 {*  }*}
@@ -125,6 +192,7 @@ $(document).ready(function() {
 {/footer_script}
 <!-- generate derivatives -->
 <div id="bcd_action_generate_derivatives" class="bulkAction">
+  <p>{$PWG_TOKEN}</p>
   <a href="javascript:bcd_selectAll()">{'All'|translate}</a>,
   <a href="javascript:bcd_selectNone()">{'None'|translate}</a>
   <br>
