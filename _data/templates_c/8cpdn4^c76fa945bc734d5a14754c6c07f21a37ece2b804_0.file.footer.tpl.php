@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-12-11 17:53:12
+/* Smarty version 4.3.1, created on 2025-01-16 22:36:51
   from '/var/www/html/piwigo/admin/themes/default/template/footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_67596f1851a901_11722864',
+  'unifunc' => 'content_6789279356e2d2_43506694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67596f1851a901_11722864 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6789279356e2d2_43506694 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
 <?php if ((isset($_smarty_tpl->tpl_vars['footer_elements']->value))) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['footer_elements']->value, 'elt');

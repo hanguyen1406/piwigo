@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-12-11 17:53:12
+/* Smarty version 4.3.1, created on 2025-01-16 22:36:50
   from '/var/www/html/piwigo/admin/themes/default/template/admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_67596f18439ea4_35714246',
+  'unifunc' => 'content_67892792eb1fd3_96782217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/colorbox.inc.tpl' => 1,
   ),
 ),false)) {
-function content_67596f18439ea4_35714246 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67892792eb1fd3_96782217 (Smarty_Internal_Template $_smarty_tpl) {
 $_block_plugin2 = isset($_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0]) ? $_smarty_tpl->smarty->registered_plugins['block']['footer_script'][0][0] : null;
 if (!is_callable(array($_block_plugin2, 'block_footer_script'))) {
 throw new SmartyException('block tag \'footer_script\' not callable or registered');
@@ -208,8 +208,8 @@ if ((isset($_smarty_tpl->tpl_vars['U_UPDATES']->value))) {?>
 </a></li>
         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['U_SHOW_TEMPLATE_TAB']->value;
-$_prefixVariable1 = ob_get_clean();
-if ($_prefixVariable1) {?>
+$_prefixVariable2 = ob_get_clean();
+if ($_prefixVariable2) {?>
           <li><a href="<?php echo $_smarty_tpl->tpl_vars['U_CONFIG_EXTENTS']->value;?>
 "><i class="icon-code"></i><?php echo l10n('Templates');?>
 </a></li>

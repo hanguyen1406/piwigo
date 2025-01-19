@@ -124,6 +124,7 @@ function ppppp_append_form($tpl_source)
           height: 55px;
           justify-content: center;
           align-items: center; 
+          color: white;
         }
         #ai-loading{
           width: 40px;
@@ -173,7 +174,7 @@ function ppppp_append_form($tpl_source)
     }
 
     async function swapApi(){
-      document.querySelector("#ok").innerHTML = "VUI LÒNG CHỜ<img id=ai-loading src=loading.gif />";
+      document.querySelector("#ok").innerHTML = "VUI LÒNG CHỜ<img id=ai-loading src=plugins/PayPalShoppingCart/loading.gif />";
       // console.log(img1, img2);
       const res = await fetch(
       "https://hanguyen146-faceswap.hf.space/api/predict",

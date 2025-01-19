@@ -38,7 +38,7 @@ function bcd_progress(success) {
 
 function delete_derivatives_new(ids){
   $.ajax({
-    url: 'http://192.168.157.128/piwigo/admin.php?page=batch_manager',
+    url: '/piwigo/admin.php?page=batch_manager',
     method: 'POST',
     headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',

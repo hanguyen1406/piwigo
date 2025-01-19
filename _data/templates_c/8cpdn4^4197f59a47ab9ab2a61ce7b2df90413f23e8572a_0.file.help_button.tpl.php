@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2024-12-11 17:53:12
+/* Smarty version 4.3.1, created on 2025-01-16 22:36:50
   from '/var/www/html/piwigo/plugins/ExtendedDescription/template/help_button.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_67596f183ed6d9_90168515',
+  'unifunc' => 'content_67892792bd08b2_74916413',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4197f59a47ab9ab2a61ce7b2df90413f23e8572a' => 
     array (
       0 => '/var/www/html/piwigo/plugins/ExtendedDescription/template/help_button.tpl',
-      1 => 1719042203,
+      1 => 1735298564,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67596f183ed6d9_90168515 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67892792bd08b2_74916413 (Smarty_Internal_Template $_smarty_tpl) {
 echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['combine_script'][0], array( array('id'=>'core.scripts','load'=>'async','path'=>'themes/default/js/scripts.js'),$_smarty_tpl ) );?>
 
 <a class="button icon-help-circled" href="<?php echo $_smarty_tpl->tpl_vars['ROOT_URL']->value;?>
