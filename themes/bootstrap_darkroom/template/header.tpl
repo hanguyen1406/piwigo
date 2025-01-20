@@ -56,6 +56,9 @@
 {strip}
 {if $theme_config->bootstrap_theme} {* see https://github.com/tkuther/piwigo-bootstrap-darkroom/issues/104 *}
     {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
+    {if is_file("themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/skin.css")}
+      {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/skin.css" order=-10}
+    {/if}
 {else}
     {combine_css path="themes/bootstrap_darkroom/css/bootstrap-default/bootstrap.min.css" order=-20}
 {/if}
@@ -118,14 +121,10 @@
                 <div class="collapse navbar-collapse" id="navbar-menubar">
 {if $theme_config->quicksearch_navbar}
                   <form class="form-inline navbar-form ml-auto" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
-                    <div style="margin-right: 20px">
-                      <a style="color: white" href="index.php?/add_photos">Upload Photo</a>
-                    </div>
                     <i class="fas fa-search" title="{'Search'|@translate}" aria-hidden="true"></i>
                     <div class="form-group">
                         <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Search'|@translate}" />
                     </div>
-                    
                   </form>
 {footer_script require='jquery'}
 var qsearch_icon = $('#navbar-menubar>#quicksearch>.fa-search');

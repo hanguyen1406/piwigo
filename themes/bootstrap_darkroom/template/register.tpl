@@ -45,12 +45,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-4">Số điện thoại *</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="phone" id="phone" placeholder="012345678" class="form-control" required="required">
-                    </div>
-                </div>
-                <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
