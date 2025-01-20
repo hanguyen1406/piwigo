@@ -14,8 +14,16 @@ function ppsc_picture()
 {
   global $template, $picture, $user;
   $image_id = $picture['current']['id'];
-  $query = "select * from piwigo_image_plugin where image_id=".$image_id;
-  $result = pwg_db_num_rows(pwg_query($query));
+  $query = pwg_query('
+    SELECT 1 
+    FROM (SELECT id FROM piwigo_tags WHERE name = "faceswap") AS filtered_tags
+    JOIN (SELECT tag_id FROM piwigo_image_tag 
+    WHERE image_id = ' . $picture['current']['id'] . ') AS filtered_image_tag
+    ON filtered_image_tag.tag_id = filtered_tags.id
+    LIMIT 1
+  ');
+
+  $result = pwg_db_num_rows($query);
   $template->assign('display', $result > 0 ? true : false);
 
   $result = pwg_query("SELECT ppcredits FROM piwigo_user_infos WHERE user_id=".$user['id']);

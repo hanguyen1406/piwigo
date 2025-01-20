@@ -76,22 +76,22 @@ jQuery("#ppcreditsBuyPhoto a.buy").click(function(){
 });
 {/footer_script}
 
-<div id="ppcreditsBuyPhoto" data-credits_left="{$CREDITS_LEFT}" data-image_id="{$current.id}">
-{'Download this file'|@translate}
-<ul>
-{foreach from=$ppcredits_sizes item=size}
-  <li>
-  {if isset($size.download_url)}
-    <a class="download" href="{$size.download_url}">{$size.type|translate}</a>
-  {else}
-    <a class="buy" href="#" data-cost="{$size.nb_credits}" data-size="{$size.type}">{$size.label}</a> <img class="loading" src="themes/default/images/ajax-loader-small.gif" style="display:none">
-  {/if}
-  </li>
-{/foreach}
-
-{if $FILE_LINK != ""}
+{if $displaydl =="ngon"}
+  <div id="ppcreditsBuyPhoto" data-credits_left="{$CREDITS_LEFT}" data-image_id="{$current.id}">
+  {'Download this file'|@translate}
+  <ul>
+  {foreach from=$ppcredits_sizes item=size}
+    <li>
+    {if isset($size.download_url)}
+      <a class="download" href="{$size.download_url}">{$size.type|translate}</a>
+    {else}
+      <a class="buy" href="#" data-cost="{$size.nb_credits}" data-size="{$size.type}">{$size.label}</a> <img class="loading" src="themes/default/images/ajax-loader-small.gif" style="display:none">
+    {/if}
+    </li>
+  {/foreach}
+  </ul>
+  </div>
+{/if}
+{if $FILE_LINK}
   <a href="{$FILE_LINK}" target="_blank">Tải xuống file đính kèm</a>
 {/if}
-
-</ul>
-</div>

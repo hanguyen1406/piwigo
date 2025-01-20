@@ -301,6 +301,20 @@ function ppcredits_picture()
     $file_link = $row['path'];
   }
   // print($file_link);
+  //kiểm tra có gắn tag download không thì cho hiện
+  $query = pwg_query('
+    SELECT 1 
+    FROM (SELECT id FROM piwigo_tags WHERE name = "download") AS filtered_tags
+    JOIN (SELECT tag_id FROM piwigo_image_tag WHERE image_id = ' . $picture['current']['id'] . ') AS filtered_image_tag
+    ON filtered_image_tag.tag_id = filtered_tags.id
+    LIMIT 1
+  ');
+  if(pwg_db_num_rows($query) == 0) {
+    $displaydl = "";
+  } else {
+    $row = pwg_db_fetch_assoc($query);
+    $displaydl = "ngon";
+  }
 
   $template->assign(
     array(
@@ -310,7 +324,8 @@ function ppcredits_picture()
       'MISSING_CREDITS_SENTENCE' => $conf['ppcredits']['sell_credits']
         ? l10n('No worry!').' <a href="profile.php">'.l10n('Buy more credits on your profile page.').'</a>'
         : l10n('Need more? Contact us to get more credits.'),
-      'FILE_LINK' => $file_link
+      'FILE_LINK' => $file_link,
+      'displaydl' => $displaydl,
       )
     );
 

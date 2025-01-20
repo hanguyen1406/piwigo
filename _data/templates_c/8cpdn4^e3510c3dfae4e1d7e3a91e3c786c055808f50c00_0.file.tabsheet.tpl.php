@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2025-01-20 10:33:10
+/* Smarty version 4.3.1, created on 2025-01-20 10:57:53
   from '/var/www/html/piwigo/admin/themes/default/template/tabsheet.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_678dc3f62978d3_84751735',
+  'unifunc' => 'content_678dc9c19cc440_60563146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_678dc3f62978d3_84751735 (Smarty_Internal_Template $_smarty_tpl) {
+function content_678dc9c19cc440_60563146 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['tabsheet']->value)) && count($_smarty_tpl->tpl_vars['tabsheet']->value)) {?>
 <div id="tabsheet">
 <ul class="tabsheet">
