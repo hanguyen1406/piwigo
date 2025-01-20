@@ -83,6 +83,8 @@ SELECT '.implode(',', $fields).'
     $userdata );
   $template->assign_var_from_handle('PROFILE_CONTENT', 'profile_content');
 
+
+  
   // include menubar
   $themeconf = $template->get_template_vars('themeconf');
   if (!isset($themeconf['hide_menu_on']) OR !in_array('theProfilePage', $themeconf['hide_menu_on']))
@@ -150,10 +152,10 @@ function save_profile_from_post($userdata, &$errors)
     //   die('Hacking attempt, incorrect language value');
     // }
 
-    // if (!in_array($_POST['theme'], array_keys(get_pwg_themes())))
-    // {
-    //   die('Hacking attempt, incorrect theme value');
-    // }
+    if (!in_array($_POST['theme'], array_keys(get_pwg_themes())))
+    {
+      die('Hacking attempt, incorrect theme value');
+    }
   }
 
   if (isset($_POST['mail_address']))

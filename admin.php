@@ -183,7 +183,7 @@ $conf_link = $link_start.'configuration&amp;section=';
 // $_GET['tab'] is often used to perform and
 // include('admin_page_'.$_GET['tab'].'.php') : we need to protect it to
 // avoid any unexpected file inclusion
-// check_input_parameter('tab', $_GET, false, '/^[a-zA-Z\d_-]+$/');
+check_input_parameter('tab', $_GET, false, '/^[a-zA-Z\d_-]+$/');
 
 // +-----------------------------------------------------------------------+
 // | Template init                                                         |
@@ -221,8 +221,6 @@ $template->assign(
     'U_BATCH'=> $link_start.'batch_manager',
     'U_TAGS'=> $link_start.'tags',
     'U_USERS'=> $link_start.'user_list',
-    'U_FACEBOOK'=> $link_start.'verify_facebook',
-    'U_FOLLOW_PAGE'=> $link_start.'follow_page',
     'U_GROUPS'=> $link_start.'group_list',
     'U_RETURN'=> get_gallery_home_url(),
     'U_ADMIN'=> PHPWG_ROOT_PATH.'admin.php',
@@ -340,6 +338,66 @@ if (
   invalidate_user_cache();
 }
 
+$show_whats_new = false;
+
+$whats_new_major_version = get_branch_from_version(PHPWG_VERSION);
+
+if (userprefs_get_param('show_whats_new_'.$whats_new_major_version, true) and pwg_is_dbconf_writeable())
+{
+  if ($user['registration_date'] > $conf['last_major_update'])
+  {
+    userprefs_update_param('show_whats_new_'.$whats_new_major_version, false);
+  }
+  else
+  {
+    // purge old whats_new_*
+    if (isset($user['preferences']))
+    {
+      $userprefs_params_to_delete = array();
+
+      foreach (array_keys($user['preferences']) as $pref_param)
+      {
+        if (preg_match('/^whats_new_/', $pref_param))
+        {
+          $userprefs_params_to_delete[] = $pref_param;
+        }
+      }
+
+      if (count($userprefs_params_to_delete) > 0)
+      {
+        userprefs_delete_param($userprefs_params_to_delete);
+      }
+    }
+
+    $show_whats_new = true;
+  }
+}
+
+$release_note_url = PHPWG_URL.'/releases/'.$whats_new_major_version.'.0.0';
+
+$whats_new_imgs = array(
+  '1' =>'https://ressources.piwigo.com/uploads/c/v/7/cv7jpz6hf8//2024/11/07/20241107171642-58ded6af.png',
+  '2' =>'https://ressources.piwigo.com/uploads/c/v/7/cv7jpz6hf8//2024/11/07/20241107171642-9d651969.png',
+  '3' =>'https://ressources.piwigo.com/uploads/c/v/7/cv7jpz6hf8//2024/11/07/20241107171643-d659d017.png',
+  '4' =>'https://ressources.piwigo.com/uploads/c/v/7/cv7jpz6hf8//2024/11/07/20241107171642-1109101f.png',
+);
+
+$display_bell = false;
+if (strtotime($conf['last_major_update']) > strtotime('1 month ago'))
+{
+  $display_bell = true;
+}
+
+$template->assign(
+  array(
+  'SHOW_WHATS_NEW' => $show_whats_new,
+  'WHATS_NEW_MAJOR_VERSION' => $whats_new_major_version,
+  'RELEASE_NOTE_URL' => $release_note_url,
+  'WHATS_NEW_IMGS' => $whats_new_imgs,
+  'DISPLAY_BELL' => $display_bell,
+  )
+);
+
 // +-----------------------------------------------------------------------+
 // | Include specific page                                                 |
 // +-----------------------------------------------------------------------+
@@ -353,6 +411,7 @@ $template->assign('ACTIVE_MENU', get_active_menu($page['page']));
 // | Sending html code                                                     |
 // +-----------------------------------------------------------------------+
 
+// Add the Piwigo Official menu
 $template->assign( 'pwgmenu', pwg_URL() );
 
 include(PHPWG_ROOT_PATH.'include/page_header.php');
@@ -393,4 +452,5 @@ ini_set('display_errors', 1);
 
 
 include(PHPWG_ROOT_PATH.'include/page_tail.php');
+
 ?>

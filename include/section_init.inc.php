@@ -244,7 +244,6 @@ if ('categories' == $page['section'])
     }
 
     $page['items'] = get_image_ids_for_categories($cat_ids);
-    // printf($page['items']);
   }
   elseif
     (
@@ -612,7 +611,7 @@ elseif ('recent_cats'==$page['section'])
 }
 elseif ('search'==$page['section'])
 {
-  $page['meta_robots']['nofollow']=1;
+  $page['meta_robots']=array('noindex'=>1, 'nofollow'=>1);
 }
 if ( $filter['enabled'] )
 {

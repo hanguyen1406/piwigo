@@ -54,7 +54,7 @@ if (isset($_POST['submit']))
     $page['errors'],
     isset($_POST['send_password_by_mail'])
     );
-  
+
   
 
   if (count($page['errors']) == 0)

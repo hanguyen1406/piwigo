@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Finnish [FI]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=686
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -432,3 +432,27 @@ $lang['Cancel'] = 'Peruuta';
 $lang['Album title'] = 'Albumin otsikko';
 $lang['Album description'] = 'Albumin kuvaus';
 $lang['%d visits'] = '%d vierailua';
+$lang['Pre-established filters are proposed, but you can add or remove them using the "Choose filters" button.'] = 'Ennaltamääriteltyjä suodattimia ehdotetaan, mutta voit lisätä tai poistaa niitä käyttämällä "Valitse suodattimet" -painiketta.';
+$lang['Tags listed here match your search by word. Click on one to browse by tag.'] = 'Tässä listatut tagit vastaavat hakusanaasi. Paina sellaisesta selataksesi tageittain.';
+$lang['Search in :'] = 'Hae täältä : ';
+$lang['Search in this set'] = 'Hae tästä joukosta';
+$lang['You can try to edit your filters and perform a new search.'] = 'Voit yrittää muokata suodattimia ja tehdä uuden haun.';
+$lang['Tags found'] = 'Tageja löydetty';
+$lang['The PDF you requested is too large to display on this page.'] = 'Pyytämäsi PDF on liian suuri tällä sivulla näytettäväksi.';
+$lang['Unknown time period'] = 'Tuntematon aikaväli';
+$lang['Validate'] = 'Tarkista';
+$lang['Fill in the filters to start a search'] = 'Täytä suodattimet aloittaaksesi haun';
+$lang['Filters'] = 'Suodattimet';
+$lang['No results are available.'] = 'Ei tuloksia.';
+$lang['Only the first %d albums are displayed, out of %d.'] = 'Vain %d ensimmäistä albumia näkyvissä, yhteensä %d:sta.';
+$lang['Pages'] = 'Sivut';
+$lang['Added by'] = 'Lisännyt';
+$lang['Album already selected'] = 'Albumi on jo valittu';
+$lang['Albums found'] = 'Albumeita löydetty';
+$lang['Albums listed here match your search by word. Click on one to browse by album.'] = 'Tässä listatut albumit vastaavat hakusanaasi. Klikkaa sellaisesta selataksesi albumeittain.';
+$lang['Click here to display it'] = 'Klikkaa tästä näyttääksesi sen';
+$lang['last 12 months'] = 'Viimeisimmät 12 kuukautta';
+$lang['Custom dates'] = 'Tietyt päivät';
+$lang['There are no creation dates available for the photos currently filtered'] = 'Nykyisen suodatuksen mukaisille kuville ei ole saatavissa luomispäiviä';
+$lang['There are no tags available for the photos currently filtered'] = 'Nykyisen suodatuksen mukaisille kuville ei ole saatavissa tageja';
+$lang['There are no authors available for the photos currently filtered'] = 'Nykyisen suodatuksen mukaisille kuville ei ole saatavissa tekijätietoja';

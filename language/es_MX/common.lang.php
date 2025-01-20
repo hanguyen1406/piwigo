@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: México [MX]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=726
 Author: Piwigo team
 Author URI: http://piwigo.org

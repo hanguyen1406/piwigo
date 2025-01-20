@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Català [CA]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=413
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -443,3 +443,13 @@ $lang['last 7 days'] = 'Darrers 7 dies';
 $lang['last year'] = 'Darrer any';
 $lang['rating score %s'] = 'puntuació %s';
 $lang['year %d'] = 'any %d';
+$lang['Album already selected'] = 'Àlbum ja seleccionat';
+$lang['Only the first %d albums are displayed, out of %d.'] = 'Només es mostren els primers %d àlbums, d\'un total de %d.';
+$lang['Pages'] = 'Pàgines';
+$lang['The PDF you requested is too large to display on this page.'] = 'El PDF que heu sol·licitat és massa gran per mostrar-lo en aquesta pàgina.';
+$lang['Click here to display it'] = 'Feu clic aquí per mostrar-lo';
+$lang['Custom dates'] = 'Dates personalitzades';
+$lang['last 12 months'] = 'Els darrers 12 mesos';
+$lang['There are no authors available for the photos currently filtered'] = 'No hi ha autors disponibles per a les fotos filtrades actualment';
+$lang['There are no creation dates available for the photos currently filtered'] = 'No hi ha dates de creació disponibles per a les fotos filtrades actualment';
+$lang['There are no tags available for the photos currently filtered'] = 'No hi ha etiquetes disponibles per a les fotos filtrades actualment';

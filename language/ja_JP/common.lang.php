@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: 日本語 [JP]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=425
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -37,7 +37,7 @@ $lang['%d new user'] = '新しいユーザ: %d';
 $lang['%d new users'] = '新しいユーザ: %d';
 $lang['About'] = 'Piwigoについて';
 $lang['All tags'] = 'すべてのタグ';
-$lang['Any tag'] = 'すべてのtag';
+$lang['Any tag'] = 'いずれかのタグ';
 $lang['Author'] = '作成者';
 $lang['Albums'] = 'アルバム';
 $lang['Album'] = 'アルバム';
@@ -89,7 +89,7 @@ $lang['Retrieve password'] = 'パスワード取得';
 $lang['Search tags'] = '検索タグ';
 $lang['Search'] = '検索';
 $lang['display available tags'] = '利用可能なタグを表示する';
-$lang['Since'] = 'Since';
+$lang['Since'] = 'ある維持以降';
 $lang['Sort by'] = '並び替え';
 $lang['Sort order'] = '並び順';
 $lang['Tag'] = 'タグ';
@@ -411,3 +411,19 @@ $lang['Invalid username or password!'] = 'ユーザ名かパスワードが違�
 $lang['Password: ********** (no copy by email)'] = 'パスワード: ********** (電子メールにはコピーされません)';
 $lang['Related albums'] = '関連するアルバム';
 $lang['Search in this set'] = 'この範囲内で検索する';
+$lang['Choose filters'] = 'フィルターを選択する';
+$lang['Pre-established filters are proposed, but you can add or remove them using the "Choose filters" button.'] = 'あらかじめ作成されたフィルターが選ばれていますが、「フィルターを選択する」ボタンを使ってフィルターの作成と削除をすることができます。';
+$lang['Fill in the filters to start a search'] = '検索を始めるにはフィルターに入力してください';
+$lang['File type'] = 'ファイル形式';
+$lang['Added by'] = '追加したユーザー';
+$lang['last 24 hours'] = '24時間以内';
+$lang['last 3 months'] = '3カ月以内';
+$lang['last 30 days'] = '30日以内';
+$lang['last 6 months'] = '6カ月以内';
+$lang['last 7 days'] = '7日以内';
+$lang['last year'] = '昨年';
+$lang['Tags found'] = '見つかったタグ';
+$lang['Album description'] = 'アルバムの説明';
+$lang['Album title'] = 'アルバムのタイトル';
+$lang['Clear'] = '条件を初期化';
+$lang['Search in :'] = '以下から検索する';

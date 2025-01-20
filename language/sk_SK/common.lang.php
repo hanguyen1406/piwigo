@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Slovensky [SK]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=452
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -450,3 +450,13 @@ $lang['Search in :'] = 'Hľadať v:';
 $lang['Search in this set'] = 'Hľadať v tejto skupine';
 $lang['Tags found'] = 'Našli sa značky';
 $lang['Unknown time period'] = 'Neznáme časové obdobie';
+$lang['Album already selected'] = 'Album je už vybraný';
+$lang['Click here to display it'] = 'Kliknutím sem ho zobrazíte';
+$lang['Only the first %d albums are displayed, out of %d.'] = 'Zobrazí sa len prvých %d albumov z %d.';
+$lang['Pages'] = 'Stránky';
+$lang['The PDF you requested is too large to display on this page.'] = 'Požadované PDF je príliš veľké na zobrazenie na tejto stránke.';
+$lang['Custom dates'] = 'Vlastné termíny';
+$lang['last 12 months'] = 'Posledných 12 mesiacov';
+$lang['There are no authors available for the photos currently filtered'] = 'V súčasnosti nie sú k dispozícii žiadni autori vyfiltrovaných fotografií';
+$lang['There are no creation dates available for the photos currently filtered'] = 'V súčasnosti nie sú k dispozícii žiadne dátumy vytvorenia vyfiltrovaných fotografií';
+$lang['There are no tags available for the photos currently filtered'] = 'Pre aktuálne vyfiltrované fotografie nie sú k dispozícii žiadne značky';

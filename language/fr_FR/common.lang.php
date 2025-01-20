@@ -7,7 +7,7 @@
 // +-----------------------------------------------------------------------+
 /*
 Language Name: Français [FR]
-Version: 14.5.0
+Version: 15.3.0
 Language URI: http://piwigo.org/ext/extension_view.php?eid=421
 Author: Piwigo team
 Author URI: http://piwigo.org
@@ -444,3 +444,13 @@ $lang['rating score %s'] = 'score %s';
 $lang['year %d'] = 'année %d';
 $lang['last 3 months'] = '3 derniers mois';
 $lang['last 24 hours'] = '24 dernières heures';
+$lang['Only the first %d albums are displayed, out of %d.'] = 'Seuls les %d premiers sont affichés, sur %d.';
+$lang['Album already selected'] = 'Album déjà sélectionné';
+$lang['Pages'] = "Pages";
+$lang['The PDF you requested is too large to display on this page.']= 'Le PDF que vous avez demandé est trop volumineux pour être affiché sur cette page.';
+$lang['Click here to display it']= 'Cliquez ici pour le voir';
+$lang['last 12 months'] = '12 derniers mois';
+$lang['Custom dates'] = 'Dates personnalisées';
+$lang['There are no tags available for the photos currently filtered'] = 'Aucun tag n\'est disponible pour les photos actuellement filtrées';
+$lang['There are no creation dates available for the photos currently filtered'] = 'Aucune date de création n\'est disponible pour les photos actuellement filtrées';
+$lang['There are no authors available for the photos currently filtered'] = 'Aucun auteur n\'est disponible pour les photos actuellement filtrées';

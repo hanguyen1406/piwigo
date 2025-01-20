@@ -120,7 +120,7 @@ function search_case_username($username)
  * @param bool $notify_user
  * @return int|false user id or false
  */
-function register_user($login, $password, $mail_address, $phone, $notify_admin=true, &$errors = array(), $notify_user=false)
+function register_user($login, $password, $mail_address, $notify_admin=true, &$errors = array(), $notify_user=false)
 {
   global $conf;
 
@@ -175,9 +175,7 @@ function register_user($login, $password, $mail_address, $phone, $notify_admin=t
     $insert = array(
       $conf['user_fields']['username'] => $login,
       $conf['user_fields']['password'] => $conf['password_hash']($password),
-      $conf['user_fields']['email'] => $mail_address,
-      'phone' => $phone
-
+      $conf['user_fields']['email'] => $mail_address
       );
 
     single_insert(USERS_TABLE, $insert);
@@ -217,7 +215,7 @@ SELECT id
     if ($notify_admin and 'none' != $conf['email_admin_on_new_user'])
     {
       include_once(PHPWG_ROOT_PATH.'include/functions_mail.inc.php');
-      $admin_url = get_absolute_root_url().'admin.php?page=user_list&username='.$login;
+      $admin_url = get_absolute_root_url().'admin.php?page=user_list&user_id='.$user_id;
 
       $keyargs_content = array(
         get_l10n_args('User: %s', stripslashes($login) ),
@@ -726,6 +724,8 @@ SELECT *
       unset($cache['default_user']['user_id']);
       unset($cache['default_user']['status']);
       unset($cache['default_user']['registration_date']);
+      unset($cache['default_user']['last_visit']);
+      unset($cache['default_user']['last_visit_from_history']);
     }
     else
     {
@@ -1736,6 +1736,53 @@ function deactivate_password_reset_key($user_id)
 }
 
 /**
+ * Generate reset password link
+ *
+ * @since 15
+ * @param int $user_id
+ * @param boolean $first_login
+ * @return array time_validation and password link 
+ */
+function generate_password_link($user_id, $first_login=false)
+{
+  global $conf;
+
+  $activation_key = generate_key(20);
+
+  $duration = $first_login
+  ? $conf['password_activation_duration'] 
+  : $conf['password_reset_duration'];
+  list($expire) = pwg_db_fetch_row(pwg_query('SELECT ADDDATE(NOW(), INTERVAL '. $duration .' SECOND)'));
+
+  single_update(
+    USER_INFOS_TABLE,
+    array(
+      'activation_key' => pwg_password_hash($activation_key),
+      'activation_key_expire' => $expire,
+      ),
+    array('user_id' => $user_id)
+    );
+
+    set_make_full_url();
+
+    $password_link = get_root_url().'password.php?key='.$activation_key;
+
+    unset_make_full_url();
+
+    $time_validation = time_since(
+      strtotime('now -'.$duration.' second'),
+      'second',
+      null,
+      false
+    );
+
+    return array(
+      'time_validation' => $time_validation,
+      'password_link' => $password_link,
+    );
+}
+
+/**
  * Gets the last visit (datetime) of a user, based on history table
  *
  * @since 2.9
@@ -1871,5 +1918,27 @@ function userprefs_get_param($param, $default_value=null)
   }
 
   return $default_value;
+}
+
+/**
+ * See if this is the first time the user has logged on
+ *
+ * @since 15
+ * @param int $user_id
+ * @return bool true if first connexion else false 
+ */
+function has_already_logged_in($user_id)
+{
+  $query = '
+SELECT COUNT(*)
+  FROM '.ACTIVITY_TABLE.'
+  WHERE action = \'login\' and performed_by = '.$user_id.'';
+
+  list($logged_in) = pwg_db_fetch_row(pwg_query($query));
+  if ($logged_in > 0)
+  {
+    return false;
+  }
+  return true;
 }
 ?>

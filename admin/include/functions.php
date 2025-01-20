@@ -2228,6 +2228,8 @@ function pwg_URL()
  */
 function invalidate_user_cache($full = true)
 {
+  global $persistent_cache;
+
   if ($full)
   {
     $query = '
@@ -2244,6 +2246,7 @@ UPDATE '.USER_CACHE_TABLE.'
   SET need_update = \'true\';';
     pwg_query($query);
   }
+  $persistent_cache->purge(true);
   conf_delete_param('count_orphans');
   trigger_notify('invalidate_user_cache', $full);
 }
@@ -3064,7 +3067,6 @@ function clear_derivative_cache_rec($path, $pattern)
       }
       else
       {
-        // printf($node.'<br>');
         if (preg_match($pattern, $node))
         {
           unlink($path.'/'.$node);
@@ -3669,4 +3671,190 @@ function get_piwigo_news()
   }
 
   return $news;
+}
+
+function get_graphics_library()
+{
+  global $conf;
+
+  include_once(PHPWG_ROOT_PATH.'admin/include/image.class.php');
+
+  $library = pwg_image::get_library();
+
+  switch (pwg_image::get_library())
+  {
+    case 'imagick':
+      $img = new Imagick();
+      $version = $img->getVersion();
+      if (preg_match('/ImageMagick \d+\.\d+\.\d+-?\d*/', $version['versionString'], $match))
+      {
+        $library.= '/'.$match[0];
+      }
+      break;
+
+    case 'ext_imagick':
+      exec($conf['ext_imagick_dir'].'convert -version', $returnarray);
+      if (preg_match('/Version: ImageMagick (\d+\.\d+\.\d+-?\d*)/', $returnarray[0], $match))
+      {
+        $library.= '/'.$match[1];
+      }
+      break;
+
+    case 'gd':
+      $gd_info = gd_info();
+      $library.= '/'.@$gd_info['GD Version'];
+      break;
+  }
+
+  return $library;
+}
+
+function get_graphics_library_label()
+{
+  list($library_code, $library_version) = explode('/', get_graphics_library());
+
+  $label_for_lib = array(
+    'imagick' => 'ImageMagick',
+    'ext_imagick' => 'External ImageMagick',
+    'gd' => 'GD',
+  );
+
+  return $label_for_lib[$library_code].' '.$library_version;
+}
+
+function get_pwg_general_statitics()
+{
+  $stats = array();
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.IMAGES_TABLE.'
+;';
+  list($stats['nb_photos']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.CATEGORIES_TABLE.'
+;';
+  list($stats['nb_categories']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.TAGS_TABLE.'
+;';
+  list($stats['nb_tags']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.IMAGE_TAG_TABLE.'
+;';
+  list($stats['nb_image_tag']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.USERS_TABLE.'
+;';
+  list($stats['nb_users']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT
+    COUNT(*)
+  FROM '.USER_INFOS_TABLE.'
+  WHERE status IN (\'webmaster\', \'admin\')
+;';
+  list($stats['nb_admins']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM `'.GROUPS_TABLE.'`
+;';
+  list($stats['nb_groups']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT COUNT(*)
+  FROM '.RATE_TABLE.'
+;';
+  list($stats['nb_rates']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT
+    SUM(nb_pages)
+  FROM '.HISTORY_SUMMARY_TABLE.'
+  WHERE month IS NULL
+;';
+  list($stats['nb_views']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT
+    SUM(filesize)
+  FROM '.IMAGES_TABLE.'
+;';
+  list($stats['disk_usage']) = pwg_db_fetch_row(pwg_query($query));
+
+  $query = '
+SELECT
+    COUNT(*),
+    SUM(filesize)
+  FROM '.IMAGE_FORMAT_TABLE.'
+;';
+  list($stats['nb_formats'], $stats['formats_disk_usage']) = pwg_db_fetch_row(pwg_query($query));
+
+  $stats['disk_usage'] += $stats['formats_disk_usage'];
+
+  return $stats;
+}
+
+function get_installation_date()
+{
+  $candidate = null;
+
+  // Piwigo first beta versions were created in septembre 2001, so it's not possible
+  // to have an installation prior to this "origin of times"
+  $piwigo_origins = '2001-09-01 00:00:00';
+
+  $query = '
+SELECT
+    registration_date
+  FROM '.USER_INFOS_TABLE.'
+  WHERE user_id = 2
+;';
+  $users = query2array($query);
+  if (count($users) > 0)
+  {
+    $candidate = $users[0]['registration_date'];
+  }
+
+  if (empty($candidate) or strtotime($candidate) < strtotime($piwigo_origins))
+  {
+    $query = '
+SELECT
+    MIN(registration_date) AS min_registration_date
+  FROM '.USER_INFOS_TABLE.'
+  WHERE registration_date > \''.$piwigo_origins.'\'
+;';
+    $users = query2array($query);
+    if (count($users) > 0)
+    {
+      $candidate = $users[0]['min_registration_date'];
+    }
+  }
+
+  if (empty($candidate) or strtotime($candidate) < strtotime($piwigo_origins))
+  {
+    // let's find another candidate
+    $query = '
+SELECT
+    date_available
+  FROM '.IMAGES_TABLE.'
+  ORDER BY id ASC
+  LIMIT 1
+;';
+    $images = query2array($query);
+    if (count($images) > 0)
+    {
+      $candidate = $images[0]['date_available'];
+    }
+  }
+
+  return $candidate;
 }

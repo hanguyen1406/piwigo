@@ -124,16 +124,6 @@ add_event_handler('render_element_content', 'default_picture_content');
 // add default event handler for rendering element description
 add_event_handler('render_element_description', 'pwg_nl2br');
 
-/**
- * pwg_nl2br is useful for PHP 5.2 which doesn't accept more than 1
- * parameter on nl2br() (and anyway the second parameter of nl2br does not
- * match what Piwigo gives.
- */
-function pwg_nl2br($string)
-{
-  return nl2br($string);
-}
-
 trigger_notify('loc_begin_picture');
 
 // this is the default handler that generates the display for the element
@@ -241,6 +231,7 @@ $url_up = duplicate_index_url(
   );
 
 $url_self = duplicate_picture_url();
+
 // +-----------------------------------------------------------------------+
 // |                                actions                                |
 // +-----------------------------------------------------------------------+
@@ -521,7 +512,7 @@ while ($row = pwg_db_fetch_assoc($result))
       $row['download_url'] = get_action_url($row['id'], 'e', true);
     }
   }
-  // printf($row['file'].'<br>');
+
   $row['url'] = duplicate_picture_url(
     array(
       'image_id' => $row['id'],
@@ -548,7 +539,6 @@ while ($row = pwg_db_fetch_assoc($result))
 
 $slideshow_params = array();
 $slideshow_url_params = array();
-
 
 if (isset($_GET['slideshow']))
 {
@@ -971,6 +961,15 @@ SELECT id, name, permalink
   }
 }
 
+if (in_array(strtolower(get_extension($picture['current']['file'])), array('pdf'))) {
+  $template->assign(
+    array(
+      'PDF_VIEWER_FILESIZE_THRESHOLD' => $conf['pdf_viewer_filesize_threshold']*1024,
+      'PDF_NB_PAGES' => count_pdf_pages($picture['current']['path'])
+    )
+  );
+}
+
 // maybe someone wants a special display (call it before page_header so that
 // they can add stylesheets)
 $element_content = trigger_change(
@@ -1003,6 +1002,7 @@ $template->assign(
 // +-----------------------------------------------------------------------+
 // |                               sub pages                               |
 // +-----------------------------------------------------------------------+
+
 include(PHPWG_ROOT_PATH.'include/picture_rate.inc.php');
 if ($conf['activate_comments'])
 {

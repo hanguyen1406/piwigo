@@ -130,7 +130,7 @@ if (isset($_POST['submit']))
   }
 
   $data = trigger_change('picture_modify_before_update', $data);
-  // printf(implode(", ", $data));
+  
   single_update(
     IMAGES_TABLE,
     $data,
@@ -198,7 +198,7 @@ SELECT
   WHERE image_id = '.$_GET['image_id'].'
 ;';
 $tag_selection = get_taglist($query);
-printf(implode(", ", $tag_selection[1]));
+
 $row = $page['image'];
 
 if (isset($data['date_creation']))
@@ -213,7 +213,7 @@ if (!empty($row['storage_category_id']))
 }
 
 $image_file = $row['file'];
-// printf("hi");
+
 // +-----------------------------------------------------------------------+
 // |                             template init                             |
 // +-----------------------------------------------------------------------+
