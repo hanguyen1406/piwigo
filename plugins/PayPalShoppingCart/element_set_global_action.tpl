@@ -44,16 +44,6 @@ jQuery(document).ready(function() {
 <div id="ppcredits">
   <span>
     <div class="radio">
-      <input id="radio-1" name="radio" value="apply" type="radio" checked>
-      <label for="radio-1" class="radio-label">Áp dụng</label>
-    </div>
-    <div class="radio">
-      <input id="radio-2" name="radio" value="remove" type="radio">
-      <label  for="radio-2" class="radio-label">Gỡ bỏ</label>
-    </div>
-  </span>
-  <span>
-    <div class="radio">
       <input id="radio-3" name="fs-price" value="default" type="radio" checked>
       <label for="radio-3" class="price-label">Follow default price (swap: {$swap}, download: {$download})</label>
       <br>

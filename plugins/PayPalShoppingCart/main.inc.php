@@ -585,58 +585,37 @@ function ppsc_batch_global_submit($action, $collection)
     $datas = array();
     $query = 'select id from piwigo_tags where name = "faceswap"';
     $faceswap = pwg_db_fetch_assoc(pwg_query($query));
-    if($_POST['radio'] == "apply")
+    
+    foreach ($collection as $image_id)
     {
-      foreach ($collection as $image_id)
-      {
-        try {
-          
-          $query = 'insert into piwigo_image_plugin values ('.$image_id.', "PayPalShoppingCart")';
+      try {
+        
+        $query = 'insert into piwigo_image_plugin values ('.$image_id.', "PayPalShoppingCart")';
+        pwg_query($query);
+        $query = 'insert ignore into piwigo_image_tag values ('.$image_id.', '.$faceswap['id'].')';
+        pwg_query($query);
+
+        //update new price for image option
+        if($_POST['swap-price'] && $_POST['swap-dl-price']){
+          $query = 'INSERT INTO piwigo_ppcredits_option_price
+          VALUES ('.$image_id.', "ppcredits.faceswap.swap", '.$_POST['swap-price'].')
+          ON DUPLICATE KEY UPDATE price = '.$_POST['swap-price'].';';
           pwg_query($query);
-          $query = 'insert ignore into piwigo_image_tag values ('.$image_id.', '.$faceswap['id'].')';
+
+          $query = 'INSERT INTO piwigo_ppcredits_option_price
+          VALUES ('.$image_id.', "ppcredits.faceswap.download", '.$_POST['swap-dl-price'].')
+          ON DUPLICATE KEY UPDATE price = '.$_POST['swap-dl-price'].';';
           pwg_query($query);
-
-          //update new price for image option
-          if($_POST['swap-price'] && $_POST['swap-dl-price']){
-            $query = 'INSERT INTO piwigo_ppcredits_option_price
-            VALUES ('.$image_id.', "ppcredits.faceswap.swap", '.$_POST['swap-price'].')
-            ON DUPLICATE KEY UPDATE price = '.$_POST['swap-price'].';';
-            pwg_query($query);
-
-            $query = 'INSERT INTO piwigo_ppcredits_option_price
-            VALUES ('.$image_id.', "ppcredits.faceswap.download", '.$_POST['swap-dl-price'].')
-            ON DUPLICATE KEY UPDATE price = '.$_POST['swap-dl-price'].';';
-            pwg_query($query);
-          } else {
-            $query = "delete from piwigo_ppcredits_option_price where image_id=".$image_id;
-            pwg_query($query);
-          }
-
-
-        } catch (\Throwable $th) {
-          
+        } else {
+          $query = "delete from piwigo_ppcredits_option_price where image_id=".$image_id;
+          pwg_query($query);
         }
+      } catch (\Throwable $th) {
+        $page['infos'][] = $th->getMessage();
       }
-      $page['infos'][] = l10n('Áp dụng cho các ảnh thành công');
-    }else
-    {
-      foreach ($collection as $image_id)
-      {
-        try {
-          $query = 'delete from piwigo_image_plugin where plugin_id = "PayPalShoppingCart" and image_id = '.$image_id;
-          pwg_query($query);
-
-          $query = 'delete from piwigo_image_tag where tag_id = '.$faceswap['id'].' and image_id = '.$image_id;
-          pwg_query($query);  
-
-          $query = 'delete from piwigo_ppcredits_option_price where image_id='.$image_id;
-          pwg_query($query);  
-
-        } catch (\Throwable $th) {
-        }
-      }
-      $page['infos'][] = l10n('Gỡ bỏ cho các ảnh thành công');
     }
+    $page['infos'][] = l10n('Áp dụng cho các ảnh thành công');
+    
   }
 }
 

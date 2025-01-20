@@ -93,5 +93,7 @@ jQuery("#ppcreditsBuyPhoto a.buy").click(function(){
   </div>
 {/if}
 {if $FILE_LINK}
+<div style="margin-top:5px" id="ppcreditsBuyPhoto">
   <a href="{$FILE_LINK}" target="_blank">Tải xuống file đính kèm</a>
+</div>
 {/if}
